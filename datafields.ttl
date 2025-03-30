@@ -294,7 +294,6 @@ ff:einkommen_neu a ff:DataField ;
         sh:property [
             sh:path ff:einkommen_neu ;
             sh:in (ff:einkommen_neu-ao-selbstaendig ff:einkommen_neu-ao-soz ff:einkommen_neu-ao-alg ff:einkommen_neu-ao-alg-ii ff:einkommen_neu-ao-ausbildung ff:einkommen_neu-ao-bafoeg ff:einkommen_neu-ao-rente ff:einkommen_neu-ao-elterngeld ff:einkommen_neu-ao-mutterschaftsgeld ff:einkommen_neu-ao-wohngeld ff:einkommen_neu-ao-sonstige) ;
-            sh:maxCount 1 ;
         ] ;
     ] .
 ff:einkommen_neu-ao-selbstaendig a ff:AnswerOption ; rdfs:label "Selbstständige Arbeit in einer Beschäftigung von mehr als 15 Stunden pro Woche"@de , "Self-employed work of more than 15 hours per week"@en .
@@ -449,7 +448,6 @@ ff:bezogene_leistungen a ff:DataField ;
                 ff:bezogene_leistungen-berufsausbildungsbeihilfe-und-ausbildungsgeld
                 ff:bezogene_leistungen-sicherung-des-lebensunterhaltes-mobipro-EU
             ) ;
-            sh:maxCount 1 ;
         ] ;
     ] .
 ff:bezogene_leistungen-keine a ff:AnswerOption ; rdfs:label "Keine"@de , "None"@en .
@@ -1182,7 +1180,6 @@ ff:business_activity_location a ff:DataField ;
                 ff:business_activity_location-brandenburg
                 ff:business_activity_location-other
             ) ;
-            sh:maxCount 1 ;
         ] ;
     ] .
 ff:business_activity_location-berlin a ff:AnswerOption ; rdfs:label "Berlin"@en, "Berlin"@de .
