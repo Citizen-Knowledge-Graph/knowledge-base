@@ -4,7 +4,7 @@
 
 # MATERIALIZATION RULES
 
-ff:CalculateAgeFromBirthdate a ff:MaterializationRule, ff:SparqlRule ;
+ff:CalculateAgeFromBirthdate a ff:MaterializationRule ;
     rdfs:label "Berechnung des Alters basierend auf dem Geburtsdatum"@de, "Calculate the age from the birthdate"@en ;
     ff:input ff:geburtsdatum ;
     ff:output ff:hasAge ;
@@ -18,7 +18,7 @@ ff:CalculateAgeFromBirthdate a ff:MaterializationRule, ff:SparqlRule ;
         }
     """ .
 
-ff:PensionableFromBirthdate a ff:MaterializationRule, ff:SparqlRule ;
+ff:PensionableFromBirthdate a ff:MaterializationRule ;
     rdfs:label "Feststellung der Pensionsberechtigung basierend auf dem Geburtsdatum"@de, "Determining qualification for pension from the birthdate"@en ;
     ff:input ff:geburtsdatum ;
     ff:output ff:pensionable ;
@@ -76,7 +76,7 @@ ff:Year1962 ff:hasPensionAgeYears 66 ; ff:hasPensionAgeMonths 6 ; ff:appliesToBi
 ff:Year1963 ff:hasPensionAgeYears 66 ; ff:hasPensionAgeMonths 8 ; ff:appliesToBirthYear 1963 .
 ff:Year1964 ff:hasPensionAgeYears 66 ; ff:hasPensionAgeMonths 10 ; ff:appliesToBirthYear 1964 .
 
-ff:NoKidsImpliesNoKidsInAgeRanges a ff:MaterializationRule, ff:SparqlRule ;
+ff:NoKidsImpliesNoKidsInAgeRanges a ff:MaterializationRule ;
     rdfs:label "Wenn jemand keine Kinder hat, hat er auch keine Kinder in diesen beiden Altersspannen"@de, "If someone has no children, they also have no children in these two age ranges"@en ;
     ff:input ff:kinder ;
     ff:output ff:kinder_unter_18 ;
@@ -91,7 +91,7 @@ ff:NoKidsImpliesNoKidsInAgeRanges a ff:MaterializationRule, ff:SparqlRule ;
         }
     """ .
 
-ff:KidsInAgeRangesMeansHavingKids a ff:MaterializationRule, ff:SparqlRule ;
+ff:KidsInAgeRangesMeansHavingKids a ff:MaterializationRule ;
     rdfs:label "Wenn jemand Kinder in Altersspannen hat, hat die Person Kinder"@de, "If someone has children in age ranges, the person has children"@en ;
     ff:input ff:kinder_unter_18 ;
     ff:input ff:kinder_18_25 ;
@@ -109,7 +109,7 @@ ff:KidsInAgeRangesMeansHavingKids a ff:MaterializationRule, ff:SparqlRule ;
         }
     """ .
 
-ff:HouseholdMembersToVermoegensGrenzeBuergergeld a ff:MaterializationRule, ff:SparqlRule ;
+ff:HouseholdMembersToVermoegensGrenzeBuergergeld a ff:MaterializationRule ;
     rdfs:label "Berechnung der Vermögensgrenze für das Bürgergeld basierend auf der Anzahl der Haushaltsmitglieder"@de, 
         "Calculation of the asset limit for citizen's benefit based on the number of household members"@en ;
     ff:input ff:household_members ;
@@ -134,7 +134,7 @@ ff:HouseholdMembersToVermoegensGrenzeBuergergeld a ff:MaterializationRule, ff:Sp
         }
     """ .
 
-ff:HouseholdMembersToVermoegensGrenzeWohngeld a ff:MaterializationRule, ff:SparqlRule ;
+ff:HouseholdMembersToVermoegensGrenzeWohngeld a ff:MaterializationRule ;
     rdfs:label "Berechnung der Vermögensgrenze für das Wohngeld basierend auf der Anzahl der Haushaltsmitglieder"@de, 
         "Calculation of the asset limit for housing benefit based on the number of household members"@en ;
     ff:input ff:household_members ;
@@ -155,7 +155,7 @@ ff:HouseholdMembersToVermoegensGrenzeWohngeld a ff:MaterializationRule, ff:Sparq
         }
     """ .
 
-ff:InterestedInBuildingActivatorRule a ff:MaterializationRule, ff:SparqlRule ;
+ff:InterestedInBuildingActivatorRule a ff:MaterializationRule ;
     rdfs:label "Activate interested_in_building requirement based on interested_in_building_renovation"@en ,
         "Aktiviere die Anforderung interested_in_building basierend auf interested_in_building_renovation"@de ;
     ff:input ff:interested_in_building_renovation ;
