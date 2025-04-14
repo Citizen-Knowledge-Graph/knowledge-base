@@ -417,7 +417,18 @@ ff:pflege a ff:DataField ;
 
 # materializable data fields
 ff:pensionable a ff:DataField, ff:MaterializableDataField ; rdfs:label "Pensionable"@en, "Rentenberechtigt"@de .
-ff:hasAge a ff:DataField, ff:MaterializableDataField ; rdfs:label "Age"@en, "Alter"@de .
+ff:hasAge a ff:DataField, ff:MaterializableDataField ;
+    rdfs:label "Age"@en, "Alter"@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:hasAge ;
+        sh:property [
+            sh:path ff:hasAge ;
+            sh:datatype xsd:integer ;
+            sh:minInclusive 0 ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
 
 # Sozialleistungen
 ff:bezogene_leistungen a ff:DataField ;
