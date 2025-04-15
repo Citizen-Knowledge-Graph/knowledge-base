@@ -17,7 +17,7 @@ ff:wolfenbuettel-stiftungMainPersonShape a sh:NodeShape, ff:EligibilityConstrain
 
     sh:property [
         sh:path ff:residence_city ;
-        sh:in (ff:residence-city-wolfenbuettel) ;
+        sh:in (ff:residence_city-wolfenbuettel) ;
         sh:minCount 1 ;
         sh:message "Antragsberechtigt sind nur Personen und Institutionen mit Wohnsitz in Wolfenbüttel. (Quelle: 'Antragsberechtigt sind: Personen und Institutionen, die in Wolfenbüttel ansässig sind')."@de ;
     ] ;
