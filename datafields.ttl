@@ -47,6 +47,9 @@ ff:wohnungsbau-modernisierung a ff:BenefitCategory ;
 ff:innovation-forschung a ff:BenefitCategory ;
     rdfs:label "Innovation & Forschung"@de, "Innovation & Research"@en .
 
+ff:stiftungs-foerderung a ff:BenefitCategory ;
+    rdfs:label "Stiftungsförderung"@de, "Foundation Funding"@en .
+
 # DATAFIELD CATEGORIES
 
 ff:persoenliche-angaben-df-kategorie a ff:DatafieldCategory ; rdfs:label "Persönliche Angaben"@de, "Personal information"@en .
@@ -1347,3 +1350,67 @@ ff:building_renovation_type a ff:DataField ;
 ff:building_renovation_type-energy-efficiency a ff:AnswerOption ; rdfs:label "Energy efficiency improvements"@en, "Energieeffizienzverbesserungen"@de .
 ff:building_renovation_type-renewable-heating a ff:AnswerOption ; rdfs:label "Renewable heating systems"@en, "Erneuerbare Heizsysteme"@de .
 ff:building_renovation_type-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
+
+
+##############################
+# Wolfenbuettel
+##############################
+
+ff:residence_city a ff:DataField ;
+    schema:category ff:wolfenbuettel-df-kategorie ;
+    rdfs:label "Residence City"@en, "Wohnort"@de ;
+    schema:question "In which city do you live?"@en, "In welcher Stadt wohnen Sie?"@de ;
+    rdfs:comment "The residence city of the applicant can be relevant for funding opportunities that target specific regions or cities. Some grants are specifically available for residents of Wolfenbüttel."@en,
+                 "Der Wohnort des Antragstellers kann für Fördermöglichkeiten relevant sein, die auf bestimmte Regionen oder Städte abzielen. Einige Förderungen sind speziell für Bewohner von Wolfenbüttel verfügbar."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:residence_city ;
+        sh:property [
+            sh:path ff:residence_city ;
+            sh:in (
+                ff:residence_city-berlin
+                ff:residence_city-hamburg
+                ff:residence_city-braunschweig
+                ff:residence_city-wolfenbuettel
+                ff:residence_city-other
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+ff:residence_city-berlin a ff:AnswerOption ; rdfs:label "Berlin"@en, "Berlin"@de .
+ff:residence_city-hamburg a ff:AnswerOption ; rdfs:label "Hamburg"@en, "Hamburg"@de .
+ff:residence_city-braunschweig a ff:AnswerOption ; rdfs:label "Braunschweig"@en, "Braunschweig"@de .
+ff:residence_city-wolfenbuettel a ff:AnswerOption ; rdfs:label "Wolfenbüttel"@en, "Wolfenbüttel"@de .
+ff:residence_city-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
+
+ff:is_in_need a ff:DataField ;
+    schema:category ff:persoenliche-angaben-df-kategorie ;
+    rdfs:label "In Need of Support"@en, "Bedarf an Unterstützung"@de ;
+    schema:question "Do you consider yourself (or your organization) to be in financial need or require support for your current situation?"@en, "Halten Sie sich (oder Ihre Organisation) für finanziell bedürftig oder benötigen Sie Unterstützung für Ihre aktuelle Situation?"@de ;
+    rdfs:comment "This question helps identify individuals or organizations in need of support for their projects, which may be eligible for funding opportunities or grants."@en,
+                 "Diese Frage hilft dabei, Personen oder Organisationen zu identifizieren, die Unterstützung für ihre Projekte benötigen und möglicherweise für Fördermöglichkeiten oder Zuschüsse infrage kommen."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:is_in_need ;
+        sh:property [
+            sh:path ff:is_in_need ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:received_wolfenbuettel_stiftung_funding_previous_year a ff:DataField ;
+    schema:category ff:wolfenbuettel-df-kategorie ;
+    rdfs:label "Received Wolfenbüttel Foundation Funding Previous Year"@en, "Förderung der Wolfenbüttel Stiftung im Vorjahr erhalten"@de ;
+    schema:question "Did you receive funding from the Wolfenbüttel Foundation in the previous year?"@en, "Haben Sie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de ;
+    rdfs:comment "This question helps identify individuals or organizations that have previously received funding from the Wolfenbüttel Foundation, which may affect their eligibility for new funding opportunities."@en,
+                 "Diese Frage hilft dabei, Personen oder Organisationen zu identifizieren, die zuvor eine Förderung von der Wolfenbüttel Stiftung erhalten haben, was ihre Förderfähigkeit für neue Fördermöglichkeiten beeinflussen kann."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:received_wolfenbuettel_stiftung_funding_previous_year ;
+        sh:property [
+            sh:path ff:received_wolfenbuettel_stiftung_funding_previous_year ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
