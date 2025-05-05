@@ -372,6 +372,23 @@ ff:vermoegen a ff:DataField ;
         ] ;
     ] .
 
+ff:experience_financial_difficulties a ff:DataField ;
+    schema:category ff:lebenssituation-df-kategorie ;
+    rdfs:label "Finanzielle Schwierigkeiten"@de , "Financial Difficulties"@en ;
+    schema:question "Haben Sie finanzielle Schwierigkeiten, Ihren oder den Lebensunterhalt Ihres Haushalts zu bewältigen?"@de ,
+        "Do you have financial difficulties in managing your or your household's livelihood?"@en ;
+    rdfs:comment "Einige Leistungen setzen voraus, dass Sie in einer finanziellen Notlage sind. Das bedeutet, dass Sie nicht genug Geld haben, um Ihre Lebenshaltungskosten zu decken. Wenn Sie zum Beispiel Schulden haben, Ihre Miete nicht bezahlen können, Ihre Rechnungen nicht bezahlen können oder Ihre Lebenshaltungskosten nicht bezahlen können. Teil eines entsprechenden Antragsverfahrens ist die Prüfung, ob Sie in einer finanziellen Notlage sind."@de ,
+        "Some benefits require that you are in a financial emergency. This means that you do not have enough money to cover your living expenses. For example, if you have debts, cannot pay your rent, cannot pay your bills, or cannot pay your living expenses. Part of the corresponding application process is the examination of whether you are in a financial emergency."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:experience_financial_difficulties ;
+        sh:property [
+            sh:path ff:experience_financial_difficulties ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
 # Gesundheit
 
 ff:krankenversicherung a ff:DataField ;
