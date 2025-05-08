@@ -50,6 +50,9 @@ ff:innovation-forschung a ff:BenefitCategory ;
 ff:stiftungs-foerderung a ff:BenefitCategory ;
     rdfs:label "Stiftungsförderung"@de, "Foundation Funding"@en .
 
+ff:gewerbe-foerderung a ff:BenefitCategory ;
+    rdfs:label "Gewerbe- und Unternehmensförderung"@de, "Business & Company Funding"@en .
+
 # DATAFIELD CATEGORIES
 
 ff:persoenliche-angaben-df-kategorie a ff:DatafieldCategory ; rdfs:label "Persönliche Angaben"@de, "Personal information"@en .
@@ -60,6 +63,7 @@ ff:gesundheit-df-kategorie a ff:DatafieldCategory ; rdfs:label "Gesundheit"@de, 
 ff:gruendung-df-kategorie a ff:DatafieldCategory ; rdfs:label "Gründung"@de, "Founding"@en .
 ff:education-df-kategorie a ff:DatafieldCategory ; rdfs:label "Ausbildung"@de, "Education"@en .
 ff:wohnungsbau-df-kategorie a ff:DatafieldCategory ; rdfs:label "Wohnungsbau & Modernisierung"@de, "Housing & Modernization"@en .
+ff:business-permits-df-kategorie a ff:DatafieldCategory ; rdfs:label "Betriebsstätten & Genehmigungen"@de, "Business premises & permits"@en .
 
 # VALIDATION STAGES
 
@@ -1209,6 +1213,7 @@ ff:business_activity_location a ff:DataField ;
                 ff:business_activity_location-berlin
                 ff:business_activity_location-hamburg
                 ff:business_activity_location-brandenburg
+                ff:business_activity_location-wolfenbuettel
                 ff:business_activity_location-other
             ) ;
         ] ;
@@ -1216,6 +1221,7 @@ ff:business_activity_location a ff:DataField ;
 ff:business_activity_location-berlin a ff:AnswerOption ; rdfs:label "Berlin"@en, "Berlin"@de .
 ff:business_activity_location-hamburg a ff:AnswerOption ; rdfs:label "Hamburg"@en, "Hamburg"@de .
 ff:business_activity_location-brandenburg a ff:AnswerOption ; rdfs:label "Brandenburg"@en, "Brandenburg"@de .
+ff:business_activity_location-wolfenbuettel a ff:AnswerOption ; rdfs:label "Wolfenbüttel"@en, "Wolfenbüttel"@de .
 ff:business_activity_location-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
 
 ##############################
@@ -1432,6 +1438,22 @@ ff:received_wolfenbuettel_stiftung_funding_previous_year a ff:DataField ;
         ] ;
     ] .
 
+
+ff:has_permit_for_outdoor_seating a ff:DataField ;
+    schema:category ff:business-permits-df-kategorie ;
+    rdfs:label "Permit for Outdoor Seating"@en, "Genehmigung für Außensitzplätze"@de ;
+    schema:question "Do you have a permit for outdoor seating?"@en, "Haben Sie eine Genehmigung für Außensitzplätze?"@de ;
+    rdfs:comment "This question helps identify individuals or organizations that have obtained a permit for outdoor seating, which may be relevant for funding opportunities or grants related to outdoor dining or hospitality."@en,
+                 "Diese Frage hilft dabei, Personen oder Organisationen zu identifizieren, die eine Genehmigung für Außensitzplätze erhalten haben, was für Fördermöglichkeiten oder Zuschüsse im Zusammenhang mit Außengastronomie oder Gastgewerbe relevant sein kann."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:has_permit_for_outdoor_seating ;
+        sh:property [
+            sh:path ff:has_permit_for_outdoor_seating ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
 
 ##############################
 # Ausbildungsgeld
