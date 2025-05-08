@@ -1431,3 +1431,69 @@ ff:received_wolfenbuettel_stiftung_funding_previous_year a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
+
+
+##############################
+# Ausbildungsgeld
+##############################
+
+ff:has_disability a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Has Disability"@en, "Hat Behinderung"@de ;
+    schema:question "Do you have a disability?"@en, "Haben Sie eine Behinderung?"@de ;
+    rdfs:comment "Diese Frage hilft dabei, spezifische Fördermöglichkeiten oder Zuschüsse zu erfassen, die für Menschen mit Behinderungen verfügbar sind."@de,
+                    "This question helps identify specific funding opportunities or grants available for individuals with disabilities."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:has_disability ;
+        sh:property [
+            sh:path ff:has_disability ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:rehabilitation_provider a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Rehabilitation Provider"@en, "Rehabilitationsträger"@de ;
+    schema:question "Welche Einrichtung ist Ihr Rehabilitationsträger?"@de, "Which institution is your rehabilitation provider?"@en ;
+    rdfs:comment "Diese Frage hilft dabei, spezifische Fördermöglichkeiten oder Zuschüsse zu erfassen, die an bestimmte Rehabilitationsträger gebunden sind."@de,
+                    "This question helps identify specific funding opportunities or grants tied to certain rehabilitation providers."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:rehabilitation_provider ;
+        sh:property [
+            sh:path ff:rehabilitation_provider ;
+            sh:in (
+                ff:rehabilitation_provider-bundesagentur-fuer-arbeit
+                ff:rehabilitation_provider-other
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:rehabilitation_provider-bundesagentur-fuer-arbeit a ff:AnswerOption ; rdfs:label "Bundesagentur für Arbeit"@de, "Federal Employment Agency"@en .
+ff:rehabilitation_provider-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
+
+ff:eligible_for_transitional_allowance a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Eligible for Transitional Allowance"@en, "Anspruch auf Übergangsgeld"@de ;
+    schema:question "Are you eligible for transitional allowance?"@en, "Haben Sie Anspruch auf Übergangsgeld?"@de ;
+    rdfs:comment "This question helps identify individuals who are eligible for transitional allowance, which may affect their eligibility for specific funding opportunities or grants."@en,
+                 "Diese Frage hilft dabei, Personen zu identifizieren, die Anspruch auf Übergangsgeld haben, was ihre Förderfähigkeit für spezifische Fördermöglichkeiten oder Zuschüsse beeinflussen kann."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:eligible_for_transitional_allowance ;
+        sh:property [
+            sh:path ff:eligible_for_transitional_allowance ;
+            sh:in (
+                ff:eligible_for_transitional_allowance-yes
+                ff:eligible_for_transitional_allowance-no
+                ff:eligible_for_transitional_allowance-unsure
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+ff:eligible_for_transitional_allowance-yes a ff:AnswerOption ; rdfs:label "Ja"@de, "Yes"@en .
+ff:eligible_for_transitional_allowance-no a ff:AnswerOption ; rdfs:label "Nein"@de, "No"@en .
+ff:eligible_for_transitional_allowance-unsure a ff:AnswerOption ; rdfs:label "Unsicher"@de, "Unknown"@en .
