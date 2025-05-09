@@ -17,7 +17,7 @@ ff:wolfenbuettel-gastronomische-aussenmoeblierungMainPersonShape a sh:NodeShape,
     sh:targetClass ff:Citizen ;
 
     sh:property [
-        sh:path ff:business_activiy_location ;
+        sh:path ff:business_activity_location ;
         sh:in (ff:business_activity_location-wolfenbuettel) ;
         sh:minCount 1 ;
         sh:message "Das gastronomische Gewerbe muss in Wolfenbüttel sein."@de ;

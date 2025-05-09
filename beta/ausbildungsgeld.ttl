@@ -5,7 +5,7 @@
 
 ff:ausbildungsgeld a ff:RequirementProfile ;
     ff:title "Ausbildungsgeld"@de , "Training Allowance"@en ;
-    ff:category ff:schule-studium-ausbildung-bc-kategorie ;
+    ff:category ff:schule-studium-ausbildung-bc-kategorie ff:gesundheit-pflege-bc-kategorie ;
     ff:validationStage ff:preliminary-validation ;
     ff:benefitInfo "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)"@de ,
         "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"@en ;
