@@ -219,16 +219,16 @@ ff:kinder_in_ausbildung a ff:DataField ;
         ] ;
     ] .
 
-ff:kindergeld a ff:DataField ;
+ff:receiving_kindergeld a ff:DataField ;
     schema:category ff:kinder-df-kategorie ;
     rdfs:label "Kindergeld"@de , "Child Benefit"@en ;
     schema:question "Beziehen Sie Kindergeld für ein oder mehrere Kinder?"@de ,
         "Do you receive child benefit for one or more children?"@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:kindergeld ;
+        sh:targetSubjectsOf ff:receiving_kindergeld ;
         sh:property [
-            sh:path ff:kindergeld ;
+            sh:path ff:receiving_kindergeld ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;

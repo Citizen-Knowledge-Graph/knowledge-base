@@ -64,7 +64,7 @@ ff:kinderzuschlagMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
         ]
     ]) ;
     sh:property [
-        sh:path ff:kindergeld ;
+        sh:path ff:receiving_kindergeld ;
         sh:minCount 1 ;
         sh:in (true) ;
     ] ;
