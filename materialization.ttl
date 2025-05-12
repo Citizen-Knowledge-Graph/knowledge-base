@@ -175,3 +175,61 @@ ff:InterestedInBuildingActivatorRule a ff:MaterializationRule ;
             )
         }
     """ .
+
+ff:UebergangsGeldAgenturFuerArbeit a ff:MaterializationRule ;
+    rdfs:label "Aktiviere die Anforderung uebergangsgeld-behinderung basierend auf der Agentur für Arbeit"@de ,
+        "Activate the requirement uebergangsgeld-behinderung based on the Federal Employment Agency"@en ;
+    ff:input ff:vocational_returnee ;
+    ff:input ff:graduated_within_last_year ;
+    ff:input ff:certified_within_last_year ;
+    ff:output ff:rehabilitation_provider-bundesagentur-fuer-arbeit ;
+    ff:sparqlConstructQuery """
+        PREFIX ff: <https://foerderfunke.org/default#>
+        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+        CONSTRUCT {
+            ?person ff:vocational_returnee_deactivated ?isDeactivated1 .
+            ?person ff:vocationalReturneeShape_deactivated ?isDeactivated2 .
+            ?person ff:nonVocationalReturneeShape_deactivated ?isDeactivated3 .
+        } WHERE {
+            ?person a ff:Citizen .
+
+        # Optional bindings
+        OPTIONAL { ?person ff:vocational_returnee ?vocationalReturnee . }
+        OPTIONAL { ?person ff:graduated_within_last_year ?graduated_within_last_year . }
+        OPTIONAL { ?person ff:certified_within_last_year ?certified_within_last_year . }
+
+        # Determine deactivation status for vocational_returnee
+        BIND(
+            IF(
+                ((!BOUND(?graduated_within_last_year) && !BOUND(?certified_within_last_year)) || 
+                (?graduated_within_last_year = true || ?certified_within_last_year = true)),
+                true,
+                false
+            ) AS ?isDeactivated1
+        )
+        
+        # Determine deactivation status for orShape1
+        # - isDeactivated1 is true
+        # - vocational_returnee does not exist OR is false
+        BIND(
+            IF(
+                (?isDeactivated1 = true || 
+                (!BOUND(?vocationalReturnee) || ?vocationalReturnee = false)),
+                true,
+                false
+            ) AS ?isDeactivated2
+        )
+
+        # Determine deactivation status for the new shape orShape2
+        # - isDeactivated1 is true
+        # - vocational_returnee does not exist OR is true
+        BIND(
+            IF(
+                (?isDeactivated1 = true || 
+                (!BOUND(?vocationalReturnee) || ?vocationalReturnee = true)),
+                true,
+                false
+            ) AS ?isDeactivated3
+        )}
+    """ .
