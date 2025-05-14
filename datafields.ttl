@@ -1201,7 +1201,7 @@ ff:headquarters_country-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonsti
 ff:business_activity_location a ff:DataField ;
     schema:category ff:gruendung-df-kategorie ;
     rdfs:label "Business Activity Location"@en, "Standort der Geschäftstätigkeit"@de ;
-    schema:question "Do you have or plan significant business activities in one of the following regions?"@en, "Haben Sie oder planen Sie bedeutende Geschäftstätigkeiten in einer der folgenden Regionen?"@de ;
+    schema:question "Do you have or plan business activities in one of the following regions?"@en, "Haben Sie oder planen Sie Geschäftstätigkeiten in einer der folgenden Regionen?"@de ;
     rdfs:comment "The location of your company's business activities can be relevant for funding opportunities that require startups to be based in specific regions or countries. Some grants are specifically available for companies with business activities in Germany or in certain regions within the country."@en,
                  "Der Standort der Geschäftstätigkeiten Ihres Unternehmens kann für Fördermöglichkeiten relevant sein, die voraussetzen, dass Startups in bestimmten Regionen oder Ländern ansässig sind. Einige Förderungen sind speziell für Unternehmen mit Geschäftstätigkeiten in Deutschland oder in bestimmten Regionen innerhalb des Landes verfügbar."@de ;
     ff:hasShaclShape [
