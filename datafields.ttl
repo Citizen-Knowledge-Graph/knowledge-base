@@ -829,6 +829,7 @@ ff:industry a ff:DataField ;
                 ff:industry-ao-construction
                 ff:industry-ao-gastronomy
                 ff:industry-ao-hospitality-non-ecological
+                ff:industry-ao-retail
                 ff:industry-ao-retail-non-sustainable
                 ff:industry-ao-healthcare
                 ff:industry-ao-renewable-energy
@@ -846,6 +847,7 @@ ff:industry a ff:DataField ;
 ff:industry-ao-construction a ff:AnswerOption ; rdfs:label "Construction"@en, "Bauwesen"@de .
 ff:industry-ao-gastronomy a ff:AnswerOption ; rdfs:label "Gastronomy"@en, "Gastronomie"@de .
 ff:industry-ao-hospitality-non-ecological a ff:AnswerOption ; rdfs:label "Hospitality (non-ecological)"@en, "Gastgewerbe (nicht-ökologisch)"@de .
+ff:industry-ao-retail a ff:AnswerOption ; rdfs:label "Retail"@en, "Einzelhandel"@de .
 ff:industry-ao-retail-non-sustainable a ff:AnswerOption ; rdfs:label "Retail (non-sustainable)"@en, "Einzelhandel (nicht-nachhaltig)"@de .
 ff:industry-ao-healthcare a ff:AnswerOption ; rdfs:label "Healthcare"@en, "Gesundheitswesen"@de .
 ff:industry-ao-renewable-energy a ff:AnswerOption ; rdfs:label "Renewable Energy"@en, "Erneuerbare Energien"@de .

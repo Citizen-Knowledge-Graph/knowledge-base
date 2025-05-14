@@ -25,7 +25,7 @@ ff:wolfenbuettel-ansiedlungMainPersonShape a sh:NodeShape, ff:EligibilityConstra
 
     sh:property [
         sh:path ff:industry ;
-        sh:in (ff:industry-gastronomy ff:industry-retail) ;
+        sh:in (ff:industry-ao-gastronomy ff:industry-ao-retail) ;
         sh:minCount 1 ;
         sh:message "Das Unternehmen muss entweder der Gastronomie oder dem Einzelhandel angehören."@de ;
     ] ;
