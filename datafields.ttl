@@ -1552,7 +1552,7 @@ ff:interested_offers_location-other a ff:AnswerOption ; rdfs:label "Other"@en, "
 ff:business_location_inner_city a ff:DataField ;
     schema:category ff:gesundheit-df-kategorie ;
     rdfs:label "Business Location Inner City"@en, "Unternehmensstandort Innenstadt"@de ;
-    schema:question "Befindet sich Ihr Geschäft, Betrieb oder Ihre Gastronomy in der Innenstadt?"@de , "Is your business, operation, or restaurant located in the inner city?"@en ;
+    schema:question "Befindet sich Ihr Geschäft, Betrieb oder Ihre Gastronomie in der Innenstadt?"@de , "Is your business, operation, or restaurant located in the inner city?"@en ;
     rdfs:comment "This question helps identify businesses located in the inner city, which may be relevant for funding opportunities or grants related to urban development or revitalization."@en,
                  "Diese Frage hilft dabei, Unternehmen zu identifizieren, die sich in der Innenstadt befinden, was für Fördermöglichkeiten oder Zuschüsse im Zusammenhang mit Stadtentwicklung oder Revitalisierung relevant sein kann."@de ;
     ff:hasShaclShape [
