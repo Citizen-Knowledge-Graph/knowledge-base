@@ -1519,3 +1519,46 @@ ff:eligible_for_transitional_allowance a ff:DataField ;
 ff:eligible_for_transitional_allowance-yes a ff:AnswerOption ; rdfs:label "Ja"@de, "Yes"@en .
 ff:eligible_for_transitional_allowance-no a ff:AnswerOption ; rdfs:label "Nein"@de, "No"@en .
 ff:eligible_for_transitional_allowance-unsure a ff:AnswerOption ; rdfs:label "Unsicher"@de, "Unknown"@en .
+
+
+ff:interested_offers_location a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Interested Offers Location"@en, "Interesse an Angeboten am Standort"@de ;
+    schema:question "In which location are you interested in offers?"@en, "An welchen Standorten sind Sie an Angeboten interessiert?"@de ;
+    rdfs:comment "This question helps identify individuals or organizations interested in specific offers at a certain location, which may be relevant for funding opportunities or grants related to that location."@en,
+                 "Viele Programme und Angebote sind regional oder lokal ausgerichtet. Diese Frage hilft dabei, Personen oder Organisationen zu identifizieren, die an spezifischen Angeboten an einem bestimmten Standort interessiert sind, was für Fördermöglichkeiten oder Zuschüsse im Zusammenhang mit diesem Standort relevant sein kann."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:interested_offers_location ;
+        sh:property [
+            sh:path ff:interested_offers_location ;
+            sh:in (
+                ff:interested_offers_location-berlin
+                ff:interested_offers_location-hamburg
+                ff:interested_offers_location-brandenburg
+                ff:interested_offers_location-wolfenbuettel
+                ff:interested_offers_location-other
+            ) ;
+        ] ;
+    ] .
+ff:interested_offers_location-berlin a ff:AnswerOption ; rdfs:label "Berlin"@en, "Berlin"@de .
+ff:interested_offers_location-hamburg a ff:AnswerOption ; rdfs:label "Hamburg"@en, "Hamburg"@de .
+ff:interested_offers_location-brandenburg a ff:AnswerOption ; rdfs:label "Brandenburg"@en, "Brandenburg"@de .
+ff:interested_offers_location-wolfenbuettel a ff:AnswerOption ; rdfs:label "Wolfenbüttel"@en, "Wolfenbüttel"@de .
+ff:interested_offers_location-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
+
+ff:business_location_inner_city a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Business Location Inner City"@en, "Unternehmensstandort Innenstadt"@de ;
+    schema:question "Befindet sich Ihr Geschäft, Betrieb oder Ihre Gastronomy in der Innenstadt?"@de , "Is your business, operation, or restaurant located in the inner city?"@en ;
+    rdfs:comment "This question helps identify businesses located in the inner city, which may be relevant for funding opportunities or grants related to urban development or revitalization."@en,
+                 "Diese Frage hilft dabei, Unternehmen zu identifizieren, die sich in der Innenstadt befinden, was für Fördermöglichkeiten oder Zuschüsse im Zusammenhang mit Stadtentwicklung oder Revitalisierung relevant sein kann."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:business_location_inner_city ;
+        sh:property [
+            sh:path ff:business_location_inner_city ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
