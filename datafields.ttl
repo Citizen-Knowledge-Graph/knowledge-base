@@ -236,8 +236,8 @@ ff:receiving_kindergeld a ff:DataField ;
 
 ff:hasChild a ff:DataField ;
     schema:category ff:persoenliche-angaben-df-kategorie;
-    rdfs:label "Kinder"@de , "Children"@en ;
-    schema:question "Haben Sie Kinder?"@de , "Do you have children?"@en ;
+    rdfs:label "Anzahl Kinder"@de , "Number of children"@en ;
+    schema:question "Wie viele Kinder haben Sie?"@de , "How many children do you have?"@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:hasChild ;
