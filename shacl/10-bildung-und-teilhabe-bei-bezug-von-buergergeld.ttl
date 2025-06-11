@@ -16,7 +16,7 @@ ff:bildung-und-teilhabe-bei-bezug-von-buergergeld a ff:RequirementProfile ;
         "You are probably not entitled to this benefit. Various services for education and participation are intended to enable children and young people from needy families to participate better in social and cultural life at school and in their free time. You can receive the benefits in addition to other benefits, such as unemployment benefit II, social assistance, child allowance or housing benefit."@en ;
     ff:hasMainPersonShape ff:bildung-und-teilhabe-bei-bezug-von-buergergeldMainPersonShape .
 
-ff:bildung-und-teilhabe-bei-bezug-von-buergergeldMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:bildung-und-teilhabe-bei-bezug-von-buergergeldMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:kinder_unter_18 ;

@@ -15,7 +15,7 @@ ff:grundsicherung-im-alter-und-bei-erwerbsminderung a ff:RequirementProfile ;
         "You are probably not entitled to this benefit. You can receive basic welfare for the elderly and people with reduced earnings capacity as a needy person if you have either reached the standard retirement age - that is the point at which you can draw the regular old-age pension - or are at least 18 years old and permanently fully disabled or have the initial and go through the vocational training area of a workshop for disabled people or are in an apprenticeship for which you receive a budget for the apprenticeship. You must also live in Germany."@en ;
     ff:hasMainPersonShape ff:grundsicherung-im-alter-und-bei-erwerbsminderungMainPersonShape .
 
-ff:grundsicherung-im-alter-und-bei-erwerbsminderungMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:grundsicherung-im-alter-und-bei-erwerbsminderungMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:geburtsdatum ;

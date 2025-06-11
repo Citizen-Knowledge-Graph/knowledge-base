@@ -13,7 +13,7 @@ ff:forschungszulage a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.bundesfinanzministerium.de> ;
     ff:hasMainPersonShape ff:forschungszulageMainPersonShape .
 
-ff:forschungszulageMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:forschungszulageMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

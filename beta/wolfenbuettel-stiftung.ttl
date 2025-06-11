@@ -12,7 +12,7 @@ ff:wolfenbuettel-stiftung a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1> ;
     ff:hasMainPersonShape ff:wolfenbuettel-stiftungMainPersonShape .
 
-ff:wolfenbuettel-stiftungMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:wolfenbuettel-stiftungMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

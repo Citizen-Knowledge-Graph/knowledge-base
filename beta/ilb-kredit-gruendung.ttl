@@ -12,7 +12,7 @@ ff:ilb-kredit-gruendung a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.ilb.de> ;
     ff:hasMainPersonShape ff:ilb-kredit-gruendungMainPersonShape .
 
-ff:ilb-kredit-gruendungMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:ilb-kredit-gruendungMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

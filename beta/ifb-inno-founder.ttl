@@ -12,7 +12,7 @@ ff:ifb-inno-founder a ff:RequirementProfile ;
     rdfs:seeAlso <https://innovationsstarter.com/innofounder/> ;
     ff:hasMainPersonShape ff:ifb-inno-founderMainPersonShape .
 
-ff:ifb-inno-founderMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:ifb-inno-founderMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     
     sh:property [

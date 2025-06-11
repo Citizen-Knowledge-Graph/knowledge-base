@@ -12,7 +12,7 @@ ff:ausbildungsgeld a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.gesetze-im-internet.de/sgb_3/__122.html> ;
     ff:hasMainPersonShape ff:ausbildungsgeldMainPersonShape .
 
-ff:ausbildungsgeldMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:ausbildungsgeldMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

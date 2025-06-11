@@ -14,7 +14,7 @@ ff:kinderzuschlag a ff:RequirementProfile ;
 
 # CONDITIONS
 
-ff:MainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:MainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:parentingSetup ;

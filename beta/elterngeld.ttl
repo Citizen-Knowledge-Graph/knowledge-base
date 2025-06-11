@@ -15,7 +15,7 @@ ff:elterngeld a ff:RequirementProfile ;
         "You are probably not entitled to parental allowance if you do not live in the same household as your child, if you work more than 32 hours per week, or if you receive certain social benefits."@en ;
     ff:hasMainPersonShape ff:elterngeldMainPersonShape .
 
-ff:elterngeldMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:elterngeldMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:annnahme_kind ;

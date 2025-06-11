@@ -13,7 +13,7 @@ ff:ibb-altersgerecht-wohnen a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.ibb.de/de/foerderprogramme/ibb-altersgerecht-wohnen.html> ;
     ff:hasMainPersonShape ff:ibb-altersgerecht-wohnenMainPersonShape .
 
-ff:ibb-altersgerecht-wohnenMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:ibb-altersgerecht-wohnenMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

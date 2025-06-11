@@ -15,7 +15,7 @@ ff:kindergeld a ff:RequirementProfile ;
         "You are probably not entitled to this benefit. If your child is under the age of 18, you are entitled to child benefit if you are domiciled or habitually resident in Germany or another EU country, Norway, Lichtenstein, Iceland or Switzerland and your child lives in your household. If your child is between 18 and 25 years old, it is also required that it is completing an apprenticeship or study, is in a transitional period between leaving school and starting training or study, or is seriously trying to get an apprenticeship."@en ;
     ff:hasMainPersonShape ff:kindergeldMainPersonShape .
 
-ff:kindergeldMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:kindergeldMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:kinder_unter_18 ;

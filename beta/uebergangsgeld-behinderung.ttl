@@ -14,7 +14,7 @@ ff:uebergangsgeld-behinderung a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.arbeitsagentur.de/datei/uebergangsgeld-fuer-rehabilitanden-der-ba_ba040009.pdf> ;
     ff:hasMainPersonShape ff:uebergangsgeld-behinderungMainPersonShape .
 
-ff:uebergangsgeld-behinderungMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:uebergangsgeld-behinderungMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

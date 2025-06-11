@@ -14,7 +14,7 @@ ff:bundesfoerderung-effiziente-gebaeude a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/F%C3%B6rderprodukte/Bundesf%C3%B6rderung-effiziente-Geb%C3%A4ude-Einzelma%C3%9Fnahmen-Kredit-(261)/> ;
     ff:hasMainPersonShape ff:bundesfoerderung-effiziente-gebaeudeMainPersonShape .
 
-ff:bundesfoerderung-effiziente-gebaeudeMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:bundesfoerderung-effiziente-gebaeudeMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
 	sh:property [

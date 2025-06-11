@@ -12,7 +12,7 @@ ff:ifb-gruendung-nachfolge a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.ifbhh.de/programme/gruender-and-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge> ;
     ff:hasMainPersonShape ff:ifb-gruendung-nachfolgeMainPersonShape .
 
-ff:ifb-gruendung-nachfolgeMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:ifb-gruendung-nachfolgeMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

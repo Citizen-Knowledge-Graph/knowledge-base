@@ -4,7 +4,7 @@
 ff:childToy a ff:RequirementProfile ;
     ff:title "Spielzeug dev" .
 
-ff:MainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:MainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:hasChild ;

@@ -15,7 +15,7 @@ ff:arbeitslosengeld a ff:RequirementProfile ;
         "You are probably not entitled to this benefit. The main requirements for entitlement to unemployment benefit are as follows: You fulfill the qualifying period. This usually means that you were employed for at least 12 months in the 30 months prior to registering as unemployed. Several jobs can be added together. You have registered as unemployed with your employment agency. You are unemployed, but you can work in a job that is subject to compulsory insurance (at least 15 hours per week). You are looking for employment that is subject to compulsory insurance and you are working together with the employment agency. If you were often in temporary employment, a shorter entitlement period applies under certain conditions: At least 6 months of employment subject to compulsory insurance in the 30 months before registering as unemployed are then sufficient. One of the requirements is that most jobs were limited to up to 14 weeks."@en ;
     ff:hasMainPersonShape ff:arbeitslosengeldainPersonShape .
 
-ff:arbeitslosengeldainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:arbeitslosengeldainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [
         sh:path ff:geburtsdatum ;

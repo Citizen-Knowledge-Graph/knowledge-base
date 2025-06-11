@@ -13,7 +13,7 @@ ff:wolfenbuettel-gastronomische-aussenmoeblierung a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.wolfenbuettel.de/loadDocument.phtml?FID=3413.8485.1&Ext=PDF> ;
     ff:hasMainPersonShape ff:wolfenbuettel-gastronomische-aussenmoeblierungMainPersonShape .
 
-ff:wolfenbuettel-gastronomische-aussenmoeblierungMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:wolfenbuettel-gastronomische-aussenmoeblierungMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

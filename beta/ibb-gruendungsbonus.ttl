@@ -13,7 +13,7 @@ ff:ibb-gruendungsbonus a ff:RequirementProfile ;
     rdfs:seeAlso <https://www.ibb.de/de/foerderprogramme/gruendungsbonus-plus.html> ;
     ff:hasMainPersonShape ff:ibb-gruendungsbonusMainPersonShape .
 
-ff:ibb-gruendungsbonusMainPersonShape a sh:NodeShape, ff:EligibilityConstraint ;
+ff:ibb-gruendungsbonusMainPersonShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     
     sh:property [
