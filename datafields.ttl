@@ -70,6 +70,11 @@ ff:business-permits-df-kategorie a ff:DatafieldCategory ; rdfs:label "Betriebsst
 ff:preliminary-validation a ff:ValidationStage ; rdfs:label "Vorbehaltliches Ergebnis"@de, "Preliminary result"@en .
 ff:complete-validation a ff:ValidationStage ; rdfs:label "Abschließendes Ergebnis"@de, "Final result"@en .
 
+# CLASSES
+
+ff:Citizen a rdfs:Class ; rdfs:label "Bürger*in"@de, "Citizen"@en .
+ff:Child a rdfs:Class ; rdfs:label "Kind"@de, "Child"@en .
+
 # DATAFIELDS
 
 # Persönliche Angaben
