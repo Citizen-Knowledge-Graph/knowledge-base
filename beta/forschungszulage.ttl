@@ -11,9 +11,9 @@ ff:forschungszulage a ff:RequirementProfile ;
     ff:benefitInfo "Steuerpflichtige Unternehmen in Deutschland können eine Forschungszulage für förderfähige Aufwendungen in Grundlagenforschung, industrieller Forschung und experimenteller Entwicklung erhalten."@de ,
         "Tax-liable companies in Germany may claim a research allowance for eligible expenses related to basic research, industrial research, and experimental development."@en ;
     rdfs:seeAlso <https://www.bundesfinanzministerium.de> ;
-    ff:hasMainPersonShape ff:forschungszulageMainPersonShape .
+    ff:hasMainShape ff:forschungszulageMainShape .
 
-ff:forschungszulageMainPersonShape a sh:NodeShape ;
+ff:forschungszulageMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

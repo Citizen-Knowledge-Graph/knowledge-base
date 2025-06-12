@@ -10,9 +10,9 @@ ff:ifb-gruendung-nachfolge a ff:RequirementProfile ;
     ff:benefitInfo "Der Hamburg-Kredit Gründung und Nachfolge III 2025 unterstützt Existenzgründungen und Unternehmensnachfolgen in Hamburg durch langfristige Finanzierung von Investitionen und Betriebsmitteln. Das Programm bietet günstige Darlehenskonditionen und Zuschüsse für Handwerksbetriebe, die Ausbildungsplätze schaffen."@de ,
         "The Hamburg-Kredit Gründung und Nachfolge III 2025 supports business start-ups and successions in Hamburg through long-term financing of investments and working capital. The program offers favorable loan conditions and grants for craft businesses that create training positions."@en ;
     rdfs:seeAlso <https://www.ifbhh.de/programme/gruender-and-unternehmen/gruenden-und-nachfolgen/unternehmen-gruenden/hamburg-kredit-gruendung-und-nachfolge> ;
-    ff:hasMainPersonShape ff:ifb-gruendung-nachfolgeMainPersonShape .
+    ff:hasMainShape ff:ifb-gruendung-nachfolgeMainShape .
 
-ff:ifb-gruendung-nachfolgeMainPersonShape a sh:NodeShape ;
+ff:ifb-gruendung-nachfolgeMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

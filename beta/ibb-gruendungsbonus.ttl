@@ -11,9 +11,9 @@ ff:ibb-gruendungsbonus a ff:RequirementProfile ;
     ff:benefitInfo "Der IBB Gründungsbonus unterstützt innovative Startups in Berlin durch finanzielle Zuschüsse und Beratung. Ziel ist es, nachhaltige und innovative Geschäftsmodelle zu fördern, die einen positiven Beitrag zur Wirtschaft leisten."@de ,
         "The IBB Gründungsbonus supports innovative startups in Berlin through financial grants and consulting. The goal is to promote sustainable and innovative business models that contribute positively to the economy."@en ;
     rdfs:seeAlso <https://www.ibb.de/de/foerderprogramme/gruendungsbonus-plus.html> ;
-    ff:hasMainPersonShape ff:ibb-gruendungsbonusMainPersonShape .
+    ff:hasMainShape ff:ibb-gruendungsbonusMainShape .
 
-ff:ibb-gruendungsbonusMainPersonShape a sh:NodeShape ;
+ff:ibb-gruendungsbonusMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     
     sh:property [

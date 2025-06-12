@@ -10,9 +10,9 @@ ff:ausbildungsgeld a ff:RequirementProfile ;
     ff:benefitInfo "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Ausbildungsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. (Quelle: §§ 122 bis 126 SGB III)"@de ,
         "People with disabilities can receive a training allowance to cover their living expenses if they participate in specific educational programs. (Source: §§ 122 to 126 SGB III)"@en ;
     rdfs:seeAlso <https://www.gesetze-im-internet.de/sgb_3/__122.html> ;
-    ff:hasMainPersonShape ff:ausbildungsgeldMainPersonShape .
+    ff:hasMainShape ff:ausbildungsgeldMainShape .
 
-ff:ausbildungsgeldMainPersonShape a sh:NodeShape ;
+ff:ausbildungsgeldMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

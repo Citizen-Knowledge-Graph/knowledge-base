@@ -10,9 +10,9 @@ ff:ilb-kredit-gruendung a ff:RequirementProfile ;
     ff:benefitInfo "Der Brandenburg-Kredit Gründung unterstützt junge Unternehmen in Brandenburg mit zinsgünstigen Krediten für Investitionen und Betriebsmittel."@de ,
         "The Brandenburg Start-up Credit supports young businesses in Brandenburg with low-interest loans for investments and working capital."@en ;
     rdfs:seeAlso <https://www.ilb.de> ;
-    ff:hasMainPersonShape ff:ilb-kredit-gruendungMainPersonShape .
+    ff:hasMainShape ff:ilb-kredit-gruendungMainShape .
 
-ff:ilb-kredit-gruendungMainPersonShape a sh:NodeShape ;
+ff:ilb-kredit-gruendungMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

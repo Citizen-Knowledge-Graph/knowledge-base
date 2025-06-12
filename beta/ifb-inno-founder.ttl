@@ -10,9 +10,9 @@ ff:ifb-inno-founder a ff:RequirementProfile ;
     ff:benefitInfo "InnoFounder unterstützt innovative Startups in Hamburg mit einem nicht rückzahlbaren Zuschuss für Lebensunterhalt und Gründungskosten."@de ,
         "InnoFounder supports innovative startups in Hamburg with a non-repayable grant for living expenses and startup costs."@en ;
     rdfs:seeAlso <https://innovationsstarter.com/innofounder/> ;
-    ff:hasMainPersonShape ff:ifb-inno-founderMainPersonShape .
+    ff:hasMainShape ff:ifb-inno-founderMainShape .
 
-ff:ifb-inno-founderMainPersonShape a sh:NodeShape ;
+ff:ifb-inno-founderMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     
     sh:property [

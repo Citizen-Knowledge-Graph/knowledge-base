@@ -12,9 +12,9 @@ ff:bundesfoerderung-effiziente-gebaeude a ff:RequirementProfile ;
     ff:benefitInfo "Die BEG EM Sanierung fördert Maßnahmen zur Verbesserung der Energieeffizienz und des Anteils erneuerbarer Energien bei bestehenden Gebäuden durch Zuschüsse oder Kredite. Die förderfähigen Maßnahmen umfassen Dämmung, Heizungsmodernisierung, Anlagentechnik und Fachplanung."@de ,
                  "BEG EM Renovation supports measures to improve energy efficiency and the share of renewable energy in existing buildings through grants or loans. Eligible measures include insulation, heating modernization, technical systems, and energy planning."@en ;
     rdfs:seeAlso <https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestandsimmobilie/F%C3%B6rderprodukte/Bundesf%C3%B6rderung-effiziente-Geb%C3%A4ude-Einzelma%C3%9Fnahmen-Kredit-(261)/> ;
-    ff:hasMainPersonShape ff:bundesfoerderung-effiziente-gebaeudeMainPersonShape .
+    ff:hasMainShape ff:bundesfoerderung-effiziente-gebaeudeMainShape .
 
-ff:bundesfoerderung-effiziente-gebaeudeMainPersonShape a sh:NodeShape ;
+ff:bundesfoerderung-effiziente-gebaeudeMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
 	sh:property [

@@ -11,9 +11,9 @@ ff:wolfenbuettel-ansiedlung a ff:RequirementProfile ;
     ff:benefitInfo "Die Stadt Wolfenbüttel unterstützt die Ansiedlung von Einzelhandelsunternehmen und Gastronomiebetrieben in der Innenstadt mit finanziellen Zuschüssen."@de ,
         "The city of Wolfenbüttel supports the establishment of retail businesses and gastronomy in the city center with financial grants."@en ;
     rdfs:seeAlso <https://www.wolfenbuettel.de/loadDocument.phtml?FID=2093.1241.1&Ext=PDF> ;
-    ff:hasMainPersonShape ff:wolfenbuettel-ansiedlungMainPersonShape .
+    ff:hasMainShape ff:wolfenbuettel-ansiedlungMainShape .
 
-ff:wolfenbuettel-ansiedlungMainPersonShape a sh:NodeShape ;
+ff:wolfenbuettel-ansiedlungMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [

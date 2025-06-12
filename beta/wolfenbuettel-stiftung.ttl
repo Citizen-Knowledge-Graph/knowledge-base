@@ -10,9 +10,9 @@ ff:wolfenbuettel-stiftung a ff:RequirementProfile ;
     ff:benefitInfo "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen und soziale Projekte in Wolfenbüttel – ohne Rechtsanspruch auf Förderung."@de ,
         "The Wolfenbüttel Foundation supports needy children, needy elderly people and social projects in Wolfenbüttel - without a legal claim to funding."@en ;
     rdfs:seeAlso <https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1> ;
-    ff:hasMainPersonShape ff:wolfenbuettel-stiftungMainPersonShape .
+    ff:hasMainShape ff:wolfenbuettel-stiftungMainShape .
 
-ff:wolfenbuettel-stiftungMainPersonShape a sh:NodeShape ;
+ff:wolfenbuettel-stiftungMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [
