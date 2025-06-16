@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:uebergangsgeld-behinderung a ff:RequirementProfile ;
+ff:uebergangsgeld a ff:RequirementProfile ;
     ff:title "Übergangsgeld für Menschen mit Behinderung - Bundesagentur für Arbeit"@de ,
         "Transitional Allowance for People with Disabilities - Federal Employment Agency"@en ;
     ff:category ff:schule-studium-ausbildung-bc-kategorie, ff:gesundheit-pflege-bc-kategorie, ff:sozialhilfe-grundsicherung-bc-kategorie ;
