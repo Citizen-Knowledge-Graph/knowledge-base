@@ -96,7 +96,7 @@ ff:priorEmploymentPeriod3YearsPS a sh:PropertyShape ;
         )
     ] ;
     sh:property [ sh:path ff:state_insurance_status_3_years ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:alg_application_3_years ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:alg_application_3_years ; sh:minCount 1 ] .
 
 ff:priorEmploymentPeriodPS a sh:PropertyShape ;
     sh:deactivated [
@@ -112,4 +112,4 @@ ff:priorEmploymentPeriodPS a sh:PropertyShape ;
         )
     ] ;
     sh:property [ sh:path ff:state_insurance_status	; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:alg_application ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:alg_application ; sh:minCount 1 ] .
