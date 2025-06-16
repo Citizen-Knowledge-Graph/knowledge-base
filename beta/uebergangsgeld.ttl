@@ -1,6 +1,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix ff: <https://foerderfunke.org/default#> .
 @prefix shn: <https://schemas.link/shacl-next#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 ff:uebergangsgeld-behinderung a ff:RequirementProfile ;
     ff:title "Übergangsgeld für Menschen mit Behinderung - Bundesagentur für Arbeit"@de ,
