@@ -131,7 +131,7 @@ ff:aufenthalt a ff:DataField ;
 ff:aufenthaltsort a ff:DataField ;
     schema:category ff:persoenliche-angaben-df-kategorie;
     rdfs:label "Aufenthaltsort"@de , "Actual Residence"@en ;
-    schema:question "Wo ist Ihr tatsächlicher Aufenthaltsort an dem Sie erreichbar sind?"@de ,
+    schema:question "Wo ist Ihr tatsächlicher Aufenthaltsort, an dem Sie erreichbar sind?"@de ,
         "Where is your actual residence where you can be reached?"@en ;
     rdfs:comment "Das ist der Ort, wo Sie sich wirklich aufhalten. Es ist egal, ob Sie dort gemeldet sind oder das Recht haben, hier zu leben. Das kann auch eine Pflegeeinrichtung, ein Frauenhaus, ein Stadtteil oder Ähnliches sein."@de ,
         "This is the place where you are actually staying. It does not matter whether you are registered there or have the right to live here. This can also be a care facility, a women's shelter, a city district or the like."@en ;
@@ -1565,6 +1565,105 @@ ff:business_location_inner_city a ff:DataField ;
         sh:targetSubjectsOf ff:business_location_inner_city ;
         sh:property [
             sh:path ff:business_location_inner_city ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:vocational_training_completed a ff:DataField ;
+    schema:category ff:education-df-kategorie ;
+    rdfs:label "Education Completed"@en, "Abgeschlossene Ausbildung"@de ;
+    schema:question "Haben Sie in den letzten zwölf Monaten einen anerkannten Berufsabschluss durch eine Prüfung erworben oder wurde ein Zeugnis in dieser Zeit offiziell als gleichwertig anerkannt?"@de , 
+                    "Have you completed a recognized vocational training program or had a certificate officially recognized as equivalent in the last twelve months?"@en ;
+    rdfs:comment "Some offers and funding opportunities are specifically targeted at individuals who have recently completed vocational training."@en,
+                 "Einige Angebote und Fördermöglichkeiten richten sich speziell an Personen, die kürzlich eine Ausbildung abgeschlossen haben."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:vocational_training_completed ;
+        sh:property [
+            sh:path ff:vocational_training_completed ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:returning_professional a ff:DataField ;
+    schema:category ff:education-df-kategorie ;
+    rdfs:label "Returning Professional"@en, "Wiedereinsteiger"@de ;
+    schema:question "Sind sie Berufsrückkerer:in?"@de , "Are you a returning professional?"@en ;
+    rdfs:comment "A returning professional is someone who has interrupted their employment, unemployment, or vocational training due to childcare and family care responsibilities and wishes to return to the workforce in the near future."@en,
+                 "Eine Berufsrückkehrer:in ist jemand, der seine Erwerbstätigkeit, Arbeitslosigkeit oder betriebliche Ausbildung wegen Betreuung und Erziehung von Kindern oder Pflege Angehöriger unterbrochen hat und zeitnah wieder ins Berufsleben zurückkehren möchte."@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:returning_professional ;
+        sh:property [
+            sh:path ff:returning_professional ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:state_insurance_status_3_years a ff:DataField ;
+    schema:category ff:erwerbstaetigkeit-df-kategorie ;
+    rdfs:label "Status der staatlichen Versicherung innerhalb der letzten drei Jahre"@de , "State Insurance Status in the last three years"@en ;
+    schema:question "Waren Sie innerhalb der letzten drei Jahre mindestens zwölf Monate sozialversichert?"@de , 
+                    "Have you been covered by statutory health insurance for at least twelve months in the last three years?"@en ;
+    rdfs:comment "Monate mit sozialversicherungspflichtiger Arbeit, Arbeitslosengeld oder freiwilligen Beiträgen zählen. Diese Angabe hilft zu prüfen, ob bestimmte Leistungen möglich sind."@de,
+                    "Months of employment with social security contributions, unemployment benefits, or voluntary contributions count. This information helps determine eligibility for certain benefits."@en ;                 
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:state_insurance_status_3_years ;
+        sh:property [
+            sh:path ff:state_insurance_status_3_years ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:state_insurance_status a ff:DataField ;
+    schema:category ff:erwerbstaetigkeit-df-kategorie ;
+    rdfs:label "Status der staatlichen Versicherung"@de, "State Insurance Status"@en ;
+    schema:question "Waren Sie bisher insgesamt mindestens zwölf Monate sozialversichert?"@de, 
+                    "Have you been covered by statutory health insurance for at least twelve months in total?"@en ;
+    rdfs:comment "Monate mit sozialversicherungspflichtiger Arbeit, Arbeitslosengeld oder freiwilligen Beiträgen zählen. Diese Angabe hilft zu prüfen, ob bestimmte Leistungen möglich sind."@de,
+                    "Months of employment with social security contributions, unemployment benefits, or voluntary contributions count. This information helps determine eligibility for certain benefits."@en ; 
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:state_insurance_status ;
+        sh:property [
+            sh:path ff:state_insurance_status ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:alg_application_3_years a ff:DataField ;
+    schema:category ff:erwerbstaetigkeit-df-kategorie ;
+    rdfs:label "Antrag auf Arbeitslosengeld innerhalb der letzten drei Jahre"@de , "Applied for Unemployment Benefits in the last three years"@en ;
+    schema:question "Haben Sie in den letzten drei Jahren Arbeitslosengeld beantragt und wurde Ihr Anspruch bewilligt (oder besteht er noch)?"@de, "Have you applied for unemployment benefits in the last three years and has your claim been approved?"@en ;
+    rdfs:comment "Ein Antrag auf Arbeitslosengeld in den letzten drei Jahren zeigt, dass Ihre Versicherungszeiten bereits offiziell geprüft wurden. Diese Information hilft, Ihren Anspruch auf verschiedene Leistungen schnell und korrekt einzuschätzen."@de,
+                    "An application for unemployment benefits in the last three years indicates that your insurance periods have already been officially verified. This information helps to quickly and accurately assess your eligibility for various benefits."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:alg_application_3_years ;
+        sh:property [
+            sh:path ff:alg_application_3_years ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:alg_application a ff:DataField ;
+    schema:category ff:erwerbstaetigkeit-df-kategorie ;
+    rdfs:label "Antrag auf Arbeitslosengeld"@de , "Applied for Unemployment Benefits"@en ;
+    schema:question "Haben Sie in der Vergangenheit Arbeitslosengeld beantragt und wurde Ihr Anspruch bewilligt (oder besteht er noch)?"@de, "Have you previously applied for unemployment benefits and has your claim been approved?"@en ;
+    rdfs:comment "Ein früher Antrag auf Arbeitslosengeld bedeutet, dass Ihre Versicherungs- und Beschäftigungszeiten bereits von der Agentur für Arbeit geprüft wurden. Diese Information hilft, Ihren Anspruch auf unterschiedliche Leistungen schneller und verlässlich zu bewerten."@de,
+                    "A previous application for unemployment benefits means that your insurance and employment periods have already been verified by the Federal Employment Agency. This information helps to quickly and reliably assess your eligibility for various benefits."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:alg_application ;
+        sh:property [
+            sh:path ff:alg_application ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
