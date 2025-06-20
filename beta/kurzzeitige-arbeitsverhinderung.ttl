@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:kurzfristige-arbeitsverhinderung a ff:RequirementProfile ;
+ff:kurzzeitige-arbeitsverhinderung a ff:RequirementProfile ;
     ff:title "Kurzfristige Arbeitsverhinderung für akute Pflege"@de ,
         "Short-term Work Interruption for Acute Care"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;
@@ -11,13 +11,13 @@ ff:kurzfristige-arbeitsverhinderung a ff:RequirementProfile ;
     ff:benefitInfo "Kurzfristige Arbeitsverhinderung ermöglicht es Arbeitnehmer:innen, kurzfristig von der Arbeit freigestellt zu werden, um akute Pflegebedarfe zu decken. Diese Regelung gilt für Situationen, in denen eine plötzliche Pflegebedürftigkeit auftritt."@de ,
         "Short-term work interruption allows employees to be temporarily released from work to meet acute care needs. This regulation applies in situations where a sudden need for care arises."@en ;
     rdfs:seeAlso <https://www.gesetze-im-internet.de/pflegezg/__2.html> ;
-    ff:hasEvalShape ff:kurzfristige-arbeitsverhinderung-EvalShape ;
-    ff:hasFlowShape ff:kurzfristige-arbeitsverhinderung-FlowShape .
+    ff:hasEvalShape ff:kurzzeitige-arbeitsverhinderung-EvalShape ;
+    ff:hasFlowShape ff:kurzzeitige-arbeitsverhinderungg-FlowShape .
 
 
 # ----- EVALUATION LOGIC -----
 
-ff:kurzzeitigeArbeitsverhinderungEvalShape a sh:NodeShape ;
+ff:kurzzeitige-arbeitsverhinderung-EvalShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [ sh:path ff:acute_care_situation ; sh:in ( true ) ] ;
@@ -26,7 +26,7 @@ ff:kurzzeitigeArbeitsverhinderungEvalShape a sh:NodeShape ;
 
 # ----- DECISION TREE LOGIC -----
 
-ff:kurzfristige-arbeitsverhinderung-FlowShape a sh:NodeShape ;
+ff:kurzzeitige-arbeitsverhinderungg-FlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [ sh:path ff:acute_care_situation ; sh:minCount 1 ] ;
