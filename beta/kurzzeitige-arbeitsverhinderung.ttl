@@ -31,4 +31,4 @@ ff:kurzzeitige-arbeitsverhinderungg-FlowShape a sh:NodeShape ;
 
     sh:property [ sh:path ff:acute_care_situation ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:care_recipient_close_relative ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:required_for_care ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:required_for_care ; sh:minCount 1 ] .
