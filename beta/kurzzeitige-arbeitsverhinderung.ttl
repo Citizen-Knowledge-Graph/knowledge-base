@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 ff:kurzzeitige-arbeitsverhinderung a ff:RequirementProfile ;
-    ff:title "Kurzfristige Arbeitsverhinderung für akute Pflege"@de ,
+    ff:title "Kurzzeitige Arbeitsverhinderung für akute Pflege"@de ,
         "Short-term Work Interruption for Acute Care"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;
     ff:validationStage ff:preliminary-validation ;

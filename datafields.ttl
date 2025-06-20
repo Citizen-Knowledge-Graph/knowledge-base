@@ -444,23 +444,6 @@ ff:pflege a ff:DataField ;
         ] ;
     ] .
 
-ff:acute_care_situation a ff:DataField ;
-    schema:category ff:gesundheit-df-kategorie ;
-    rdfs:label "Akute Pflegesituation"@de , "Acute Care Situation"@en ;
-    schema:question "Befindet sich eine Person in Ihrem Umfeld in einer akuten Pflegesituation?"@de ,
-        "Is there a person in your environment in an acute care situation?"@en ;
-    rdfs:comment "Eine akute Pflegesituation liegt vor, wenn bei einer Person unerwartet ein Pflegebedarf eintritt (z. B. durch Unfall oder plötzlichen Krankheitsschub), sodass unverzüglich Pflege organisiert oder selbst geleistet werden muss und dafür sofortiger persönlicher Einsatz erforderlich ist." ,
-        "An acute care situation exists when a person unexpectedly requires care (e.g. due to an accident or sudden illness), so that care must be organized or provided immediately and immediate personal commitment is required."@en ;
-    ff:hasShaclShape [
-        a sh:NodeShape ;
-        sh:targetSubjectsOf ff:acute_care_situation ;
-        sh:property [
-            sh:path ff:acute_care_situation ;
-            sh:datatype xsd:boolean ;
-            sh:maxCount 1 ;
-        ] ;
-    ] .
-
 ff:care_recipient_close_relative a ff:DataField ;
     schema:category ff:gesundheit-df-kategorie ;
     rdfs:label "Pflegebedürftiger naher Angehöriger"@de , "Care recipient close relative"@en ;
@@ -477,6 +460,23 @@ ff:care_recipient_close_relative a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .    
+
+ff:acute_care_situation a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Akute Pflegesituation"@de , "Acute Care Situation"@en ;
+    schema:question "Befindet sich eine Person in Ihrem Umfeld in einer akuten Pflegesituation?"@de ,
+        "Is there a person in your environment in an acute care situation?"@en ;
+    rdfs:comment "Eine akute Pflegesituation liegt vor, wenn bei einer Person unerwartet ein Pflegebedarf eintritt (z. B. durch Unfall oder plötzlichen Krankheitsschub), sodass unverzüglich Pflege organisiert oder selbst geleistet werden muss und dafür sofortiger persönlicher Einsatz erforderlich ist." ,
+        "An acute care situation exists when a person unexpectedly requires care (e.g. due to an accident or sudden illness), so that care must be organized or provided immediately and immediate personal commitment is required."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:acute_care_situation ;
+        sh:property [
+            sh:path ff:acute_care_situation ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
 
 ff:required_for_care a ff:DataField ;
     schema:category ff:gesundheit-df-kategorie ;
