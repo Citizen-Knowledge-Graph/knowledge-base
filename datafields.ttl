@@ -461,7 +461,7 @@ ff:care_recipient_close_relative a ff:DataField ;
         ] ;
     ] .    
 
-ff:acute_care_situation a ff:DataField ;
+ff:short_term_care_situation a ff:DataField ;
     schema:category ff:gesundheit-df-kategorie ;
     rdfs:label "Akute Pflegesituation"@de , "Acute Care Situation"@en ;
     schema:question "Befindet sich eine Person in Ihrem Umfeld in einer akuten Pflegesituation?"@de ,
@@ -470,9 +470,9 @@ ff:acute_care_situation a ff:DataField ;
         "An acute care situation exists when a person unexpectedly requires care (e.g. due to an accident or sudden illness), so that care must be organized or provided immediately and immediate personal commitment is required."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:acute_care_situation ;
+        sh:targetSubjectsOf ff:short_term_care_situation ;
         sh:property [
-            sh:path ff:acute_care_situation ;
+            sh:path ff:short_term_care_situation ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
