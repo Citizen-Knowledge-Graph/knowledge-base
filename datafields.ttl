@@ -65,6 +65,20 @@ ff:education-df-kategorie a ff:DatafieldCategory ; rdfs:label "Ausbildung"@de, "
 ff:wohnungsbau-df-kategorie a ff:DatafieldCategory ; rdfs:label "Wohnungsbau & Modernisierung"@de, "Housing & Modernization"@en .
 ff:business-permits-df-kategorie a ff:DatafieldCategory ; rdfs:label "Betriebsstätten & Genehmigungen"@de, "Business premises & permits"@en .
 
+# PROVIDING AGENCIES
+
+ff:sozialamt a ff:ProvidingAgency ;
+    rdfs:label "Sozialamt"@de, "Social Welfare Office"@en ;
+    rdfs:comment "Das Sozialamt ist für die Gewährung von Sozialleistungen zuständig, insbesondere für Menschen in Notlagen."@de ,
+        "The Social Welfare Office is responsible for providing social benefits, especially for people in need."@en .
+
+# Adminstrative Levels
+
+ff:bund a ff:AdministrativeLevel ;
+    rdfs:label "Bund"@de, "Federal"@en ;
+    rdfs:comment "Der Bund ist die höchste Ebene der deutschen Verwaltung und zuständig für bundesweite Angelegenheiten."@de ,
+        "The federal level is the highest level of German administration and is responsible for nationwide matters."@en .
+
 # VALIDATION STAGES
 
 ff:preliminary-validation a ff:ValidationStage ; rdfs:label "Vorbehaltliches Ergebnis"@de, "Preliminary result"@en .
