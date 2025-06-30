@@ -11,6 +11,8 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
 const SHACL_DIR_1 = `${ROOT}/shacl`
 const SHACL_DIR_2 = `${ROOT}/beta`
 const DATAFIELDS_FILE = `${ROOT}/datafields.ttl`
+const CONSISTENCY_FILE = `${ROOT}/consistency.ttl` // TODO
+const DEFINITIONS_FILE = `${ROOT}/definitions.ttl` // TODO
 const MATERIALIZATION_FILE = `${ROOT}/materialization.ttl`
 
 describe("Turtle files integrity", function () {

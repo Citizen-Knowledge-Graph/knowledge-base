@@ -4,93 +4,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 
-# BENEFIT CATEGORIES
-
-ff:arbeitslosigkeit-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Arbeitslosigkeit & Arbeitsuche"@de, "Unemployment & Job Search"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/arbeitslosigkeit> .
-
-ff:sozialhilfe-grundsicherung-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Sozialhilfe & Grundsicherung"@de, "Social & Basic welfare"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/sozialhilfe-grundsicherung> .
-
-ff:wohnen-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Wohnen"@de, "Housing"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/wohnen> .
-
-ff:schule-studium-ausbildung-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Schule, Studium, Ausbildung"@de, "Vocational Training & Studies"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/schule-studium-ausbildung> .
-
-ff:leistungen-fuer-familien-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Leistungen für Familien"@de, "Family & Children"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/leistungen-fuer-familien> .
-
-ff:migration-asyl-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Migration & Asyl"@de, "Migration & Asylum"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/migration-asyl> .
-
-ff:alter-ruhestand-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Alter und Ruhestand"@de, "Aging & Retirement"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/inhalt/alter-ruhestand> .
-
-ff:gesundheit-pflege-bc-kategorie a ff:BenefitCategory ;
-    rdfs:label "Gesundheit & Pflege"@de, "Health & Care"@en ;
-    rdfs:seeAlso <https://sozialplattform.de/gesundheit-pflege> .
-
-ff:selbstaendigkeit-gruendung a ff:BenefitCategory ;
-    rdfs:label "Selbständigkeit & Gründung"@de, "Self-employment & Founding"@en .
-
-ff:wohnungsbau-modernisierung a ff:BenefitCategory ;
-    rdfs:label "Wohnungsbau & Modernisierung"@de, "Housing & Modernization"@en .
-
-ff:innovation-forschung a ff:BenefitCategory ;
-    rdfs:label "Innovation & Forschung"@de, "Innovation & Research"@en .
-
-ff:stiftungs-foerderung a ff:BenefitCategory ;
-    rdfs:label "Stiftungsförderung"@de, "Foundation Funding"@en .
-
-ff:gewerbe-foerderung a ff:BenefitCategory ;
-    rdfs:label "Gewerbe- und Unternehmensförderung"@de, "Business & Company Funding"@en .
-
-# DATAFIELD CATEGORIES
-
-ff:persoenliche-angaben-df-kategorie a ff:DatafieldCategory ; rdfs:label "Persönliche Angaben"@de, "Personal information"@en .
-ff:kinder-df-kategorie a ff:DatafieldCategory ; rdfs:label "Kinder"@de, "Children"@en .
-ff:erwerbstaetigkeit-df-kategorie a ff:DatafieldCategory ; rdfs:label "Erwerbstätigkeit"@de, "Employment"@en .
-ff:lebenssituation-df-kategorie a ff:DatafieldCategory ; rdfs:label "Lebenssituation"@de, "Living situation"@en .
-ff:gesundheit-df-kategorie a ff:DatafieldCategory ; rdfs:label "Gesundheit"@de, "Health"@en .
-ff:gruendung-df-kategorie a ff:DatafieldCategory ; rdfs:label "Gründung"@de, "Founding"@en .
-ff:education-df-kategorie a ff:DatafieldCategory ; rdfs:label "Ausbildung"@de, "Education"@en .
-ff:wohnungsbau-df-kategorie a ff:DatafieldCategory ; rdfs:label "Wohnungsbau & Modernisierung"@de, "Housing & Modernization"@en .
-ff:business-permits-df-kategorie a ff:DatafieldCategory ; rdfs:label "Betriebsstätten & Genehmigungen"@de, "Business premises & permits"@en .
-
-# PROVIDING AGENCIES
-
-ff:sozialamt a ff:ProvidingAgency ;
-    rdfs:label "Sozialamt"@de, "Social Welfare Office"@en ;
-    rdfs:comment "Das Sozialamt ist für die Gewährung von Sozialleistungen zuständig, insbesondere für Menschen in Notlagen."@de ,
-        "The Social Welfare Office is responsible for providing social benefits, especially for people in need."@en .
-
-# Adminstrative Levels
-
-ff:bund a ff:AdministrativeLevel ;
-    rdfs:label "Bund"@de, "Federal"@en ;
-    rdfs:comment "Der Bund ist die höchste Ebene der deutschen Verwaltung und zuständig für bundesweite Angelegenheiten."@de ,
-        "The federal level is the highest level of German administration and is responsible for nationwide matters."@en .
-
-# VALIDATION STAGES
-
-ff:preliminary-validation a ff:ValidationStage ; rdfs:label "Vorbehaltliches Ergebnis"@de, "Preliminary result"@en .
-ff:complete-validation a ff:ValidationStage ; rdfs:label "Abschließendes Ergebnis"@de, "Final result"@en .
-
-# CLASSES
-
-ff:Citizen a rdfs:Class ; rdfs:label "Bürger*in"@de, "Citizen"@en .
-ff:Child a rdfs:Class ; rdfs:label "Kind"@de, "Child"@en .
-
-# DATAFIELDS
-
 # Persönliche Angaben
 
 ff:geburtsdatum a ff:DataField ;
@@ -523,6 +436,7 @@ ff:hasAge a ff:DataField, ff:MaterializableDataField ;
     ] .
 
 # Sozialleistungen
+
 ff:bezogene_leistungen a ff:DataField ;
     schema:category ff:sozialleistungen-df-kategorie ;
     rdfs:label "Bezogene Leistungen"@de , "Received Benefits"@en ;
