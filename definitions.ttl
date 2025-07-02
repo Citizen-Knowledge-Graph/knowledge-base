@@ -62,6 +62,13 @@ ff:education-df-kategorie a ff:DatafieldCategory ; rdfs:label "Ausbildung"@de, "
 ff:wohnungsbau-df-kategorie a ff:DatafieldCategory ; rdfs:label "Wohnungsbau & Modernisierung"@de, "Housing & Modernization"@en .
 ff:business-permits-df-kategorie a ff:DatafieldCategory ; rdfs:label "Betriebsstätten & Genehmigungen"@de, "Business premises & permits"@en .
 
+# Laws
+
+ff:sgb-ix a ff:Law ;
+    rdfs:label "SGB IX"@de, "SGB IX"@en ;
+    rdfs:comment "Das SGB IX regelt die Rehabilitation und Teilhabe von Menschen mit Behinderungen."@de ,
+    "SGB IX regulates the rehabilitation and participation of people with disabilities."@en .
+
 # Providing Agencies
 
 ff:sozialamt a ff:ProvidingAgency ;
