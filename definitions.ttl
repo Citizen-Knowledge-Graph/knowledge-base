@@ -69,6 +69,16 @@ ff:sgb-ix a ff:Law ;
     rdfs:comment "Das SGB IX regelt die Rehabilitation und Teilhabe von Menschen mit Behinderungen."@de ,
     "SGB IX regulates the rehabilitation and participation of people with disabilities."@en .
 
+ff:bundeskindergeldgesetz a ff:Law ;
+    rdfs:label "Bundeskindergeldgesetz"@de, "Federal Child Benefit Act"@en ;
+    rdfs:comment "Das Bundeskindergeldgesetz regelt die Gewährung von Kindergeld in Deutschland."@de ,
+    "The Federal Child Benefit Act regulates the granting of child benefit in Germany."@en .
+
+ff:einkommensteuergesetz a ff:Law ;
+    rdfs:label "Einkommensteuergesetz"@de, "Income Tax Act"@en ;
+    rdfs:comment "Das Einkommensteuergesetz regelt die Erhebung der Einkommensteuer in Deutschland."@de ,
+    "The Income Tax Act regulates the collection of income tax in Germany."@en .
+
 # Providing Agencies
 
 ff:sozialamt a ff:ProvidingAgency ;

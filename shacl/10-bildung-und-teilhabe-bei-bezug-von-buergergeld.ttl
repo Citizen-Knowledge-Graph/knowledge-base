@@ -25,11 +25,7 @@ ff:bildung-und-teilhabe-bei-bezug-von-buergergeldMainShape a sh:NodeShape ;
     sh:property [
         sh:path ff:kinder_18_25 ;
         sh:minCount 1 ;
-    ] ;
-    sh:property [
-        sh:path ff:einkommen_neu ;
-        sh:minCount 2 ;
-    ] ;
+    ] ;   
     sh:property [
         sh:path ff:kinder ;
         sh:minCount 1 ;
@@ -61,6 +57,5 @@ ff:bildung-und-teilhabe-bei-bezug-von-buergergeldMainShape a sh:NodeShape ;
     sh:property [
         sh:path ff:bezogene_leistungen ;
         sh:in (ff:bezogene_leistungen-buergergeld ff:bezogene_leistungen-wohngeld) ;
-        sh:minCount 2 ;
-        sh:maxCount 2 ;
+        sh:minCount 1 ;
     ] .
