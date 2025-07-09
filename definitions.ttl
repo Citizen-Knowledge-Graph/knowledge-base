@@ -64,10 +64,20 @@ ff:business-permits-df-kategorie a ff:DatafieldCategory ; rdfs:label "Betriebsst
 
 # Laws
 
+ff:sgb-iii a ff:Law ;
+    rdfs:label "SGB III"@de, "SGB III"@en ;
+    rdfs:comment "Das SGB III regelt die Arbeitsförderung in Deutschland."@de ,
+    "SGB III regulates employment promotion in Germany."@en .
+
 ff:sgb-ix a ff:Law ;
     rdfs:label "SGB IX"@de, "SGB IX"@en ;
     rdfs:comment "Das SGB IX regelt die Rehabilitation und Teilhabe von Menschen mit Behinderungen."@de ,
     "SGB IX regulates the rehabilitation and participation of people with disabilities."@en .
+
+ff:sgb-xii a ff:Law ;
+    rdfs:label "SGB XII"@de, "SGB XII"@en ;
+    rdfs:comment "Das SGB XII regelt die Sozialhilfe in Deutschland."@de ,
+    "SGB XII regulates social assistance in Germany."@en .
 
 ff:bundeskindergeldgesetz a ff:Law ;
     rdfs:label "Bundeskindergeldgesetz"@de, "Federal Child Benefit Act"@en ;
@@ -78,6 +88,16 @@ ff:einkommensteuergesetz a ff:Law ;
     rdfs:label "Einkommensteuergesetz"@de, "Income Tax Act"@en ;
     rdfs:comment "Das Einkommensteuergesetz regelt die Erhebung der Einkommensteuer in Deutschland."@de ,
     "The Income Tax Act regulates the collection of income tax in Germany."@en .
+
+ff:bundesausbildungsfoerderungsgesetz a ff:Law ;
+    rdfs:label "Bundesausbildungsförderungsgesetz"@de, "Federal Training Assistance Act"@en ;
+    rdfs:comment "Das Bundesausbildungsförderungsgesetz regelt die Ausbildungsförderung für Schüler:innen und Student:innen in Deutschland."@de ,
+    "The Federal Training Assistance Act regulates training assistance for students and pupils in Germany."@en .
+
+ff:wohngeldgesetz a ff:Law ;
+    rdfs:label "Wohngeldgesetz"@de, "Housing Benefit Act"@en ;
+    rdfs:comment "Das Wohngeldgesetz regelt die Gewährung von Wohngeld in Deutschland."@de ,
+    "The Housing Benefit Act regulates the granting of housing benefit in Germany."@en .
 
 # Providing Agencies
 
@@ -91,6 +111,31 @@ ff:familienkasse a ff:ProvidingAgency ;
     rdfs:comment "Die Familienkasse ist für die Auszahlung von Kindergeld und anderen familienbezogenen Leistungen zuständig."@de ,
     "The Family Benefits Office is responsible for the payment of child benefit and other family-related benefits."@en .
 
+ff:amt-fuer-ausbildungsfoerderung a ff:ProvidingAgency ;
+    rdfs:label "Amt für Ausbildungsförderung"@de, "Office for Training Assistance"@en ;
+    rdfs:comment "Das Amt für Ausbildungsförderung ist für die Gewährung von BAföG und anderen Ausbildungsförderungen zuständig."@de ,
+    "The Office for Training Assistance is responsible for providing BAföG and other training assistance."@en .
+
+ff:bundesverwaltungsamt a ff:ProvidingAgency ;
+    rdfs:label "Bundesverwaltungsamt"@de, "Federal Administrative Office"@en ;
+    rdfs:comment "Das Bundesverwaltungsamt ist eine Bundesbehörde, die verschiedene Verwaltungsaufgaben wahrnimmt."@de ,
+    "The Federal Administrative Office is a federal authority that performs various administrative tasks."@en .
+
+ff:jobcenter a ff:ProvidingAgency ;
+    rdfs:label "Jobcenter"@de, "Job Center"@en ;
+    rdfs:comment "Das Jobcenter ist für die Grundsicherung für Arbeitsuchende zuständig und unterstützt bei der Integration in den Arbeitsmarkt."@de ,
+    "The Job Center is responsible for basic security for job seekers and supports integration into the labor market."@en .
+
+ff:bundesagentur-fuer-arbeit a ff:ProvidingAgency ;
+    rdfs:label "Bundesagentur für Arbeit"@de, "Federal Employment Agency"@en ;
+    rdfs:comment "Die Bundesagentur für Arbeit ist die zentrale Institution für Arbeitsvermittlung und Arbeitsförderung in Deutschland."@de ,
+    "The Federal Employment Agency is the central institution for job placement and employment promotion in Germany."@en .
+
+ff:wohngeldbehoerde a ff:ProvidingAgency ;
+    rdfs:label "Wohngeldbehörde"@de, "Housing Benefit Authority"@en ;
+    rdfs:comment "Die Wohngeldbehörde ist für die Gewährung von Wohngeld zuständig."@de ,
+    "The Housing Benefit Authority is responsible for granting housing benefit."@en .
+
 # Administrative Levels
 
 ff:bund a ff:AdministrativeLevel ;
@@ -98,6 +143,16 @@ ff:bund a ff:AdministrativeLevel ;
     rdfs:comment "Der Bund ist die höchste Ebene der deutschen Verwaltung und zuständig für bundesweite Angelegenheiten."@de ,
     "The federal level is the highest level of German administration and is responsible for nationwide matters."@en .
 
+ff:land a ff:AdministrativeLevel ;
+    rdfs:label "Land"@de, "State"@en ;
+    rdfs:comment "Die Länder sind die Bundesländer in Deutschland und haben eigene Verwaltungsstrukturen."@de ,
+    "The states are the federal states in Germany and have their own administrative structures."@en .
+
+ff:kommune a ff:AdministrativeLevel ;
+    rdfs:label "Kommune"@de, "Municipality"@en ;
+    rdfs:comment "Die Kommunen sind die unterste Ebene der deutschen Verwaltung und zuständig für lokale Angelegenheiten."@de ,
+    "The municipalities are the lowest level of German administration and are responsible for local matters."@en .
+    
 # Validation Stages
 
 ff:preliminary-validation a ff:ValidationStage ; rdfs:label "Vorbehaltliches Ergebnis"@de, "Preliminary result"@en .

@@ -9,6 +9,9 @@ ff:bildung-und-teilhabe-bei-bezug-von-buergergeld a ff:RequirementProfile ;
     ff:category ff:arbeitslosigkeit-bc-kategorie, ff:sozialhilfe-grundsicherung-bc-kategorie, ff:schule-studium-ausbildung-bc-kategorie, ff:leistungen-fuer-familien-bc-kategorie ;
     rdfs:seeAlso <https://sozialplattform.de/inhalt/bildung-und-teilhabe> ;
     rdfs:seeAlso <https://sozialplattform.de/leistung/bildung-und-teilhabe-bei-bezug-von-buergergeld> ;
+    ff:legalBasis ff:sgb-iii ;
+    ff:administrativeLevel ff:bund, ff:land, ff:kommune ;
+    ff:providingAgency ff:jobcenter ;
     ff:validationStage ff:complete-validation ;
     ff:benefitInfo "In Deutschland sollen Kinder, Jugendliche und junge Erwachsene die gleichen Chancen haben. Wichtige Voraussetzungen für Chancengleichheit sind Bildung und die Teilnahme am sozialen und kulturellen Leben. Deswegen fördert der Staat Leistungen zur Bildung und Teilhabe, auch Bildungs- und Teilhabepaket genannt."@de ,
         "In Germany, children, teens and young adults are supposed to have equal opportunities. Education and participation in social and cultural activities are important factors in ensuring equal opportunity. For this reason, the state provides benefits to support education and participation. This is also known as the education and participation package."@en ;
