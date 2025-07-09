@@ -86,6 +86,11 @@ ff:sozialamt a ff:ProvidingAgency ;
     rdfs:comment "Das Sozialamt ist für die Gewährung von Sozialleistungen zuständig, insbesondere für Menschen in Notlagen."@de ,
     "The Social Welfare Office is responsible for providing social benefits, especially for people in need."@en .
 
+ff:familienkasse a ff:ProvidingAgency ;
+    rdfs:label "Familienkasse"@de, "Family Benefits Office"@en ;
+    rdfs:comment "Die Familienkasse ist für die Auszahlung von Kindergeld und anderen familienbezogenen Leistungen zuständig."@de ,
+    "The Family Benefits Office is responsible for the payment of child benefit and other family-related benefits."@en .
+
 # Administrative Levels
 
 ff:bund a ff:AdministrativeLevel ;
