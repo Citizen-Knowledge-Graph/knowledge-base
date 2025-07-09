@@ -8,6 +8,9 @@ ff:uebergangsgeld a ff:RequirementProfile ;
         "Transitional Allowance for People with Disabilities - Federal Employment Agency"@en ;
     ff:category ff:schule-studium-ausbildung-bc-kategorie, ff:gesundheit-pflege-bc-kategorie, ff:sozialhilfe-grundsicherung-bc-kategorie ;
     ff:validationStage ff:preliminary-validation ;
+    ff:legalBasis ff:sgb-iii, ff:sgb-ix ;
+    ff:administrativeLevel ff:bund ;
+    ff:providingAgency ff:bundesagentur-fuer-arbeit ;
     ff:benefitInfo "Menschen mit Behinderungen können zur Sicherung des Lebensunterhaltes Übergangsgeld erhalten, wenn sie an bestimmten Bildungsmaßnahmen teilnehmen. Je nach Rehabilitionträger gelten hier unterschiedliche Voraussetzungen und Leistungsangebote. Die vorliegende Leistung steht Menschen zur Verfügung, deren Rehabilitationsträger die Bundesagentur für Arbeit ist."@de ,
         "People with disabilities can receive transitional allowance to cover their living expenses if they participate in specific educational programs. Depending on the rehabilitation provider, different requirements and benefits apply. This benefit is available to people whose rehabilitation provider is the Federal Employment Agency."@en ;
     rdfs:seeAlso <https://www.arbeitsagentur.de/datei/uebergangsgeld-fuer-rehabilitanden-der-ba_ba040009.pdf> ;
