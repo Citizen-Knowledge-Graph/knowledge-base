@@ -1,5 +1,7 @@
 @prefix ff: <https://foerderfunke.org/default#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Benefit categories
 
@@ -162,3 +164,60 @@ ff:complete-validation a ff:ValidationStage ; rdfs:label "Abschließendes Ergebn
 
 ff:Citizen a rdfs:Class ; rdfs:label "Bürger*in"@de, "Citizen"@en .
 ff:Child a rdfs:Class ; rdfs:label "Kind"@de, "Child"@en .
+
+# Materializable Data Fields
+
+ff:pensionable a ff:DataField, ff:MaterializableDataField ;
+    rdfs:label "Pensionable"@en, "Rentenberechtigt"@de ;
+    ff:materializedViaRule ff:CalculateAgeFromBirthdate ;
+    ff:suggestProfileAddition true ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:pensionable ;
+        sh:property [
+            sh:path ff:pensionable ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:hasAge a ff:DataField, ff:MaterializableDataField ;
+    rdfs:label "Age"@en, "Alter"@de ;
+    ff:materializedViaRule ff:PensionableFromBirthdate ;
+    ff:suggestProfileAddition true ; # it can change though
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:hasAge ;
+        sh:property [
+            sh:path ff:hasAge ;
+            sh:datatype xsd:integer ;
+            sh:minInclusive 0 ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:vermoegensgrenze_buergergeld a ff:DataField, ff:MaterializableDataField ;
+    ff:suggestProfileAddition false ;
+    ff:materializedViaRule ff:HouseholdMembersToVermoegensGrenzeBuergergeld ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:vermoegensgrenze_buergergeld ;
+        sh:property [
+            sh:path ff:vermoegensgrenze_buergergeld ;
+            sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:vermoegensgrenze_wohngeld a ff:DataField, ff:MaterializableDataField ;
+    ff:suggestProfileAddition false ;
+    ff:materializedViaRule ff:HouseholdMembersToVermoegensGrenzeWohngeld ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:vermoegensgrenze_wohngeld ;
+        sh:property [
+            sh:path ff:vermoegensgrenze_wohngeld ;
+            sh:datatype xsd:integer ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
