@@ -1,0 +1,111 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ff: <https://foerderfunke.org/default#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+
+ff:registered_residence_country a ff:DataField ;
+    schema:category ff:persoenliche-angaben-df-kategorie;
+    rdfs:label "Land des Wohnsitzes"@de , "Country of main residence"@en ;
+    schema:question "In welchem Land haben Sie einen Wohnsitz?"@de , "In which country do you have a residence?"@en ;
+    rdfs:comment "Wo haben Sie Ihren Wohnsitz? Sie können mehrere Wohnsitze angeben, wenn Sie in mehreren Ländern wohnen."@de ,
+        "Where do you have your residence? You can specify multiple residences if you live in several countries."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:registered_residence_country ;
+        sh:property [
+            sh:path ff:registered_residence_country ;
+            sh:in (ff:registered_residence_country-germany ff:registered_residence_country-other) ;
+        ] ;
+    ] .
+
+ff:registered_residence_country-germany a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germany"@en .
+ff:registered_residence_country-other a ff:AnswerOption ; rdfs:label "Anderes Land"@de , "Other country"@en .
+
+
+ff:employment_country a ff:DataField ;
+    schema:category ff:persoenliche-angaben-df-kategorie;
+    rdfs:label "Land des Arbeitsverhältnisses"@de , "Country of employment"@en ;
+    schema:question "In welchem Land sind Sie beschäftigt?"@de , "In which country are you employed?"@en ;
+    rdfs:comment "Wo sind Sie beschäftigt? Sie können mehrere Länder angeben, wenn Sie in mehreren Ländern arbeiten."@de ,
+        "Where are you employed? You can specify multiple countries if you work in several countries."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:employment_country ;
+        sh:property [
+            sh:path ff:employment_country ;
+            sh:in (ff:employment_country-germany ff:employment_country-other) ;
+        ] ;
+    ] .
+
+ff:employment_country-germany a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germany"@en .
+ff:employment_country-other a ff:AnswerOption ; rdfs:label "Anderes Land"@de , "Other country"@en .
+
+
+ff:disability_expected_duration_6_months a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Behinderung voraussichtlich länger als 6 Monate"@de , "Disability expected to last longer than 6 months"@en ;
+    schema:question "Wird Ihre Behinderung mit hoher Wahrscheinlichkeit länger als 6 Monate andauern?"@de ,
+        "Is your disability expected to last longer than 6 months?"@en ;
+    rdfs:comment "Die Frage soll ermitteln, ob der Zustand Ihrer Behinderung nicht nur vorübergehend besteht, sondern voraussichtlich mindestens sechs Monate andauert."@de ,
+        "This question aims to determine whether your disability is not just temporary but is expected to last at least six months."@en ;
+        ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:disability_expected_duration_6_months ;
+        sh:property [
+            sh:path ff:disability_expected_duration_6_months ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+
+ff:disability_degree_evaluated a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Grad der Behinderung festgestellt"@de , "Degree of disability evaluated"@en ;
+    schema:question "Wurde der Grad Ihrer Behinderung bereits festgestellt?"@de , "Has the degree of your disability been evaluated?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:disability_degree_evaluated ;
+        sh:property [
+            sh:path ff:disability_degree_evaluated ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+
+ff:disability_degree a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Grad der Behinderung"@de , "Degree of disability"@en ;
+    schema:question "Wie hoch ist der Grad Ihrer Behinderung?"@de , "What is the degree of your disability?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:disability_degree ;
+        sh:property [
+            sh:path ff:disability_degree ;
+            sh:datatype xsd:integer ;
+            sh:minInclusive 0 ;
+            sh:maxInclusive 100 ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+
+ff:job_at_risk_without_equal_status a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Arbeitsplatz gefährdet ohne Gleichstellung"@de , "Job at risk without equal status"@en ;
+    schema:question "Könnten Sie wegen Ihrer Behinderung ohne eine Gleichstellung keinen geeigneten Arbeitsplatz bekommen oder behalten?"@de ,
+        "Could you not obtain or retain suitable employment due to your disability without equal status?"@en ;
+    rdfs:comment "Gleichstellung bedeutet, dass Personen mit einem Grad der Behinderung von 30 bis 49 formal Schwerbehinderten gleichgestellt werden, wenn sie sonst keinen geeigneten Arbeitsplatz erlangen oder behalten könnten."@de ,
+        "Equal status means that persons with a degree of disability of 30 to 49 are formally treated as severely disabled if they would otherwise not be able to obtain or retain suitable employment."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:job_at_risk_without_equal_status ;
+        sh:property [
+            sh:path ff:job_at_risk_without_equal_status ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
