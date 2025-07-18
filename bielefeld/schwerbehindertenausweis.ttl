@@ -10,7 +10,7 @@ ff:schwerbehindertenausweis a ff:RequirementProfile ;
     ff:validationStage ff:preliminary-validation ;
     ff:legalBasis ff:sgb-ix ;
     ff:administrativeLevel ff:bund ;
-    ff:providingAgency ff:bundesagentur-fuer-arbeit, ff:versorgungsamt ;
+    ff:providingAgency ff:sozialamt ;
     ff:benefitInfo "Menschen mit einer Behinderung haben je nach Grad der Behinderung und Arbeitsplatzsituation Anspruch auf einen Schwerbehindertenausweis oder eine Gleichstellung."@de ,
                    "People with a disability may be entitled to a severely disabled person's ID card or to equal status, depending on the degree of disability and their employment situation."@en ;
     ff:hasMainShape ff:schwerbehindertenausweisMainShape ;
@@ -25,9 +25,9 @@ ff:schwerbehindertenausweisMainShape a sh:NodeShape ;
     sh:property [ sh:path ff:disability_expected_duration_6_months ; sh:in (true) ] ;
     sh:property [
         sh:or (
-            [ sh:property [ sh:path ff:registered_residence_country ; sh:in (true) ] ]
-            [ sh:property [ sh:path ff:aufenthaltsort ; sh:in (true) ] ]
-            [ sh:property [ sh:path ff:employment_country ; sh:in (true) ] ]
+            [ sh:property [ sh:path ff:registered_residence_country ; sh:in (ff:registered_residence_country-germany) ] ]
+            [ sh:property [ sh:path ff:aufenthaltsort ; sh:in (ff:aufenthaltsort-ao-ausserhalb) ] ]
+            [ sh:property [ sh:path ff:employment_country ; sh:in (ff:employment_country-germany) ] ]
         )
     ] ;
     sh:property [ sh:path ff:disability_degree_evaluated; sh:in (true) ] ;
@@ -47,16 +47,25 @@ ff:schwerbehindertenausweisFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property ff:baseRequirements ;
+    sh:property ff:degreeEvaluatedPS ;
     sh:property ff:jobRiskPS .
 
-ff:ff:baseRequirements a sh:PropertyShape ;
+ff:baseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:has_disability ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:disability_expected_duration_6_months ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:registered_residence_country ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:aufenthaltsort ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:lawful_employment_germany ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:employment_country ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:disability_degree_evaluated ; sh:minCount 1 ] .
-    sh:property [ sh:path ff:disability_degree ; sh:minCount 1 ] .
+
+ff:degreeEvaluatedPS a sh:PropertyShape ;
+    sh:deactivated [
+        sh:not [
+            shn:eq ( [ sh:path ff:disability_degree_evaluated ] true ) 
+        ]
+    ] ;
+    sh:path ff:disability_degree ;
+    sh:minCount 1 .
 
 ff:jobRiskPS a sh:PropertyShape ;
     sh:deactivated [
