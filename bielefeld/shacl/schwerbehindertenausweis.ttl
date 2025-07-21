@@ -34,9 +34,11 @@ ff:schwerbehindertenausweisMainShape a sh:NodeShape ;
     sh:property [
         sh:or (
             [ sh:property [ sh:path ff:disability_degree ; sh:minInclusive 50 ] ]
-            [
-                sh:property [ sh:path ff:disability_degree ; sh:minInclusive 30 ; sh:maxInclusive 49 ] ;
-                sh:property [ sh:path ff:job_at_risk_without_equal_status ; sh:in (true) ]
+            [ 
+                sh:and (
+                    sh:property [ sh:path ff:disability_degree ; sh:minInclusive 30 ; sh:maxInclusive 49 ]
+                    sh:property [ sh:path ff:job_at_risk_without_equal_status ; sh:in (true) ]
+                )
             ]
         )
     ] .

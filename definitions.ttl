@@ -71,6 +71,11 @@ ff:sgb-iii a ff:Law ;
     rdfs:comment "Das SGB III regelt die Arbeitsförderung in Deutschland."@de ,
     "SGB III regulates employment promotion in Germany."@en .
 
+ff:sgb-vi a ff:Law ;
+    rdfs:label "SGB VI"@de, "SGB VI"@en ;
+    rdfs:comment "Das SGB VI regelt die gesetzliche Rentenversicherung in Deutschland."@de ,
+    "SGB VI regulates statutory pension insurance in Germany."@en .
+
 ff:sgb-ix a ff:Law ;
     rdfs:label "SGB IX"@de, "SGB IX"@en ;
     rdfs:comment "Das SGB IX regelt die Rehabilitation und Teilhabe von Menschen mit Behinderungen."@de ,
