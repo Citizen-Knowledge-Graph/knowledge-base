@@ -96,8 +96,8 @@ ff:disability_degree a ff:DataField ;
 ff:job_at_risk_without_equal_status a ff:DataField ;
     schema:category ff:arbeitswelt-df-kategorie ;
     rdfs:label "Arbeitsplatz gefährdet ohne Gleichstellung"@de , "Job at risk without equal status"@en ;
-    schema:question "Könnten Sie wegen Ihrer Behinderung ohne eine Gleichstellung keinen geeigneten Arbeitsplatz bekommen oder behalten?"@de ,
-        "Could you not obtain or retain suitable employment due to your disability without equal status?"@en ;
+    schema:question "Könnten Sie wegen Ihrer Behinderung ohne eine Gleichstellung einen geeigneten Arbeitsplatz nicht erlangen oder behalten?"@de ,
+        "Would you not be able to obtain or retain suitable employment due to your disability without equal status?"@en ;
     rdfs:comment "Gleichstellung bedeutet, dass Personen mit einem Grad der Behinderung von 30 bis 49 formal Schwerbehinderten gleichgestellt werden, wenn sie sonst keinen geeigneten Arbeitsplatz erlangen oder behalten könnten."@de ,
         "Equal status means that persons with a degree of disability of 30 to 49 are formally treated as severely disabled if they would otherwise not be able to obtain or retain suitable employment."@en ;
     ff:hasShaclShape [
