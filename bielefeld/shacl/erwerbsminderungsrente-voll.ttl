@@ -39,7 +39,7 @@ ff:erwerbsminderungsrenteVollMainShape a sh:NodeShape ;
             [   
                 sh:and (
                     sh:property [ sh:path ff:special_cause_inability ; sh:in (false) ] 
-                    sh:or (
+                    [ sh:or (
                         [ sh:property [ sh:path ff:extended_waiting_period ; sh:in (true) ] ; ]
                         [    
                             sh:and (
@@ -47,7 +47,7 @@ ff:erwerbsminderungsrenteVollMainShape a sh:NodeShape ;
                                 sh:property [ sh:path ff:compulsory_contributions ; sh:in (true) ]
                             )
                         ]
-                    ) 
+                    ) ]
                 )
             ]
         )
