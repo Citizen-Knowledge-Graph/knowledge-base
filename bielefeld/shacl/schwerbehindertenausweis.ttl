@@ -11,6 +11,7 @@ ff:schwerbehindertenausweis a ff:RequirementProfile ;
     ff:legalBasis ff:sgb-ix ;
     ff:administrativeLevel ff:bund ;
     ff:providingAgency ff:sozialamt ;
+    ff:tag ff:bielefunke ;
     ff:benefitInfo "Menschen mit einer Behinderung haben je nach Grad der Behinderung und Arbeitsplatzsituation Anspruch auf einen Schwerbehindertenausweis oder eine Gleichstellung."@de ,
                    "People with a disability may be entitled to a severely disabled person's ID card or to equal status, depending on the degree of disability and their employment situation."@en ;
     ff:hasMainShape ff:schwerbehindertenausweisMainShape ;
