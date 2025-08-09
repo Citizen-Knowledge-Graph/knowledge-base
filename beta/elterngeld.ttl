@@ -9,6 +9,7 @@ ff:elterngeld a ff:RequirementProfile ;
     ff:title "Elterngeld"@de , "Parental Allowance"@en ;
     ff:category ff:leistungen-fuer-familien-bc-kategorie ;
     rdfs:seeAlso <https://sozialplattform.de/inhalt/elterngeld> ;
+    ff:tag ff:beta ;
     ff:benefitInfo "Elterngeld unterstuetzt Eltern finanziell nach der Geburt ihres Kindes. Es ersetzt einen Teil des entgangenen Einkommens und hilft Eltern, sich um ihr Kind zu kuemmern."@de ,
         "Parental allowance supports parents financially after the birth of their child. It replaces part of the lost income and helps parents care for their child."@en ;
     ff:ineligibleGeneralExplanation "Sie haben vermutlich keinen Anspruch auf Elterngeld, wenn Sie nicht mit Ihrem Kind in einem gemeinsamen Haushalt leben oder Ihre Arbeitszeit 32 Stunden pro Woche überschreitet oder bestimmte Sozialleistungen beziehen."@de ,

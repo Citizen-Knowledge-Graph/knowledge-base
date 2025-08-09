@@ -11,6 +11,7 @@ ff:substitutionstherapie-diamorphin a ff:RequirementProfile ;
     ff:legalBasis ff:betaeubungsmittelgesetz ;
     ff:administrativeLevel ff:bund ;
     ff:providingAgency ff:gesundheitsamt, ff:kassenaerztliche_vereinigung ;
+    ff:tag ff:bielefunke ;
     ff:benefitInfo "Die Substitutionstherapie mit Diamorphin ist eine besondere Form der Behandlung für Menschen, die stark von Heroin abhängig sind und bei denen andere Therapien nicht geholfen haben."@de ,
         "Diamorphine substitution therapy is a special form of treatment for people who are heavily dependent on heroin and for whom other therapies have not helped."@en ;
     ff:hasMainShape ff:substitutionstherapieDiamorphinMainShape ;

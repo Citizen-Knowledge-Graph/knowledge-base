@@ -8,6 +8,7 @@ ff:kurzzeitige-arbeitsverhinderung a ff:RequirementProfile ;
         "Short-term Work Interruption for Acute Care"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;
     ff:validationStage ff:preliminary-validation ;
+    ff:tag ff:beta ;
     ff:benefitInfo "Kurzfristige Arbeitsverhinderung ermöglicht es Arbeitnehmer:innen, kurzfristig von der Arbeit freigestellt zu werden, um akute Pflegebedarfe zu decken. Diese Regelung gilt für Situationen, in denen eine plötzliche Pflegebedürftigkeit auftritt."@de ,
         "Short-term work interruption allows employees to be temporarily released from work to meet acute care needs. This regulation applies in situations where a sudden need for care arises."@en ;
     rdfs:seeAlso <https://www.gesetze-im-internet.de/pflegezg/__2.html> ;
