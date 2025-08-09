@@ -305,5 +305,52 @@ ff:recent_birth a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
-    
-    
+
+ff:addiction_duration_2years a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Sucht seit mindestens 2 Jahren"@de , "Addiction for at least 2 years"@en ;
+    schema:question "Leiden Sie seit mindestens zwei Jahren an einer Sucht?"@de , "Have you been suffering from an addiction for at least two years?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:addiction_duration_2years ;
+        sh:property [
+            sh:path ff:addiction_duration_2years ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
+ff:addiction_damage a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Suchtschäden"@de, "Addiction damage"@en ;
+    schema:question "Haben Sie große gesundheitliche, seelische oder soziale Probleme, weil Sie Opioide (zum Beispiel Heroin) konsumieren?"@de ,
+        "Do you have serious health, emotional, or social problems because you use opioids (for example, heroin)?"@en ;
+    rdfs:comment "Solche Probleme können zum Beispiel schlechte körperliche Gesundheit, Traurigkeit oder Angst, Streit mit Familie oder Freund:innen, Verlust der Arbeit oder Schwierigkeiten mit Wohnung oder Geld sein."@de ,
+        "Such problems can include poor physical health, feeling depressed or anxious, trouble with family or friends, losing your job, or difficulties with housing or money."@en ;        
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:addiction_damage ;
+        sh:property [
+            sh:path ff:addiction_damage ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
+ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Erfolglose Substitutionstherapie"@de, "Unsuccessful substitution therapy"@en ;
+    schema:question "Hat eine reguläre Substitutionstherapie bei Ihnen bisher nicht geholfen?"@de ,
+        "Has regular substitution therapy not helped you so far?"@en ;
+    rdfs:comment "Das bedeutet, dass Sie schon an einer Behandlung mit Substitutionsmitteln (zum Beispiel Methadon oder Buprenorphin) teilgenommen haben, diese aber Ihre Probleme nicht ausreichend verbessert hat."@de ,
+        "This means you have already taken part in treatment with substitution medicines (for example, methadone or buprenorphine), but it has not improved your problems enough."@en ;        
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:substitutiontherapy_regular_unsuccessful ;
+        sh:property [
+            sh:path ff:substitutiontherapy_regular_unsuccessful ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+        
