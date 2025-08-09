@@ -213,3 +213,97 @@ ff:compulsory_contributions a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
+
+ff:has_confirmed_addiction a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Bestätigte Sucht"@de , "Confirmed addiction"@en ;
+    schema:question "Leiden Sie an einer Sucht, die ärztlich bestätigt wurde?"@de ,
+        "Do you have an addiction that has been confirmed by a doctor or psychologist?"@en ;
+    rdfs:comment "Eine Sucht wird von einer Ärzt:in bestätigt, wenn mehrere eindeutige Anzeichen vorliegen – zum Beispiel, dass der Konsum nicht mehr kontrolliert werden kann, der Körper ohne die Substanz starke Beschwerden zeigt, ein sehr starkes Verlangen danach besteht und andere wichtige Dinge im Leben vernachlässigt werden."@de ,
+        "An addiction is confirmed by a doctor or psychologist when there are multiple clear signs – for example, that consumption can no longer be controlled, the body shows severe discomfort without the substance, there is a very strong craving for it, and other important aspects of life are neglected."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:has_confirmed_addiction ;
+        sh:property [
+            sh:path ff:has_confirmed_addiction ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:has_medical_insurance a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Krankenversicherung"@de , "Health insurance"@en ;
+    schema:question "Haben Sie eine Krankenversicherung?"@de , "Do you have health insurance?"@en ;
+    rdfs:comment "Eine Krankenversicherung ist notwendig, um medizinische Behandlungen und Therapien zu erhalten. Sie kann gesetzlich oder privat sein."@de ,
+        "Health insurance is necessary to receive medical treatments and therapies. It can be statutory or private."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:has_medical_insurance ;
+        sh:property [
+            sh:path ff:has_medical_insurance ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:sobriety_wish a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Abstinenz Wunsch"@de , "Sobriety wish"@en ;
+    schema:question "Wünschen Sie, von Ihrer Sucht loszukommen?"@de , "Do you wish to overcome your addiction?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:sobriety_wish ;
+        sh:property [
+            sh:path ff:sobriety_wish ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:has_severe_disease a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Schwere Erkrankung"@de , "Severe disease"@en ;
+    schema:question "Haben Sie eine schwere Krankheit, zum Beispiel Krebs, HIV, Hepatitis A oder Hepatitis C??"@de , 
+        "Do you have a severe disease, such as cancer, HIV, hepatitis A, or hepatitis C?"@en ;
+    rdfs:comment "Eine schwere Erkrankung ist eine Krankheit, die erhebliche Auswirkungen auf Ihre Gesundheit und Lebensqualität hat."@de ,
+        "A severe disease is an illness that has significant effects on your health and quality of life."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:has_severe_disease ;
+        sh:property [
+            sh:path ff:has_severe_disease ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:pregnant a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Schwanger"@de , "Pregnant"@en ;
+    schema:question "Sind Sie schwanger?"@de , "Are you pregnant?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:pregnant ;
+        sh:property [
+            sh:path ff:pregnant ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:recent_birth a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Vor kurzem geboren"@de , "Recently given birth"@en ;
+    schema:question "Haben Sie vor kurzem ein Kind geboren?"@de , "Have you recently given birth to a child?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:recent_birth ;
+        sh:property [
+            sh:path ff:recent_birth ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+    
+    

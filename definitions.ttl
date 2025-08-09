@@ -106,6 +106,11 @@ ff:wohngeldgesetz a ff:Law ;
     rdfs:comment "Das Wohngeldgesetz regelt die Gewährung von Wohngeld in Deutschland."@de ,
     "The Housing Benefit Act regulates the granting of housing benefit in Germany."@en .
 
+ff:betaeubungsmittelgesetz a ff:Law ;
+    rdfs:label "Betäubungsmittelgesetz"@de, "Narcotics Act"@en ;
+    rdfs:comment "Das Betäubungsmittelgesetz regelt den Umgang mit Betäubungsmitteln in Deutschland."@de ,
+    "The Narcotics Act regulates the handling of narcotics in Germany."@en .
+
 # Providing Agencies
 
 ff:sozialamt a ff:ProvidingAgency ;
@@ -142,6 +147,16 @@ ff:wohngeldbehoerde a ff:ProvidingAgency ;
     rdfs:label "Wohngeldbehörde"@de, "Housing Benefit Authority"@en ;
     rdfs:comment "Die Wohngeldbehörde ist für die Gewährung von Wohngeld zuständig."@de ,
     "The Housing Benefit Authority is responsible for granting housing benefit."@en .
+
+ff:kassenaerztliche-vereinigung a ff:ProvidingAgency ;
+    rdfs:label "Kassenärztliche Vereinigung"@de, "Association of Statutory Health Insurance Physicians"@en ;
+    rdfs:comment "Die Kassenärztliche Vereinigung ist für die Sicherstellung der ambulanten medizinischen Versorgung in Deutschland zuständig."@de ,
+    "The Association of Statutory Health Insurance Physicians is responsible for ensuring outpatient medical care in Germany."@en .
+
+ff:gesundheitsamt a ff:ProvidingAgency ;
+    rdfs:label "Gesundheitsamt"@de, "Health Office"@en ;
+    rdfs:comment "Das Gesundheitsamt ist für den Gesundheitsschutz und die öffentliche Gesundheit zuständig."@de ,
+    "The Health Office is responsible for health protection and public health."@en .
 
 # Administrative Levels
 
