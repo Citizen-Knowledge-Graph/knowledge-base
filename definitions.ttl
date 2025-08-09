@@ -174,7 +174,12 @@ ff:kommune a ff:AdministrativeLevel ;
     rdfs:label "Kommune"@de, "Municipality"@en ;
     rdfs:comment "Die Kommunen sind die unterste Ebene der deutschen Verwaltung und zuständig für lokale Angelegenheiten."@de ,
     "The municipalities are the lowest level of German administration and are responsible for local matters."@en .
-    
+
+# Tags
+
+ff:bielefunke a ff:Tag ;
+    rdfs:label "BieleFunke"@de, "BieleFunke"@en .
+
 # Validation Stages
 
 ff:preliminary-validation a ff:ValidationStage ; rdfs:label "Vorbehaltliches Ergebnis"@de, "Preliminary result"@en .
