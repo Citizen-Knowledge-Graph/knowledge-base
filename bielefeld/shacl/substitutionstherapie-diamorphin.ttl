@@ -51,8 +51,7 @@ ff:substitutionstherapieDiamorphinFlowShape a sh:NodeShape ;
 ff:baseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:has_confirmed_addiction ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:hasAge ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] .
 
 ff:circumstanceRequirementsPS a sh:PropertyShape ;
     sh:deactivated [

@@ -63,8 +63,7 @@ ff:ageRequirementsPS a sh:PropertyShape ;
             shn:eq ( [ sh:path ff:sobriety_wish ] false ) 
         ]
     ] ;
-    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:hasAge ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] .
 
 ff:severeDeseaseRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
