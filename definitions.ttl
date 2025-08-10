@@ -158,6 +158,11 @@ ff:gesundheitsamt a ff:ProvidingAgency ;
     rdfs:comment "Das Gesundheitsamt ist für den Gesundheitsschutz und die öffentliche Gesundheit zuständig."@de ,
     "The Health Office is responsible for health protection and public health."@en .
 
+ff:integrationsamt a ff:ProvidingAgency ;
+    rdfs:label "Integrationsamt"@de, "Integration Office"@en ;
+    rdfs:comment "Das Integrationsamt unterstützt Menschen mit Behinderungen bei der Teilhabe am Arbeitsleben."@de ,
+    "The Integration Office supports people with disabilities in participating in working life."@en .
+
 # Administrative Levels
 
 ff:bund a ff:AdministrativeLevel ;

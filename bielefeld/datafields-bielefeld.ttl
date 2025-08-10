@@ -354,3 +354,90 @@ ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
         ] ;        
     ] .
         
+ff:requires_substantial_support a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Erheblicher Unterstützungsbedarf"@de , "Requires substantial support"@en ;
+    schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de , "Do you require regular, substantial, and ongoing support to perform your work?"@en ;
+    rdfs:comment "Das bedeutet, dass Sie über eine lange Zeit hinweg oft und in größerem Umfang Hilfe von anderen brauchen, um wichtige Dinge im Alltag oder bei der Arbeit erledigen zu können."@de ,
+        "This means that you need frequent and significant help from others over a long period to manage important tasks in daily life or at work."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:requires_substantial_support ;
+        sh:property [
+            sh:path ff:requires_substantial_support ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
+ff:core_activity_independent a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Kernaktivität selbstständig"@de , "Core activity independent"@en ;
+    schema:question "Können Sie Ihre Kernaktivitäten Ihrer Arbeit ohne Hilfe erledigen?"@de ,
+        "Can you perform your core activities at work independently?"@en ;
+    rdfs:comment "Sie erledigen die wichtigste Aufgabe selbst und brauchen nur bei kleineren oder vorbereitenden Arbeiten Unterstützung."@de ,
+        "You can perform the main task independently and only need support for smaller or preparatory tasks."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:core_activity_independent ;
+        sh:property [
+            sh:path ff:core_activity_independent ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
+ff:existing_workplace_design_insufficient a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Vorhandene Arbeitsplatzgestaltung unzureichend"@de , "Existing workplace design insufficient"@en ;
+    schema:question "Ist die vorhandene behindertengerechte Gestaltung Ihres Arbeitsplatzes nicht ausreichend, um Ihre Arbeit zu ermöglichen?"@de ,
+        "Is the existing disability-friendly design of your workplace insufficient to enable you to work?"@en ;
+    rdfs:comment "Bestehende Anpassungen können zum Beispiel ein höhenverstellbarer Schreibtisch, eine Rampe oder ein Bildschirmlesegerät sein."@de ,
+        "Existing adjustments can include a height-adjustable desk, a ramp, or a screen reader."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:existing_workplace_design_insufficient ;
+        sh:property [
+            sh:path ff:existing_workplace_design_insufficient ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
+ff:workplace a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Arbeitsplatz"@de , "Workplace"@en ;
+    schema:question "Haben Sie einen Arbeitsplatz?"@de , "Do you have a workplace?"@en ;
+    rdfs:comment "Ein Arbeitsplatz ist der Ort, an dem Sie Ihre beruflichen Aufgaben erledigen."@de ,
+        "A workplace is the place where you perform your professional tasks."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:workplace ;
+        sh:property [
+            sh:path ff:workplace ;
+            sh:in (ff:workplace-inclusive ff:workplace-sheltered ff:workplace-other) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:workplace-inclusive a ff:AnswerOption ; rdfs:label "Inklusionsbetrieb"@de , "Inclusive workplace"@en .
+ff:workplace-sheltered a ff:AnswerOption ; rdfs:label "Werkstatt für Menschen mit Behinderung"@de , "Workshop for people with disabilities"@en .
+ff:workplace-self-employed a ff:AnswerOption ; rdfs:label "Selbstständig"@de , "Self-employed"@en .
+ff:workplace-other a ff:AnswerOption ; rdfs:label "Anderer Arbeitsplatz"@de , "Other workplace"@en .
+
+ff:workhours_per_week a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Arbeitsstunden pro Woche"@de , "Work hours per week"@en ;
+    schema:question "Wie viele Stunden arbeiten Sie pro Woche?"@de , "How many hours do you work per week?"@en ;
+    rdfs:comment "Die Angabe der Arbeitsstunden pro Woche hilft, den Umfang Ihrer Beschäftigung zu verstehen."@de ,
+        "Specifying the number of work hours per week helps to understand the extent of your employment."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:workhours_per_week ;
+        sh:property [
+            sh:path ff:workhours_per_week ;
+            sh:datatype xsd:integer ;
+            sh:minInclusive 0 ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .

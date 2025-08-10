@@ -67,15 +67,13 @@ ff:degreeEvaluatedPS a sh:PropertyShape ;
             shn:eq ( [ sh:path ff:disability_degree_evaluated ] true ) 
         ]
     ] ;
-    sh:path ff:disability_degree ;
-    sh:minCount 1 .
+    sh:path ff:disability_degree ; sh:minCount 1 .
 
 ff:jobRiskPS a sh:PropertyShape ;
     sh:deactivated [
         sh:or (
-            [ sh:path ff:disability_degree ; sh:minExclusive 49 ]
-            [ sh:path ff:disability_degree ; sh:maxExclusive 30 ]
+            [ sh:path ff:disability_degree ; sh:maxInclusive 49 ]
+            [ sh:path ff:disability_degree ; sh:minInclusive 30 ]
         )
     ] ;
-    sh:path ff:job_at_risk_without_equal_status ;
-    sh:minCount 1 .
+    sh:path ff:job_at_risk_without_equal_status ; sh:minCount 1 .
