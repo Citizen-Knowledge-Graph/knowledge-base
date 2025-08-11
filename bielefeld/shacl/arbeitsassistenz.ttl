@@ -69,7 +69,7 @@ ff:arbeitsassistenzFlowShape a sh:NodeShape ;
 
 ff:baseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:has_disability ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:disability_degree_evaluated ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:disability_degree_evaluated ; sh:minCount 1 ] .
 
 ff:degreeEvaluatedPS a sh:PropertyShape ;
     sh:deactivated [
@@ -96,8 +96,8 @@ ff:insufficientWorkplacePS a sh:PropertyShape ;
             [
                 sh:not [
                     sh:and (
-                        sh:path ff:disability_degree; sh:minInclusive 30 ; sh:maxInclusive 49 
-                        sh:path ff:job_at_risk_without_equal_status ; sh:in (true) 
+                        [ sh:path ff:disability_degree; sh:minInclusive 30 ; sh:maxInclusive 49 ]
+                        [ sh:path ff:job_at_risk_without_equal_status ; sh:in (true) ]
                     )
                 ]
             ]
