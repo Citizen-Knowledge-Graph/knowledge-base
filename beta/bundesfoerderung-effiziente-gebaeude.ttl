@@ -27,7 +27,9 @@ ff:bundesfoerderung-effiziente-gebaeudeMainShape a sh:NodeShape ;
 
    	sh:property [
         sh:deactivated [
-            shn:eq ([ sh:path ff:interested_in_building_renovation_FLAG ] false )
+            sh:not [
+                shn:eq ([ sh:path ff:interested_in_building_renovation ] true )
+            ]
         ] ;
         sh:path ff:building_location_country ;
         sh:in ( ff:building_location_country-germany ) ;
@@ -37,7 +39,9 @@ ff:bundesfoerderung-effiziente-gebaeudeMainShape a sh:NodeShape ;
 
     sh:property [
         sh:deactivated [
-            shn:eq ([ sh:path ff:interested_in_building_renovation_FLAG ] false )
+            sh:not [
+                shn:eq ([ sh:path ff:interested_in_building_renovation ] true )
+            ]
         ] ;
         sh:path ff:building_status ;
         sh:in ( ff:building_status-existing ) ;
@@ -47,8 +51,10 @@ ff:bundesfoerderung-effiziente-gebaeudeMainShape a sh:NodeShape ;
 
     sh:property [
         sh:deactivated [
-            shn:eq ([ sh:path ff:interested_in_building_renovation_FLAG ] false )
-        ] ;        
+            sh:not [
+                shn:eq ([ sh:path ff:interested_in_building_renovation ] true )
+            ]
+        ] ;     
         sh:path ff:building_renovation_type ;
         sh:in ( ff:building_renovation_type-energy-efficiency ff:building_renovation_type-renewable-heating ) ;
         sh:minCount 1 ;
