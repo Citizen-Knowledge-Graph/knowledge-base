@@ -354,17 +354,17 @@ ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
         ] ;        
     ] .
         
-ff:requires_substantial_support a ff:DataField ;
+ff:requires_assistance a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
-    rdfs:label "Erheblicher Unterstützungsbedarf"@de , "Requires substantial support"@en ;
+    rdfs:label "Erheblicher Unterstützungsbedarf"@de , "Requires assistance"@en ;
     schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de , "Do you require regular, substantial, and ongoing support to perform your work?"@en ;
     rdfs:comment "Das bedeutet, dass Sie über eine lange Zeit hinweg oft und in größerem Umfang Hilfe von anderen brauchen, um wichtige Dinge im Alltag oder bei der Arbeit erledigen zu können."@de ,
         "This means that you need frequent and significant help from others over a long period to manage important tasks in daily life or at work."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:requires_substantial_support ;
+        sh:targetSubjectsOf ff:requires_assistance ;
         sh:property [
-            sh:path ff:requires_substantial_support ;
+            sh:path ff:requires_assistance ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;        
@@ -387,7 +387,7 @@ ff:core_activity_independent a ff:DataField ;
         ] ;        
     ] .
 
-ff:existing_workplace_design_insufficient a ff:DataField ;
+ff:existing_workplace_measures_insufficient a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Vorhandene Arbeitsplatzgestaltung unzureichend"@de , "Existing workplace design insufficient"@en ;
     schema:question "Ist die vorhandene behindertengerechte Gestaltung Ihres Arbeitsplatzes nicht ausreichend, um Ihre Arbeit zu ermöglichen?"@de ,
@@ -396,9 +396,9 @@ ff:existing_workplace_design_insufficient a ff:DataField ;
         "Existing adjustments can include a height-adjustable desk, a ramp, or a screen reader."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:existing_workplace_design_insufficient ;
+        sh:targetSubjectsOf ff:existing_workplace_measures_insufficient ;
         sh:property [
-            sh:path ff:existing_workplace_design_insufficient ;
+            sh:path ff:existing_workplace_measures_insufficient ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;        
@@ -438,6 +438,39 @@ ff:workhours_per_week a ff:DataField ;
             sh:path ff:workhours_per_week ;
             sh:datatype xsd:integer ;
             sh:minInclusive 0 ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:business_plan a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Geschäftsplan"@de , "Business plan"@en ;
+    schema:question "Haben Sie einen Geschäftsplan erstellt?"@de , "Have you created a business plan?"@en ;
+    rdfs:comment "Ein Geschäftsplan ist ein Dokument, das die Ziele, Strategien und Rahmenbedingungen einer Unternehmung beschreibt und dabei insbesondere darlegt, wie die wirtschaftliche Tragfähigkeit des Vorhabens sichergestellt wird."@de ,
+        "A business plan is a document that outlines the goals, strategies, and conditions of a business venture, particularly detailing how the economic viability of the project will be ensured."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:business_plan ;
+        sh:property [
+            sh:path ff:business_plan ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:self_employment_secures_livelihood a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Wirtschaftliche Tragfähigkeit der Selbstständigkeit"@de , "Economic viability of self-employment"@en ;
+    schema:question "Dient die Selbständigkeit zur Sicherung der wirtschaftlichen Lebensgrundlage??"@de , 
+        "Is the self-employment intended to secure your economic livelihood?"@en ;
+    rdfs:comment "Die wirtschaftliche Tragfähigkeit bedeutet, dass Ihr selbstständiges Vorhaben so gestaltet ist, dass es langfristig finanziell erfolgreich sein kann."@de ,
+        "Economic viability means that your self-employment project is designed to be financially successful in the long term."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:self_employment_secures_livelihood ;
+        sh:property [
+            sh:path ff:self_employment_secures_livelihood ;
+            sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
     ] .
