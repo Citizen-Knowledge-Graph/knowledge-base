@@ -25,18 +25,14 @@ ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
     sh:property [ sh:path ff:has_confirmed_addiction ; sh:in (true) ] ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:in (true) ] ;
     sh:property [
-        sh:or (
-            [ sh:property [ sh:path ff:sobriety_wish ; sh:in (true) ] ]
+        sh:and (
+            [ sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ]
             [
-                sh:and (
-                    [ sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ]
-                    [
-                        sh:or (
-                            [ sh:property [ sh:path ff:has_severe_disease ; sh:in (true) ] ]
-                            [ sh:property [ sh:path ff:pregnant ; sh:in (false) ] ]
-                            [ sh:property [ sh:path ff:recent_birth ; sh:in (false) ] ]
-                        )
-                    ]
+                sh:or (
+                    [ sh:property [ sh:path ff:sobriety_wish ; sh:in (true) ] ]
+                    [ sh:property [ sh:path ff:has_severe_disease ; sh:in (true) ] ]
+                    [ sh:property [ sh:path ff:pregnant ; sh:in (false) ] ]
+                    [ sh:property [ sh:path ff:recent_birth ; sh:in (false) ] ]
                 )
             ]
         )
@@ -48,7 +44,6 @@ ff:substitutionstherapieRegulaerFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property ff:baseRequirements ;
-    sh:property ff:ageRequirementsPS ;
     sh:property ff:severeDeseaseRequirementsPS ;
     sh:property ff:pregancyRequirementsPS .
 
@@ -57,24 +52,11 @@ ff:baseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:sobriety_wish ; sh:minCount 1 ] .
 
-ff:ageRequirementsPS a sh:PropertyShape ;
+ff:severeDeseaseRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [ 
             shn:eq ( [ sh:path ff:sobriety_wish ] false ) 
         ]
-    ] ;
-    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] .
-
-ff:severeDeseaseRequirementsPS a sh:PropertyShape ;
-    sh:deactivated [
-        sh:or (
-            [ sh:not [ 
-                shn:eq ( [ sh:path ff:sobriety_wish ] false )
-            ] ]
-            [ sh:not [
-                sh:path ff:hasAge ; sh:minInclusive 18
-            ] ]
-        )
     ] ;
     sh:property [ sh:path ff:has_severe_disease ; sh:minCount 1 ] .
 
