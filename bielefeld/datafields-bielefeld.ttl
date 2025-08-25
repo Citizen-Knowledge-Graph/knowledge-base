@@ -6,11 +6,11 @@
 
 
 ff:registered_residence_country a ff:DataField ;
-    schema:category ff:persoenliche-angaben-df-kategorie;
-    rdfs:label "Land des Wohnsitzes"@de , "Country of main residence"@en ;
-    schema:question "In welchem Land haben Sie einen Wohnsitz?"@de , "In which country do you have a residence?"@en ;
-    rdfs:comment "Wo haben Sie Ihren Wohnsitz? Sie können mehrere Wohnsitze angeben, wenn Sie in mehreren Ländern wohnen."@de ,
-        "Where do you have your residence? You can specify multiple residences if you live in several countries."@en ;
+    schema:category ff:persoenliche-angaben-df-kategorie ;
+    rdfs:label "Land der Meldeadresse"@de , "Country of registered residence"@en ;
+    schema:question "In welchem Land sind Sie mit einer Meldeadresse gemeldet?"@de , "In which country is your residence officially registered?"@en ;
+    rdfs:comment "Es geht um das Land, in dem Sie eine offizielle Meldeadresse haben. Falls Sie in mehreren Ländern gemeldet sind, können Sie mehrere Adressen angeben."@de ,
+        "This refers to the country where your residence is officially registered. If you are registered in multiple countries, you may specify them all."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:registered_residence_country ;
@@ -470,6 +470,40 @@ ff:self_employment_secures_livelihood a ff:DataField ;
         sh:targetSubjectsOf ff:self_employment_secures_livelihood ;
         sh:property [
             sh:path ff:self_employment_secures_livelihood ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:primary_occupation_country a ff:DataField ;
+    schema:category ff:persoenliche-angaben-df-kategorie ;
+    rdfs:label "Land der Hauptbeschäftigung"@de , "Country of primary occupation"@en ;
+    schema:question "In welchem Land sind Sie hauptsächlich berufstätig?"@de , "In which country are you primarily employed?"@en ;
+    rdfs:comment "Die Angabe bezieht sich auf das Land, in dem der überwiegende Teil des Lebensunterhalts durch Arbeit oder selbständige Tätigkeit erzielt wird. Maßgeblich ist, wo das Haupteinkommen erwirtschaftet wird."@de ,
+        "This information refers to the country where the majority of livelihood is earned through employment or self-employment. The key factor is where the main income is generated."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:primary_occupation_country ;
+        sh:property [
+            sh:path ff:primary_occupation_country ;
+            sh:in (ff:primary_occupation_country-germany ff:primary_occupation_country-other) ;
+        ] ;
+    ] .
+ff:primary_occupation_country-germany a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germany"@en .
+ff:primary_occupation_country-other a ff:AnswerOption ; rdfs:label "Anderes Land"@de , "Other country"@en .
+
+ff:earnings_above_jaeg a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Einkommen über der JAEG"@de , "Income above the JAEG"@en ;
+    schema:question "Liegt Ihr Einkommen über der Jahresentgeltgrenze von 73.800 Euro brutto (JAEG)?"@de , 
+        "Is your income above the annual earnings threshold of 73,800 euros gross (JAEG)?"@en ;
+    rdfs:comment "Ab einem regelmäßigen Bruttojahresgehalt über 73 800 € gilt man ab 2025 als krankenversicherungsfrei, d. h. man kann zwischen der freiwilligen GKV und der PKV wählen."@de ,
+        "From a regular gross annual salary of over €73,800, one is considered exempt from compulsory health insurance as of 2025, meaning one can choose between voluntary statutory health insurance (GKV) and private health insurance (PKV)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:earnings_above_jaeg ;
+        sh:property [
+            sh:path ff:earnings_above_jaeg ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;

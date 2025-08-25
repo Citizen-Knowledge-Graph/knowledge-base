@@ -336,10 +336,17 @@ ff:krankenversicherung a ff:DataField ;
         sh:targetSubjectsOf ff:krankenversicherung ;
         sh:property [
             sh:path ff:krankenversicherung ;
-            sh:datatype xsd:boolean ;
-            sh:maxCount 1 ;
+            sh:in (
+                ff:krankenversicherung-yes
+                ff:krankenversicherung-no
+                ff:krankenversicherung-unsure
+            )
         ] ;
     ] .
+ff:krankenversicherung-yes a ff:AnswerOption ; rdfs:label "Ja"@de , "Yes"@en .
+ff:krankenversicherung-no a ff:AnswerOption ; rdfs:label "Nein"@de , "No"@en .
+ff:krankenversicherung-unsure a ff:AnswerOption ; rdfs:label "Nicht sicher"@de , "Not sure"@en .
+
 
 ff:pflegeversicherung a ff:DataField ;
     schema:category ff:gesundheit-df-kategorie ;

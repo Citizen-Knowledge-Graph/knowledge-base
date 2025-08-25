@@ -37,7 +37,7 @@ ff:bafoegMainShape a sh:NodeShape ;
     sh:property [
         sh:path ff:krankenversicherung ;
         sh:minCount 1 ;
-        sh:in (true) ;
+        sh:in (ff:krankenversicherung-yes) ;
     ] ;
     sh:property [
         sh:path ff:pflegeversicherung ;
