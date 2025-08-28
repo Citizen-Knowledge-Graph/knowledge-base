@@ -9,7 +9,7 @@
 ff:geburtsdatum a ff:DataField ;
     schema:category ff:persoenliche-angaben-df-kategorie;
     rdfs:label "Geburtsdatum"@de , "Date of Birth"@en ;
-    schema:question "Wie lautet Ihr Geburtsdatum?"@de , "What is your date of birth?"@en ;
+    schema:question "Wann sind Sie Geburtsdatum?"@de , "What is your date of birth?"@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:geburtsdatum ;

@@ -24,17 +24,13 @@ ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
 
     sh:property [ sh:path ff:has_confirmed_addiction ; sh:in (true) ] ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:in (true) ] ;
+    sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ;
     sh:property [
-        sh:and (
-            [ sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ]
-            [
-                sh:or (
-                    [ sh:property [ sh:path ff:sobriety_wish ; sh:in (true) ] ]
-                    [ sh:property [ sh:path ff:has_severe_disease ; sh:in (true) ] ]
-                    [ sh:property [ sh:path ff:pregnant ; sh:in (false) ] ]
-                    [ sh:property [ sh:path ff:recent_birth ; sh:in (false) ] ]
-                )
-            ]
+        sh:or (
+            [ sh:property [ sh:path ff:sobriety_wish ; sh:in (true) ] ]
+            [ sh:property [ sh:path ff:has_severe_disease ; sh:in (true) ] ]
+            [ sh:property [ sh:path ff:pregnant ; sh:in (true) ] ]
+            [ sh:property [ sh:path ff:recent_birth ; sh:in (true) ] ]
         )
     ] .
     
@@ -44,27 +40,48 @@ ff:substitutionstherapieRegulaerFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property ff:baseRequirements ;
-    sh:property ff:severeDeseaseRequirementsPS ;
-    sh:property ff:pregancyRequirementsPS .
+    sh:property ff:sobrietyWishPS ;
+    sh:property ff:severeDiseasePS ;
+    sh:property ff:pregancyRequirementsPS ;
+    sh:property ff:recentBirthPS .
+
 
 ff:baseRequirements a sh:PropertyShape ;
-    sh:property [ sh:path ff:has_confirmed_addiction ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:has_opioid_addiction ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] .
+
+ff:sobrietyWishPS a sh:PropertyShape ;
+    sh:deactivated [
+        sh:not [
+            sh:and (
+                [ shn:eq ( [ sh:path ff:has_opioid_addiction ] true ) ]
+                [ shn:eq ( [ sh:path ff:has_medical_insurance ] true ) ]
+                [ sh:path ff:hasAge ; sh:minInclusive 18 ]
+        )]
+    ] ;
     sh:property [ sh:path ff:sobriety_wish ; sh:minCount 1 ] .
 
-ff:severeDeseaseRequirementsPS a sh:PropertyShape ;
+ff:severeDiseasePS a sh:PropertyShape ;
     sh:deactivated [
-        sh:not [ 
-            shn:eq ( [ sh:path ff:sobriety_wish ] false ) 
+        sh:not [
+            shn:eq ( [ sh:path ff:sobriety_wish ] false )
         ]
     ] ;
     sh:property [ sh:path ff:has_severe_disease ; sh:minCount 1 ] .
 
 ff:pregancyRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
-        sh:not [ 
+        sh:not [
             shn:eq ( [ sh:path ff:has_severe_disease ] false )
         ]
     ] ;
-    sh:property [ sh:path ff:pregnant ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:pregnant ; sh:minCount 1 ] .
+
+ff:recentBirthPS a sh:PropertyShape ;
+    sh:deactivated [
+        sh:not [
+            shn:eq ( [ sh:path ff:pregnant ] false )
+        ]
+    ] ;
     sh:property [ sh:path ff:recent_birth ; sh:minCount 1 ] .

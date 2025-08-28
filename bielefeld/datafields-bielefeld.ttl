@@ -217,8 +217,7 @@ ff:compulsory_contributions a ff:DataField ;
 ff:has_confirmed_addiction a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Bestätigte Sucht"@de , "Confirmed addiction"@en ;
-    schema:question "Leiden Sie an einer Sucht, die ärztlich bestätigt wurde?"@de ,
-        "Do you have an addiction that has been confirmed by a doctor or psychologist?"@en ;
+    schema:question "Leiden Sie an einer Suchterkrankung?"@de , "Do you suffer from an addiction?"@en ;
     rdfs:comment "Eine Sucht wird von einer Ärzt:in bestätigt, wenn mehrere eindeutige Anzeichen vorliegen – zum Beispiel, dass der Konsum nicht mehr kontrolliert werden kann, der Körper ohne die Substanz starke Beschwerden zeigt, ein sehr starkes Verlangen danach besteht und andere wichtige Dinge im Leben vernachlässigt werden."@de ,
         "An addiction is confirmed by a doctor or psychologist when there are multiple clear signs – for example, that consumption can no longer be controlled, the body shows severe discomfort without the substance, there is a very strong craving for it, and other important aspects of life are neglected."@en ;
     ff:hasShaclShape [
@@ -226,6 +225,22 @@ ff:has_confirmed_addiction a ff:DataField ;
         sh:targetSubjectsOf ff:has_confirmed_addiction ;
         sh:property [
             sh:path ff:has_confirmed_addiction ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:has_opioid_addiction a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Opioidabhängigkeit"@de , "Opioid addiction"@en ;
+    schema:question "Sind Sie abhängig von Opioiden?"@de , "Are you addicted to opioids?"@en ;
+    rdfs:comment "Opioide sind Substanzen, die Schmerzen lindern und ein Gefühl von Euphorie erzeugen können. Beispiele für Opioide sind Heroin, Morphin, Methadon und Buprenorphin."@de ,
+        "Opioids are substances that can relieve pain and create a feeling of euphoria. Examples of opioids include heroin, morphine, methadone, and buprenorphine."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:has_opioid_addiction ;
+        sh:property [
+            sh:path ff:has_opioid_addiction ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
@@ -250,7 +265,8 @@ ff:has_medical_insurance a ff:DataField ;
 ff:sobriety_wish a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Abstinenz Wunsch"@de , "Sobriety wish"@en ;
-    schema:question "Wünschen Sie, von Ihrer Sucht loszukommen?"@de , "Do you wish to overcome your addiction?"@en ;
+    schema:question "Ist es Ihr Ziel, in Ihrem Leben keine Opioide mehr zu nehmen?"@de , 
+        "Is it your goal to no longer use opioids in your life?"@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:sobriety_wish ;
@@ -264,7 +280,7 @@ ff:sobriety_wish a ff:DataField ;
 ff:has_severe_disease a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Schwere Erkrankung"@de , "Severe disease"@en ;
-    schema:question "Haben Sie eine schwere Krankheit, zum Beispiel Krebs, HIV, Hepatitis A oder Hepatitis C??"@de , 
+    schema:question "Haben Sie eine schwere Krankheit, zum Beispiel Krebs, HIV, Hepatitis A oder Hepatitis C?"@de , 
         "Do you have a severe disease, such as cancer, HIV, hepatitis A, or hepatitis C?"@en ;
     rdfs:comment "Eine schwere Erkrankung ist eine Krankheit, die erhebliche Auswirkungen auf Ihre Gesundheit und Lebensqualität hat."@de ,
         "A severe disease is an illness that has significant effects on your health and quality of life."@en ;
@@ -337,11 +353,28 @@ ff:addiction_damage a ff:DataField ;
         ] ;        
     ] .
 
+ff:substitutiontherapy_regular_6months a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Reguläre Substitutionstherapie von mindestens 6 Monaten"@de , "Regular substitution therapy of at least 6 months"@en ;
+    schema:question "Waren Sie bereits in Ihrem Leben mindestens 6 Monate in einer Substitutionstherapie?"@de ,
+        "Have you already been in substitution therapy for at least 6 months in your life?"@en ;
+    rdfs:comment "Eine Substitutionstherapie ist eine medizinische Behandlung, bei der Opioide (zum Beispiel Heroin) durch andere, länger wirkende und weniger schädliche Substanzen (zum Beispiel Methadon oder Buprenorphin) ersetzt werden."@de ,
+        "Substitution therapy is a medical treatment in which opioids (for example, heroin) are replaced by other, longer-acting and less harmful substances (for example, methadone or buprenorphine)."@en ;        
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:substitutiontherapy_regular_6months ;
+        sh:property [
+            sh:path ff:substitutiontherapy_regular_6months ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
 ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Erfolglose Substitutionstherapie"@de, "Unsuccessful substitution therapy"@en ;
-    schema:question "Hat eine reguläre Substitutionstherapie bei Ihnen bisher nicht geholfen?"@de ,
-        "Has regular substitution therapy not helped you so far?"@en ;
+    schema:question "War die letzte oder aktuelle Substitutionstherapie erfolglos?"@de , 
+        "Was your last or current substitution therapy unsuccessful?"@en ;
     rdfs:comment "Das bedeutet, dass Sie schon an einer Behandlung mit Substitutionsmitteln (zum Beispiel Methadon oder Buprenorphin) teilgenommen haben, diese aber Ihre Probleme nicht ausreichend verbessert hat."@de ,
         "This means you have already taken part in treatment with substitution medicines (for example, methadone or buprenorphine), but it has not improved your problems enough."@en ;        
     ff:hasShaclShape [
