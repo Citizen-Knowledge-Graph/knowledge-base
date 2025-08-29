@@ -233,7 +233,7 @@ ff:has_confirmed_addiction a ff:DataField ;
 ff:has_opioid_addiction a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Opioidabhängigkeit"@de , "Opioid addiction"@en ;
-    schema:question "Sind Sie abhängig von Opioiden?"@de , "Are you addicted to opioids?"@en ;
+    schema:question "Liegt bei Ihnen eine ärztlich anerkannte Opioid-Abhängigkeitserkrankung vor?"@de , "Do you have a medically recognized opioid addiction?"@en , "Sind Sie abhängig von Opioiden und wurde diese Abhängigkeit von einem Arzt oder einer Ärztin bestätigt?"@de-x-es ;
     rdfs:comment "Opioide sind Substanzen, die Schmerzen lindern und ein Gefühl von Euphorie erzeugen können. Beispiele für Opioide sind Heroin, Morphin, Methadon und Buprenorphin."@de ,
         "Opioids are substances that can relieve pain and create a feeling of euphoria. Examples of opioids include heroin, morphine, methadone, and buprenorphine."@en ;
     ff:hasShaclShape [
