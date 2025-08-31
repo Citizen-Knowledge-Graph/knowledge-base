@@ -233,9 +233,8 @@ ff:has_confirmed_addiction a ff:DataField ;
 ff:has_opioid_addiction a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Opioidabhängigkeit"@de , "Opioid addiction"@en ;
-    schema:question "Liegt bei Ihnen eine ärztlich anerkannte Opioid-Abhängigkeitserkrankung vor?"@de , "Do you have a medically recognized opioid addiction?"@en , "Sind Sie abhängig von Opioiden und wurde diese Abhängigkeit von einem Arzt oder einer Ärztin bestätigt?"@de-x-es ;
-    rdfs:comment "Opioide sind Substanzen, die Schmerzen lindern und ein Gefühl von Euphorie erzeugen können. Beispiele für Opioide sind Heroin, Morphin, Methadon und Buprenorphin."@de ,
-        "Opioids are substances that can relieve pain and create a feeling of euphoria. Examples of opioids include heroin, morphine, methadone, and buprenorphine."@en ;
+    schema:question "Liegt bei Ihnen eine ärztlich anerkannte Opioid-Abhängigkeitserkrankung vor?"@de , "Sind Sie abhängig von Opioiden und wurde diese Abhängigkeit von einem Arzt oder einer Ärztin bestätigt?"@de-x-es , "Do you have a medically recognized opioid addiction?"@en ;
+    rdfs:comment "Eine Substitutionstherapie ist eine Therapieform, die nur bei Personen mit einer Opioidabhängigkeit vermittelt wird."@de , "Eine Substitutionstherapie ist nur für Menschen mit einer Abhängigkeit von Opioiden."@de-x-es , "Substitution therapy is a form of treatment that is only provided to individuals with opioid dependence."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:has_opioid_addiction ;
@@ -249,9 +248,8 @@ ff:has_opioid_addiction a ff:DataField ;
 ff:has_medical_insurance a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Krankenversicherung"@de , "Health insurance"@en ;
-    schema:question "Haben Sie eine Krankenversicherung?"@de , "Do you have health insurance?"@en ;
-    rdfs:comment "Eine Krankenversicherung ist notwendig, um medizinische Behandlungen und Therapien zu erhalten. Sie kann gesetzlich oder privat sein."@de ,
-        "Health insurance is necessary to receive medical treatments and therapies. It can be statutory or private."@en ;
+    schema:question "Sind Sie krankenversichert?"@de , "Sind Sie krankenversichert?"@de-x-es , "Do you have health insurance?"@en ;
+    rdfs:comment "Die Kosten einer Substitutionstherapie können nur mit der Krankenkasse abgerechnet werden."@de , "Eine Substitutionstherapie kann nur die Krankenkasse bezahlen."@de-x-es , "The costs of substitution therapy can only be billed to the health insurance company."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:has_medical_insurance ;
@@ -265,8 +263,8 @@ ff:has_medical_insurance a ff:DataField ;
 ff:sobriety_wish a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Abstinenz Wunsch"@de , "Sobriety wish"@en ;
-    schema:question "Ist es Ihr Ziel, in Ihrem Leben keine Opioide mehr zu nehmen?"@de , 
-        "Is it your goal to no longer use opioids in your life?"@en ;
+    schema:question "Besteht bei Ihnen der Wunsch, abstinent von Opioiden, also vollkommen ohne Opioide zu leben?"@de , "Haben Sie den Wunsch, in Ihrem Leben keine Opioide mehr zu nehmen?"@de-x-es , "Do you wish to abstain from opioids, i.e., to live completely without opioids?"@en ;
+    rdfs:comment "Der Wille zur Abstinenz ist in der Regel ein Kriterium, unter dem eine Substitutionstherapie begonnen wird."@de , "Der Wille, keine Opioide zu nehmen, ist meistens eine Bedingung für die Substitutions-Therapie."@de-x-es , "The desire to abstain is usually a criterion for starting substitution therapy."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:sobriety_wish ;
@@ -280,10 +278,8 @@ ff:sobriety_wish a ff:DataField ;
 ff:has_severe_disease a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Schwere Erkrankung"@de , "Severe disease"@en ;
-    schema:question "Haben Sie eine schwere Krankheit, zum Beispiel Krebs, HIV, Hepatitis A oder Hepatitis C?"@de , 
-        "Do you have a severe disease, such as cancer, HIV, hepatitis A, or hepatitis C?"@en ;
-    rdfs:comment "Eine schwere Erkrankung ist eine Krankheit, die erhebliche Auswirkungen auf Ihre Gesundheit und Lebensqualität hat."@de ,
-        "A severe disease is an illness that has significant effects on your health and quality of life."@en ;
+    schema:question "Liegt bei Ihnen eine schwere Erkrankung neben der Opiatabhängigkeit vor, wie zum Beispiel Krebs, HIV, Hepatitis A, Hepatitis C?"@de , "Haben Sie eine schwere Krankheit neben der Opiat-Abhängigkeit? Zum Beispiel Krebs, HIV, Hepatitis A oder Hepatitis C?"@de-x-es , "Do you have a serious illness in addition to opioid dependence, such as cancer, HIV, hepatitis A, or hepatitis C?"@en ;
+    rdfs:comment "Eine schwere Krankheit neben der Abhängigkeit kann Einfluss darauf haben, ob eine Substitutionstherapie auch ohne Willen zur Abstinenz genehmigt wird."@de , "Eine schwere Krankheit neben der Abhängigkeit kann dafür sorgen, dass man auch ohne den Willen, keine Opioide zu nehmen, eine Substitutionstherapie bekommt."@de-x-es , "A serious illness in addition to addiction can influence whether substitution therapy is approved even without the desire for abstinence."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:has_severe_disease ;
