@@ -22,6 +22,7 @@ ff:substitutionstherapie-regulaer a ff:RequirementProfile ;
 ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
+    sh:property [ sh:path ff:has_opioid_addiction ; sh:in (true) ] ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:in (true) ] ;
     sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ;
     sh:property [
