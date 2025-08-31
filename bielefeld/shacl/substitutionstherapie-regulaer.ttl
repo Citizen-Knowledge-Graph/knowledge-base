@@ -46,7 +46,6 @@ ff:substitutionstherapieRegulaerFlowShape a sh:NodeShape ;
 
 
 ff:baseRequirements a sh:PropertyShape ;
-    sh:property [ sh:path ff:has_opioid_addiction ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:has_medical_insurance ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] .
 
@@ -54,7 +53,6 @@ ff:sobrietyWishPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:and (
-                [ shn:eq ( [ sh:path ff:has_opioid_addiction ] true ) ]
                 [ shn:eq ( [ sh:path ff:has_medical_insurance ] true ) ]
                 [ sh:path ff:hasAge ; sh:minInclusive 18 ]
         )]
