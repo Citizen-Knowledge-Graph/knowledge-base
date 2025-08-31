@@ -325,7 +325,8 @@ ff:recent_birth a ff:DataField ;
 ff:opioid_addiction_duration_2years a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Sucht seit mindestens 2 Jahren"@de , "Addiction for at least 2 years"@en ;
-    schema:question "Leiden Sie seit mindestens zwei Jahren an einer Sucht?"@de , "Have you been suffering from an addiction for at least two years?"@en ;
+    schema:question "Besteht Ihre Opioidabhängigkeit seit mehr als 2 Jahren?"@de , "Sind sie schon länger als 2 Jahre abhängig von Opioiden?"@de-x-es, "Have you been dependent on opioids for more than 2 years?"@en ;
+    rdfs:comment "Eine Therapie mit dem Wirkstoff Diamorphin kann nur genehmigt werden, wenn die Abhängigkeit seit mehr als 2 Jahren besteht."@de, "Eine Therapie mit Diamorphin kann nur genehmigt werden, wenn die Abhängigkeit schon länger als 2 Jahre besteht."@de-x-es, "Treatment with the active ingredient diamorphine can only be approved if the addiction has existed for more than two years."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:opioid_addiction_duration_2years ;
@@ -339,10 +340,8 @@ ff:opioid_addiction_duration_2years a ff:DataField ;
 ff:addiction_damage a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Suchtschäden"@de, "Addiction damage"@en ;
-    schema:question "Haben Sie große gesundheitliche, seelische oder soziale Probleme, weil Sie Opioide (zum Beispiel Heroin) konsumieren?"@de ,
-        "Do you have serious health, emotional, or social problems because you use opioids (for example, heroin)?"@en ;
-    rdfs:comment "Solche Probleme können zum Beispiel schlechte körperliche Gesundheit, Traurigkeit oder Angst, Streit mit Familie oder Freund:innen, Verlust der Arbeit oder Schwierigkeiten mit Wohnung oder Geld sein."@de ,
-        "Such problems can include poor physical health, feeling depressed or anxious, trouble with family or friends, losing your job, or difficulties with housing or money."@en ;        
+    schema:question "Weisen Sie erhebliche Defizite in medizinischer, psychologischer oder sozialer Hinsicht auf, die auf den Gebrauch von unerlaubt erworbenen Opioiden zurückzuführen sind?"@de , "Haben Sie große Probleme mit Ihrer Gesundheit, Ihrer Psyche oder in Ihrem sozialen Umfeld? Haben Sie diese Probleme, weil Sie illegale Opioide zu sich genommen haben?"@de-x-es , "Do you have significant medical, psychological, or social deficits attributable to the use of illicitly obtained opioids?"@en ;
+    rdfs:comment "Solche Probleme können zum Beispiel schlechte körperliche Gesundheit, Traurigkeit oder Angst, Streit mit Familie oder Freund:innen, Verlust der Arbeit oder Schwierigkeiten mit Wohnung oder Geld sein."@de , "Such problems can include poor physical health, feeling depressed or anxious, trouble with family or friends, losing your job, or difficulties with housing or money."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:addiction_damage ;
@@ -373,10 +372,8 @@ ff:substitutiontherapy_regular_6months a ff:DataField ;
 ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Erfolglose Substitutionstherapie"@de, "Unsuccessful substitution therapy"@en ;
-    schema:question "War die letzte oder aktuelle Substitutionstherapie erfolglos?"@de , 
-        "Was your last or current substitution therapy unsuccessful?"@en ;
-    rdfs:comment "Das bedeutet, dass Sie schon an einer Behandlung mit Substitutionsmitteln (zum Beispiel Methadon oder Buprenorphin) teilgenommen haben, diese aber Ihre Probleme nicht ausreichend verbessert hat."@de ,
-        "This means you have already taken part in treatment with substitution medicines (for example, methadone or buprenorphine), but it has not improved your problems enough."@en ;        
+    schema:question "Können Sie nachweisen, dass Sie bereits eine Substitutionstherapie zur Behandlung einer Opioidabhängigkeit über einen Zeitraum von 6 Monaten gemacht haben, welche sich als nicht geeignet oder erfolglos erwiesen hat?"@de , "Können Sie belegen, dass Sie schon eine Substitutionstherapie gegen eine Abhängigkeit von Opioiden gemacht haben, die mindestens 6 Monate gedauert hat und nicht geholfen hat?"@de-x-es , "Can you prove that you have already undergone substitution therapy for the treatment of opioid dependence for a period of 6 months, which proved to be unsuitable or unsuccessful?"@en ;
+    rdfs:comment "Bei einer Substitutionstherapie zur Behandlung einer Opioidabhängigkeit bekommen Betroffene ein Ersatzmedikament wie Methadon, Polamidon oder Buprenorphin. Wenn diese Behandlung mindestens 6 Monate lang durchgeführt wurde und sich als ungeeignet oder erfolglos erwiesen hat, gilt sie als nicht wirksam."@de , "In einer Substitutionstherapie gegen eine Abhängigkeit von Opioiden bekommen Menschen ein Ersatzmedikament. Beispiele sind Methadon, Polamidon oder Buprenorphin. Hat die Behandlung mindestens 6 Monate gedauert und nicht geholfen, gilt sie als erfolglos."@de-x-es , "In substitution therapy for the treatment of opioid dependence, patients are given a substitute medication such as methadone, polamidone, or buprenorphine. If this treatment has been carried out for at least 6 months and has proven to be unsuitable or unsuccessful, it is considered ineffective."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:substitutiontherapy_regular_unsuccessful ;
