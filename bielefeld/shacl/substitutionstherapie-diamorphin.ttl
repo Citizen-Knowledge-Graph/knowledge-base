@@ -32,7 +32,7 @@ ff:substitutionstherapieDiamorphinMainShape a sh:NodeShape ;
             [ sh:property [ sh:path ff:recent_birth ; sh:in (true) ] ]
         )
     ] ;
-    sh:property [ sh:path ff:addiction_duration_2years ; sh:in (true) ] ;
+    sh:property [ sh:path ff:opioid_addiction_duration_2years ; sh:in (true) ] ;
     sh:property [ sh:path ff:addiction_damage ; sh:in (true) ] ;
     sh:property [ sh:path ff:substitutiontherapy_regular_6months ; sh:in (true) ] ;
     sh:property [ sh:path ff:substitutiontherapy_regular_unsuccessful ; sh:in (true) ] .
@@ -103,12 +103,12 @@ ff:durationRequirementPS a sh:PropertyShape ;
             )
         ]
     ] ;
-    sh:property [ sh:path ff:addiction_duration_2years ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:opioid_addiction_duration_2years ; sh:minCount 1 ] .
 
 ff:addictionDamageRequirementPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            shn:eq ( [ sh:path ff:addiction_duration_2years ] true )
+            shn:eq ( [ sh:path ff:opioid_addiction_duration_2years ] true )
         ]
     ] ;
     sh:property [ sh:path ff:addiction_damage ; sh:minCount 1 ] .

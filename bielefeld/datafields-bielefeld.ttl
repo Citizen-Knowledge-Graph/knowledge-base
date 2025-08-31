@@ -322,15 +322,15 @@ ff:recent_birth a ff:DataField ;
         ] ;
     ] .
 
-ff:addiction_duration_2years a ff:DataField ;
+ff:opioid_addiction_duration_2years a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Sucht seit mindestens 2 Jahren"@de , "Addiction for at least 2 years"@en ;
     schema:question "Leiden Sie seit mindestens zwei Jahren an einer Sucht?"@de , "Have you been suffering from an addiction for at least two years?"@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:addiction_duration_2years ;
+        sh:targetSubjectsOf ff:opioid_addiction_duration_2years ;
         sh:property [
-            sh:path ff:addiction_duration_2years ;
+            sh:path ff:opioid_addiction_duration_2years ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;        
