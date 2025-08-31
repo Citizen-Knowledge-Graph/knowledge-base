@@ -1438,7 +1438,7 @@ ff:has_permit_for_outdoor_seating a ff:DataField ;
 ff:has_disability a ff:DataField ;
     schema:category ff:gesundheit-df-kategorie ;
     rdfs:label "Has Disability"@en, "Hat Behinderung"@de ;
-    schema:question "Do you have a disability?"@en, "Haben Sie eine Behinderung?"@de ;
+    schema:question "Liegt bei Ihnen eine anerkannte Behinderung vor?"@de , "Haben Sie eine Behinderung, die anerkannt ist?"@de-x-es , "Do you have a recognized disability?"@en ;
     rdfs:comment "Diese Frage hilft dabei, spezifische Fördermöglichkeiten oder Zuschüsse zu erfassen, die für Menschen mit Behinderungen verfügbar sind."@de,
                     "This question helps identify specific funding opportunities or grants available for individuals with disabilities."@en ;
     ff:hasShaclShape [

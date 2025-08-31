@@ -383,7 +383,7 @@ ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
 ff:requires_assistance a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Erheblicher Unterstützungsbedarf"@de , "Requires assistance"@en ;
-    schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de , "Do you require regular, substantial, and ongoing support to perform your work?"@en ;
+    schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de , "Brauchen Sie oft viel und immer wieder Unterstützung?"@de-x-es , "Do you require regular, substantial, and ongoing support to perform your work?"@en ;
     rdfs:comment "Das bedeutet, dass Sie über eine lange Zeit hinweg oft und in größerem Umfang Hilfe von anderen brauchen, um wichtige Dinge im Alltag oder bei der Arbeit erledigen zu können."@de ,
         "This means that you need frequent and significant help from others over a long period to manage important tasks in daily life or at work."@en ;
     ff:hasShaclShape [
@@ -399,8 +399,7 @@ ff:requires_assistance a ff:DataField ;
 ff:core_activity_independent a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Kernaktivität selbstständig"@de , "Core activity independent"@en ;
-    schema:question "Können Sie Ihre Kernaktivitäten Ihrer Arbeit ohne Hilfe erledigen?"@de ,
-        "Can you perform your core activities at work independently?"@en ;
+    schema:question "Können Sie die Kerntätigkeit Ihrer Arbeit ohne Hilfe erledigen?"@de , "Wird die Hauptarbeit selbstständig gemacht? Dann muss man nur bei anderen Arbeiten helfen."@de-x-es , "Can you perform the core tasks of your job without assistance?"@en ;
     rdfs:comment "Sie erledigen die wichtigste Aufgabe selbst und brauchen nur bei kleineren oder vorbereitenden Arbeiten Unterstützung."@de ,
         "You can perform the main task independently and only need support for smaller or preparatory tasks."@en ;
     ff:hasShaclShape [
