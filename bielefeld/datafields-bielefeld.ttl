@@ -512,6 +512,7 @@ ff:primary_occupation_country a ff:DataField ;
         sh:property [
             sh:path ff:primary_occupation_country ;
             sh:in (ff:primary_occupation_country-germany ff:primary_occupation_country-other) ;
+            sh:maxCount 1 ;
         ] ;
     ] .
 ff:primary_occupation_country-germany a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germany"@en .
