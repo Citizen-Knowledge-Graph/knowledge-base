@@ -432,8 +432,8 @@ ff:substitutiontherapy_regular_unsuccessful a ff:DataField ;
 ff:requires_assistance a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Erheblicher Unterstützungsbedarf"@de , "Requires assistance"@en ;
-    schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de , "Brauchen Sie oft viel und immer wieder Unterstützung?"@de-x-es , 
-        "Brauchen Sie regelmäßig viel und dauerhafte Hilfe, um Ihre Arbeit zu machen?"@de-x-es ,
+    schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de , 
+        "Brauchen Sie oft viel und immer wieder Unterstützung?"@de-x-es , 
         "Do you require regular, substantial, and ongoing support to perform your work?"@en ;
     rdfs:comment "Das bedeutet, dass Sie über eine lange Zeit hinweg oft und in größerem Umfang Hilfe von anderen brauchen, um wichtige Dinge im Alltag oder bei der Arbeit erledigen zu können."@de ,
         "Das heißt: Sie brauchen über eine längere Zeit oft und deutlich Hilfe von anderen. Nur so können Sie wichtige Dinge im Alltag oder bei der Arbeit schaffen."@de-x-es ,
@@ -467,20 +467,20 @@ ff:core_activity_independent a ff:DataField ;
         ] ;        
     ] .
 
-ff:existing_workplace_measures_insufficient a ff:DataField ;
+ff:existing_workplace_measures_sufficient a ff:DataField ;
     schema:category ff:gesundheit-pflege-df-kategorie ;
     rdfs:label "Vorhandene Arbeitsplatzgestaltung unzureichend"@de , "Existing workplace design insufficient"@en ;
-    schema:question "Ist die vorhandene behindertengerechte Gestaltung Ihres Arbeitsplatzes nicht ausreichend, um Ihre Arbeit zu ermöglichen?"@de ,
-        "Reicht die behindertengerechte Ausstattung an Ihrem Arbeitsplatz nicht aus, damit Sie arbeiten können?"@de-x-es ,
-        "Is the existing disability-friendly design of your workplace insufficient to enable you to work?"@en ;
+    schema:question "Ist die vorhandene behindertengerechte Gestaltung Ihres Arbeitsplatzes ausreichend, um Ihre Arbeit zu ermöglichen?"@de ,
+        "Reicht die behindertengerechte Ausstattung an Ihrem Arbeitsplatz aus, damit Sie arbeiten können?"@de-x-es ,
+        "Is the existing disability-friendly design of your workplace sufficient to enable you to work?"@en ;
     rdfs:comment "Bestehende Anpassungen können zum Beispiel ein höhenverstellbarer Schreibtisch, eine Rampe oder ein Bildschirmlesegerät sein."@de ,
         "Beispiele sind: ein Schreibtisch, den man hoch und runter stellen kann, eine Rampe oder ein Gerät zum Vorlesen am Bildschirm."@de-x-es ,
         "Existing adjustments can include a height-adjustable desk, a ramp, or a screen reader."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:existing_workplace_measures_insufficient ;
+        sh:targetSubjectsOf ff:existing_workplace_measures_sufficient ;
         sh:property [
-            sh:path ff:existing_workplace_measures_insufficient ;
+            sh:path ff:existing_workplace_measures_sufficient ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;        

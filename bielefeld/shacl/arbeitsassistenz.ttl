@@ -37,7 +37,7 @@ ff:arbeitsassistenzMainShape a sh:NodeShape ;
     ] ;
     sh:property [ sh:path ff:requires_assistance ; sh:in (true) ] ;
     sh:property [ sh:path ff:core_activity_independent ; sh:in (true) ] ;
-    sh:property [ sh:path ff:existing_workplace_measures_insufficient ; sh:in (true) ] ;
+    sh:property [ sh:path ff:existing_workplace_measures_sufficient ; sh:in (false) ] ;
     sh:property [
         sh:or (
             [ sh:property ff:inclusiveWorkplacePS ]            
@@ -98,9 +98,10 @@ ff:degreeEvaluatedPS a sh:PropertyShape ;
 
 ff:jobRiskPS a sh:PropertyShape ;
     sh:deactivated [
-        sh:not [
-            sh:path ff:disability_degree; sh:minInclusive 30 ; sh:maxInclusive 49 
-        ]
+        sh:or (
+            [ sh:path ff:disability_degree ; sh:maxInclusive 49 ]
+            [ sh:path ff:disability_degree ; sh:minInclusive 30 ]
+        )
     ] ;
     sh:property [ sh:path ff:job_at_risk_without_equal_status ; sh:minCount 1 ] .
     
@@ -122,7 +123,7 @@ ff:insufficientWorkplacePS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:requires_assistance ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:core_activity_independent ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:existing_workplace_measures_insufficient ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:existing_workplace_measures_sufficient ; sh:minCount 1 ] .
 
 ff:workplaceRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
@@ -130,7 +131,7 @@ ff:workplaceRequirementsPS a sh:PropertyShape ;
             sh:and (
                 shn:eq ( [ sh:path ff:requires_assistance ] true ) 
                 shn:eq ( [ sh:path ff:core_activity_independent ] true )
-                shn:eq ( [ sh:path ff:existing_workplace_measures_insufficient ] true )
+                shn:eq ( [ sh:path ff:existing_workplace_measures_sufficient ] false )
             )  
         ]
     ] ;
