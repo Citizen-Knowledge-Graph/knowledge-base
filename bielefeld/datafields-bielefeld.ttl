@@ -170,9 +170,9 @@ ff:open_market_hours a ff:DataField ;
         ] ;
     ] .
 
-ff:open_market_hours-3hours a ff:AnswerOption ; rdfs:label "Höchstens 3 Stunden"@de , 
-    "Bis zu 3 Stunden"@de-x-es ,
-    "At most 3 hours"@en .
+ff:open_market_hours-3hours a ff:AnswerOption ;
+    rdfs:label "Höchstens 3 Stunden"@de , "Bis zu 3 Stunden"@de-x-es , "At most 3 hours"@en ;
+    rdfs:comment "[dev] Hier eine Erklärung zu dieser Antwortoption"@de , "[dev] Here is an explanation of this answer option"@en .
 ff:open_market_hours-6hours a ff:AnswerOption ; rdfs:label "Höchstens 6 Stunden"@de , 
     "Bis zu 6 Stunden"@de-x-es ,
     "At most 6 hours"@en .
