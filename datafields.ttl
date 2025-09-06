@@ -1371,6 +1371,7 @@ ff:residence_city a ff:DataField ;
                 ff:residence_city-hamburg
                 ff:residence_city-braunschweig
                 ff:residence_city-wolfenbuettel
+                ff:residence_city-bielefeld
                 ff:residence_city-other
             ) ;
             sh:maxCount 1 ;
@@ -1380,6 +1381,7 @@ ff:residence_city-berlin a ff:AnswerOption ; rdfs:label "Berlin"@en, "Berlin"@de
 ff:residence_city-hamburg a ff:AnswerOption ; rdfs:label "Hamburg"@en, "Hamburg"@de .
 ff:residence_city-braunschweig a ff:AnswerOption ; rdfs:label "Braunschweig"@en, "Braunschweig"@de .
 ff:residence_city-wolfenbuettel a ff:AnswerOption ; rdfs:label "Wolfenbüttel"@en, "Wolfenbüttel"@de .
+ff:residence_city-bielefeld a ff:AnswerOption ; rdfs:label "Bielefeld"@en, "Bielefeld"@de .
 ff:residence_city-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
 
 ff:is_in_need a ff:DataField ;
