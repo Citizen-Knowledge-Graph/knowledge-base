@@ -10,18 +10,21 @@ const debug = true
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
 const SHACL_DIR_1 = `${ROOT}/shacl`
 const SHACL_DIR_2 = `${ROOT}/beta`
-const DATAFIELDS_FILE = `${ROOT}/datafields.ttl`
+const SHACL_DIR_3 = `${ROOT}/bielefeld/shacl`
+const DATAFIELDS_FILE_1 = `${ROOT}/datafields.ttl`
+const DATAFIELDS_FILE_2 = `${ROOT}/bielefeld/datafields-bielefeld.ttl`
 const CONSISTENCY_FILE = `${ROOT}/consistency.ttl` // TODO
 const DEFINITIONS_FILE = `${ROOT}/definitions.ttl` // TODO
 const MATERIALIZATION_FILE = `${ROOT}/materialization.ttl`
 
 describe("Turtle files integrity", function () {
-    let turtleFiles = [ DATAFIELDS_FILE, MATERIALIZATION_FILE ]
+    let turtleFiles = [ DATAFIELDS_FILE_1, DATAFIELDS_FILE_2, MATERIALIZATION_FILE ]
 
     before(async function () {
         try {
             turtleFiles = turtleFiles.concat((await fsPromise.readdir(SHACL_DIR_1)).map(file => `${SHACL_DIR_1}/${file}`))
             turtleFiles = turtleFiles.concat((await fsPromise.readdir(SHACL_DIR_2)).map(file => `${SHACL_DIR_2}/${file}`))
+            turtleFiles = turtleFiles.concat((await fsPromise.readdir(SHACL_DIR_3)).map(file => `${SHACL_DIR_3}/${file}`))
         } catch (error) {
             throw new Error(`Failed to collect turtle files: ${error.message}`)
         }
@@ -104,7 +107,9 @@ describe("Content-related tests on Turtle files", function () {
             }
             for (const file of (await fsPromise.readdir(SHACL_DIR_1))) datasets.shacl[file] = await buildDs(`${SHACL_DIR_1}/${file}`)
             for (const file of (await fsPromise.readdir(SHACL_DIR_2))) datasets.shacl[file] = await buildDs(`${SHACL_DIR_2}/${file}`)
-            datasets.datafields = await buildDs(DATAFIELDS_FILE)
+            for (const file of (await fsPromise.readdir(SHACL_DIR_3))) datasets.shacl[file] = await buildDs(`${SHACL_DIR_3}/${file}`)
+            datasets.datafields = await buildDs(DATAFIELDS_FILE_1)
+            // TODO
             datasets.materialization = await buildDs(MATERIALIZATION_FILE)
         } catch (error) {
             throw new Error(`Failed to read file contents: ${error.message}`)
@@ -115,6 +120,13 @@ describe("Content-related tests on Turtle files", function () {
         strictEqual(Object.keys(datasets.shacl).length > 0, true, "No SHACL files found")
         strictEqual(Object.keys(datasets.datafields).length > 0, true, "Datafields file is empty")
         strictEqual(Object.keys(datasets.materialization).length > 0, true, "Materialization file is empty")
+    })
+
+    describe.skip("Assertions on all turtle files", function () {
+        describe("All language strings must to be available in @de and @en", function () {
+            // --> objects of: rdfs:label, schema:question, rdfs:comment, ff:title, ff:benefitInfo, ff:ineligibleGeneralExplanation
+            // TODO
+        })
     })
 
     describe.skip("Assertions on datafields", function () {
