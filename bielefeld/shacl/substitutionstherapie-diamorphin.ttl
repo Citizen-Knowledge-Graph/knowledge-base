@@ -13,6 +13,7 @@ ff:substitutionstherapie-diamorphin a ff:RequirementProfile ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "Die diamorphingestützte Therapie ist eine besondere Form der Behandlung für Menschen, die stark von Heroin abhängig sind und bei denen andere Therapien nicht geholfen haben."@de ,
         "Diamorphine-assisted therapy is a special form of treatment for people who are heavily dependent on heroin and for whom other therapies have not helped."@en ;
+    ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
     ff:hasMainShape ff:substitutionstherapieDiamorphinMainShape ;
     ff:hasFlowShape ff:substitutionstherapieDiamorphinFlowShape .
 

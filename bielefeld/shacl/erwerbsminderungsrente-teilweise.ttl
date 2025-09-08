@@ -14,6 +14,7 @@ ff:erwerbsminderungsrente-teilweise a ff:RequirementProfile ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "Die Rente wegen teilweiser Erwerbsminderung ist eine Leistung der gesetzlichen Rentenversicherung für Versicherte, die aufgrund von Krankheit oder Behinderung nicht mehr in der Lage sind, vollständig am allgemeinen Arbeitsmarkt erwerbstätig zu sein."@de ,
         "The pension for partial disability is a benefit of the statutory pension insurance for insured persons who, due to illness or disability, are no longer able to work fully in the general labor market."@en ;
+    ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
     ff:hasMainShape ff:erwerbsminderungsrenteTeilweiseMainShape ;
     ff:hasFlowShape ff:erwerbsminderungsrenteTeilweiseFlowShape .
 

@@ -14,6 +14,7 @@ ff:arbeitsassistenz a ff:RequirementProfile ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "Arbeitsassistenz ist eine Unterstützung für Menschen mit Behinderungen, bei der eine Hilfsperson am Arbeitsplatz notwendige Tätigkeiten übernimmt, um die Ausübung der beruflichen Aufgaben zu ermöglichen oder zu erleichtern."@de ,
                 "Job assistance is a support for people with disabilities, where an assistant at the workplace takes over necessary tasks to enable or facilitate the performance of professional duties."@en ;
+    ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
     ff:hasMainShape ff:arbeitsassistenzMainShape ;
     ff:hasFlowShape ff:arbeitsassistenzFlowShape .
 

@@ -14,6 +14,7 @@ ff:erwerbsminderungsrente-voll a ff:RequirementProfile ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "Die Rente wegen voller Erwerbsminderung ist eine Leistung der gesetzlichen Rentenversicherung für Versicherte, die aufgrund von Krankheit oder Behinderung dauerhaft nicht mehr in der Lage sind, am allgemeinen Arbeitsmarkt erwerbstätig zu sein."@de ,
         "The pension for full disability is a benefit of the statutory pension insurance for insured persons who, due to illness or disability, are permanently unable to work in the general labor market."@en ;
+    ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
     ff:hasMainShape ff:erwerbsminderungsrenteVollMainShape ;
     ff:hasFlowShape ff:erwerbsminderungsrenteVollFlowShape .
 

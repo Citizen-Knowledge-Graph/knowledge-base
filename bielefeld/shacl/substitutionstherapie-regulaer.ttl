@@ -14,6 +14,7 @@ ff:substitutionstherapie-regulaer a ff:RequirementProfile ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "Substitutionstherapie ist eine medizinische Behandlung für Menschen mit einer Abhängigkeit von Opioiden, die darauf abzielt, die Gesundheit zu stabilisieren und Rückfälle zu verhindern."@de ,
         "Substitution therapy is a medical treatment for people with an opioid addiction, aimed at stabilizing health and preventing relapses."@en ;
+    ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
     ff:hasMainShape ff:substitutionstherapieRegulaerMainShape ;
     ff:hasFlowShape ff:substitutionstherapieRegulaerFlowShape .
 

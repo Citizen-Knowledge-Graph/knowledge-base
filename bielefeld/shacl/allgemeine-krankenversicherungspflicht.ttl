@@ -14,6 +14,7 @@ ff:allgemeine-krankenversicherungspflicht a ff:RequirementProfile ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "In Deutschland besteht eine allgemeine Krankenversicherungspflicht: Jeder mit Wohnsitz oder gewöhnlichem Aufenthalt muss versichert sein, entweder in der gesetzlichen (GKV) oder der privaten Krankenversicherung (PKV). Welche Absicherung gilt, hängt von der Lebenssituation ab; bei Unklarheiten hilft die Clearingstelle weiter."@de ,
                 "In Germany, there is a general health insurance obligation: Everyone with a residence or habitual abode must be insured, either in statutory health insurance (GKV) or private health insurance (PKV). The type of coverage depends on the life situation; in case of uncertainties, the clearing office can assist."@en ;
+    ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
     ff:hasMainShape ff:allgemeine-krankenversicherungspflichtMainShape ;
     ff:hasFlowShape ff:allgemeine-krankenversicherungspflichtFlowShape .
 
