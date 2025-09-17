@@ -1,0 +1,243 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ff: <https://foerderfunke.org/default#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+# general
+
+ff:careNeed a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Pflegebedürftigkeit"@de , "Need for Care"@en ;
+    schema:question "Sind Sie pflegebedürftig?"@de , "Are you in need of care?"@en ;
+    rdfs:comment "Pflegebedürftig sind Personen, die wegen gesundheitlicher Einschränkungen in erheblichem oder vollständigem Maß auf Hilfe bei den Verrichtungen des täglichen Lebens angewiesen sind. Die Feststellung erfolgt nach den Regelungen des Elften Buches Sozialgesetzbuch (SGB XI)."@de ,
+                 "A person is considered in need of care if, due to health impairments, they require substantial or complete assistance with activities of daily living. The determination is made according to the German Social Code, Book XI (SGB XI)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:careNeed ;
+        sh:property [
+            sh:path ff:careNeed ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:disability a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Behinderung"@de , "Disability"@en ;
+    schema:question "Haben Sie eine Behinderung?"@de , "Do you have a disability?"@en ;
+    rdfs:comment "Als Menschen mit Behinderung gelten Personen, deren körperliche Funktion, geistige Fähigkeit oder seelische Gesundheit mit hoher Wahrscheinlichkeit länger als sechs Monate von dem für das Lebensalter typischen Zustand abweicht und die daher in ihrer Teilhabe am Leben in der Gesellschaft beeinträchtigt sind (§ 2 SGB IX)."@de ,
+                 "Persons are considered to have a disability if their physical function, mental ability, or psychological health deviates from the typical state for their age for more than six months and thus impairs their participation in society (§ 2 German Social Code, Book IX)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:disability ;
+        sh:property [
+            sh:path ff:disability ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:addictionDisorder a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Suchterkrankung"@de , "Addiction Disorder"@en ;
+    schema:question "Leiden Sie an einer Suchterkrankung?"@de , "Do you have an addiction disorder?"@en ;
+    rdfs:comment "Eine Suchterkrankung bezeichnet eine anhaltende Abhängigkeit oder einen schädlichen Gebrauch von Substanzen, zum Beispiel Alkohol, illegale Drogen oder Medikamente, oder eine nicht stoffgebundene Abhängigkeit, zum Beispiel Glücksspiel. Die Diagnose erfolgt in der Regel durch eine ärztliche oder psychotherapeutische Fachperson."@de ,
+                 "An addiction disorder refers to a persistent dependence or harmful use of substances, for example alcohol, illicit drugs or medications, or a non substance related addiction, for example gambling. The diagnosis is usually made by a medical or psychotherapeutic professional."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:addictionDisorder ;
+        sh:property [
+            sh:path ff:addictionDisorder ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:pregnancy a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Schwangerschaft"@de , "Pregnancy"@en ;
+    schema:question "Sind Sie schwanger?"@de , "Are you pregnant?"@en ;
+    rdfs:comment "Die Frage erfasst, ob aktuell eine Schwangerschaft besteht."@de ,
+                 "This question asks whether a pregnancy currently exists."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:pregnancy ;
+        sh:property [
+            sh:path ff:pregnancy ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:recentChildbirth a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Kürzliche Geburt"@de , "Recent Childbirth"@en ;
+    schema:question "Haben Sie vor kurzem ein Kind geboren?"@de , "Have you recently given birth to a child?"@en ;
+    rdfs:comment "Die Frage erfasst, ob eine Person in jüngerer Vergangenheit ein Kind geboren hat. Eine genauere zeitliche Eingrenzung kann je nach Kontext erforderlich sein, zum Beispiel die letzten sechs oder zwölf Monate."@de ,
+                 "This question captures whether a person has given birth to a child in the recent past. A more precise time frame may be required depending on the context, for example within the last six or twelve months."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:recentChildbirth ;
+        sh:property [
+            sh:path ff:recentChildbirth ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:severeDisease a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Schwere Erkrankung"@de , "Severe Disease"@en ;
+    schema:question "Liegt bei Ihnen eine schwere Erkrankung vor, wie zum Beispiel Krebs, HIV, Hepatitis A oder Hepatitis C?"@de ,
+                    "Do you have a severe disease, such as cancer, HIV, hepatitis A or hepatitis C?"@en ;
+    rdfs:comment "Schwere Erkrankungen sind insbesondere lebensbedrohliche oder chronische Krankheiten, wie zum Beispiel Krebs, HIV oder Virushepatitis."@de ,
+                 "Severe diseases are particularly life-threatening or chronic illnesses, such as cancer, HIV, or viral hepatitis."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:severeDisease ;
+        sh:property [
+            sh:path ff:severeDisease ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+# specific
+
+ff:reducedEarningCapacityBySpecialCause a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Erwerbsminderung durch besondere Ursache"@de , "Reduced Earning Capacity by Special Cause"@en ;
+    schema:question "Ist Ihre Erwerbsminderung durch einen Arbeitsunfall, eine Berufskrankheit, einen Unfall im Wehr- oder Freiwilligendienst, einen Impfschaden oder durch Gewalt entstanden?"@de ,
+                    "Was your reduced earning capacity caused by an occupational accident, an occupational disease, an accident during military or voluntary service, a vaccine injury, or by violence?"@en ;
+    rdfs:comment "Diese Frage bezieht sich auf spezifische anerkannte Ursachen einer Erwerbsminderung, darunter Arbeitsunfall, Berufskrankheit, Unfall im Wehr- oder Freiwilligendienst, Impfschaden und Gewalt (§§ SGB VII, OEG, IfSG)."@de ,
+                 "This question refers to specific recognized causes of reduced earning capacity, including occupational accident, occupational disease, accident during military or voluntary service, vaccine injury, and violence (according to the German Social Code, Book VII, Crime Victims Compensation Act, and Infection Protection Act)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:reducedEarningCapacityBySpecialCause ;
+        sh:property [
+            sh:path ff:reducedEarningCapacityBySpecialCause ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:disabilityDegreeDetermined a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Feststellung des Grades der Behinderung"@de , "Determination of Disability Degree"@en ;
+    schema:question "Wurde der Grad Ihrer Behinderung bereits festgestellt?"@de ,
+                    "Has the degree of your disability already been determined?"@en ;
+    rdfs:comment "Der Grad der Behinderung (GdB) wird in Deutschland von den zuständigen Versorgungsämtern oder anderen zuständigen Behörden festgestellt und in Zehnerschritten von 20 bis 100 angegeben (§ 152 SGB IX)."@de ,
+                 "The degree of disability (GdB) in Germany is determined by the competent pension offices or other authorities and is specified in increments of ten from 20 to 100 (§ 152 German Social Code, Book IX)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:disabilityDegreeDetermined ;
+        sh:property [
+            sh:path ff:disabilityDegreeDetermined ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:disabilityDegree a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Grad der Behinderung"@de , "Degree of Disability"@en ;
+    schema:question "Wie hoch ist der Grad Ihrer Behinderung?"@de , "What is the degree of your disability?"@en ;
+    rdfs:comment "Der Grad der Behinderung (GdB) wird in Deutschland von den zuständigen Behörden festgestellt. Er wird in Zehnerschritten zwischen 20 und 100 angegeben (§ 152 SGB IX)."@de ,
+                 "The degree of disability (GdB) is determined in Germany by the competent authorities. It is specified in increments of ten between 20 and 100 (§ 152 German Social Code, Book IX)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:disabilityDegree ;
+        sh:property [
+            sh:path ff:disabilityDegree ;
+            sh:in (
+                ff:disabilityDegree-20
+                ff:disabilityDegree-30
+                ff:disabilityDegree-40
+                ff:disabilityDegree-50
+                ff:disabilityDegree-60
+                ff:disabilityDegree-70
+                ff:disabilityDegree-80
+                ff:disabilityDegree-90
+                ff:disabilityDegree-100
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+ff:disabilityDegree-20 a ff:AnswerOption ; rdfs:label "20"@de , "20"@en .
+ff:disabilityDegree-30 a ff:AnswerOption ; rdfs:label "30"@de , "30"@en .
+ff:disabilityDegree-40 a ff:AnswerOption ; rdfs:label "40"@de , "40"@en .
+ff:disabilityDegree-50 a ff:AnswerOption ; rdfs:label "50"@de , "50"@en .
+ff:disabilityDegree-60 a ff:AnswerOption ; rdfs:label "60"@de , "60"@en .
+ff:disabilityDegree-70 a ff:AnswerOption ; rdfs:label "70"@de , "70"@en .
+ff:disabilityDegree-80 a ff:AnswerOption ; rdfs:label "80"@de , "80"@en .
+ff:disabilityDegree-90 a ff:AnswerOption ; rdfs:label "90"@de , "90"@en .
+ff:disabilityDegree-100 a ff:AnswerOption ; rdfs:label "100"@de , "100"@en .
+
+ff:equalStatusNeeded a ff:DataField ;
+    schema:category ff:beschaeftigungDfKategorie ;
+    rdfs:label "Gleichstellung erforderlich"@de , "Equal Status Needed"@en ;
+    schema:question "Könnten Sie wegen Ihrer Behinderung ohne eine Gleichstellung keinen geeigneten Arbeitsplatz bekommen oder behalten?"@de ,
+                    "Due to your disability, would you be unable to obtain or keep a suitable job without being granted equal status?"@en ;
+    rdfs:comment "Gemeint ist die Gleichstellung mit schwerbehinderten Menschen nach dem Sozialgesetzbuch Neuntes Buch. Sie kommt typischerweise für Personen mit einem Grad der Behinderung von 30 oder 40 in Betracht, wenn die Gleichstellung erforderlich ist, um einen geeigneten Arbeitsplatz zu bekommen oder zu behalten."@de ,
+                 "This refers to being granted equal status with severely disabled persons under the German Social Code Book Nine. It typically applies to persons with a degree of disability of 30 or 40 when equal status is necessary to obtain or keep suitable employment."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:equalStatusNeeded ;
+        sh:property [
+            sh:path ff:equalStatusNeeded ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:regularWorkSupport a ff:DataField ;
+    schema:category ff:beschaeftigungDfKategorie ;
+    rdfs:label "Unterstützungsbedarf bei der Arbeit"@de , "Regular Support Need at Work"@en ;
+    schema:question "Benötigen Sie regelmäßige, erhebliche und dauerhafte Unterstützung, um Ihre Arbeit auszuführen?"@de ,
+                    "Do you require regular, substantial, and lasting support to perform your work?"@en ;
+    rdfs:comment "Erfasst wird, ob eine Person für die Ausführung ihrer Arbeit wiederkehrend, in erheblichem Umfang und dauerhaft auf Unterstützung angewiesen ist. Beispiele können persönliche Assistenz, Jobcoaching, Gebärdensprachdolmetschen, technische Hilfsmittel oder Anpassungen des Arbeitsplatzes sein."@de ,
+                 "This captures whether a person requires recurring, substantial, and lasting support to perform their work. Examples can include personal assistance, job coaching, sign language interpretation, assistive technologies, or workplace adjustments."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:regularWorkSupport ;
+        sh:property [
+            sh:path ff:regularWorkSupport ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:coreWorkWithoutHelp a ff:DataField ;
+    schema:category ff:beschaeftigungDfKategorie ;
+    rdfs:label "Kerntätigkeit ohne Hilfe"@de , "Core Work Without Help"@en ;
+    schema:question "Können Sie die Kerntätigkeit Ihrer Arbeit ohne Hilfe erledigen?"@de ,
+                    "Can you perform the core tasks of your work without help?"@en ;
+    rdfs:comment "Mit Kerntätigkeit ist der wesentliche, nicht delegierbare Teil der beruflichen Aufgaben gemeint. Die Frage erfasst, ob diese Tätigkeiten selbstständig und ohne fremde Unterstützung ausgeführt werden können."@de ,
+                 "Core tasks refer to the essential, non-delegable parts of one's occupational duties. This question captures whether these tasks can be carried out independently and without external support."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:coreWorkWithoutHelp ;
+        sh:property [
+            sh:path ff:coreWorkWithoutHelp ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:workplaceAccommodationSufficient a ff:DataField ;
+    schema:category ff:beschaeftigungDfKategorie ;
+    rdfs:label "Ausreichende behindertengerechte Arbeitsplatzgestaltung"@de , "Sufficient Workplace Accommodation"@en ;
+    schema:question "Ist die vorhandene behindertengerechte Gestaltung Ihres Arbeitsplatzes ausreichend, um Ihre Arbeit zu ermöglichen?"@de ,
+                    "Is the existing accessible design of your workplace sufficient to enable you to perform your work?"@en ;
+    rdfs:comment "Gemeint sind Maßnahmen und Anpassungen am Arbeitsplatz, die Barrieren reduzieren oder beseitigen und die Ausübung der Tätigkeit ermöglichen. Dazu zählen zum Beispiel technische Hilfsmittel, ergonomische Anpassungen, Assistenzleistungen, Änderungen der Arbeitsorganisation sowie bauliche Anpassungen."@de ,
+                 "This refers to measures and adjustments at the workplace that reduce or remove barriers and enable the performance of work. Examples include assistive technologies, ergonomic adjustments, personal assistance, changes to work organization, and structural modifications."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:workplaceAccommodationSufficient ;
+        sh:property [
+            sh:path ff:workplaceAccommodationSufficient ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
