@@ -7,7 +7,7 @@ ff:wolfenbuettel-stiftung a ff:RequirementProfile ;
     ff:title "Wolfenbüttel Stiftung"@de , "Wolfenbüttel Foundation"@en ;
     ff:category ff:stiftungs-foerderung ;
     ff:validationStage ff:preliminary-validation ;
-    ff:tag ff:beta ;
+    ff:tag ff:beta , ff:wolfenbuettel ;
     ff:benefitInfo "Die Wolfenbüttel-Stiftung unterstützt bedürftige Kinder, hilfsbedürftige ältere Menschen und soziale Projekte in Wolfenbüttel – ohne Rechtsanspruch auf Förderung."@de ,
         "The Wolfenbüttel Foundation supports needy children, needy elderly people and social projects in Wolfenbüttel - without a legal claim to funding."@en ;
     rdfs:seeAlso <https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1> ;

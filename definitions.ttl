@@ -184,6 +184,7 @@ ff:kommune a ff:AdministrativeLevel ;
 
 ff:bielefunke a ff:Tag ; rdfs:label "BieleFunke"@de, "BieleFunke"@en .
 ff:beta a ff:Tag ; rdfs:label "Beta"@de, "Beta"@en .
+ff:wolfenbuettel a ff:Tag ; rdfs:label "Wolfenbüttel"@de, "Wolfenbüttel"@en .
 
 # Validation Stages
 
