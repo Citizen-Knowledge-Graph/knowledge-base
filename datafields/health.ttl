@@ -241,3 +241,152 @@ ff:workplaceAccommodationSufficient a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
+
+ff:opioidAddiction a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Opioidabhängigkeit"@de , "Opioid addiction"@en ;
+    schema:question "Liegt bei Ihnen eine ärztlich anerkannte Opioid-Abhängigkeitserkrankung vor?"@de , "Sind Sie abhängig von Opioiden und wurde diese Abhängigkeit von einem Arzt oder einer Ärztin bestätigt?"@de-x-es , "Do you have a medically recognized opioid addiction?"@en ;
+    rdfs:comment "Eine Substitutionstherapie ist eine Therapieform, die nur bei Personen mit einer Opioidabhängigkeit vermittelt wird."@de , "Eine Substitutionstherapie ist nur für Menschen mit einer Abhängigkeit von Opioiden."@de-x-es , "Substitution therapy is a form of treatment that is only provided to individuals with opioid dependence."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:opioidAddiction ;
+        sh:property [
+            sh:path ff:opioidAddiction ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .    
+
+ff:sobrietyWish a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Abstinenz Wunsch"@de , "Sobriety wish"@en ;
+    schema:question "Besteht bei Ihnen der Wunsch, abstinent von Opioiden, also vollkommen ohne Opioide zu leben?"@de , "Haben Sie den Wunsch, in Ihrem Leben keine Opioide mehr zu nehmen?"@de-x-es , "Do you wish to abstain from opioids, i.e., to live completely without opioids?"@en ;
+    rdfs:comment "Der Wille zur Abstinenz ist in der Regel ein Kriterium, unter dem eine Substitutionstherapie begonnen wird."@de , "Der Wille, keine Opioide zu nehmen, ist meistens eine Bedingung für die Substitutions-Therapie."@de-x-es , "The desire to abstain is usually a criterion for starting substitution therapy."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:sobrietyWish ;
+        sh:property [
+            sh:path ff:sobrietyWish ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:opioidAddictionMoreThanTwoYears a ff:DataField ;
+    schema:category ff:gesundheitDfKategorie ;
+    rdfs:label "Opioidabhängigkeit seit mehr als 2 Jahren"@de , "Opioid Addiction for More Than 2 Years"@en ;
+    schema:question "Besteht Ihre Opioidabhängigkeit seit mehr als 2 Jahren?"@de ,
+                    "Has your opioid addiction lasted for more than 2 years?"@en ;
+    rdfs:comment "Die Frage erfasst die Dauer einer bestehenden Opioidabhängigkeit. Maßgeblich ist, ob diese seit mehr als zwei Jahren besteht."@de ,
+                 "This question captures the duration of an existing opioid addiction. The key aspect is whether it has lasted for more than two years."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:opioidAddictionMoreThanTwoYears ;
+        sh:property [
+            sh:path ff:opioidAddictionMoreThanTwoYears ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:addictionDamage a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Suchtschäden"@de, "Addiction damage"@en ;
+    schema:question "Weisen Sie erhebliche Defizite in medizinischer, psychologischer oder sozialer Hinsicht auf, die auf den Gebrauch von unerlaubt erworbenen Opioiden zurückzuführen sind?"@de , "Haben Sie große Probleme mit Ihrer Gesundheit, Ihrer Psyche oder in Ihrem sozialen Umfeld? Haben Sie diese Probleme, weil Sie illegale Opioide zu sich genommen haben?"@de-x-es , "Do you have significant medical, psychological, or social deficits attributable to the use of illicitly obtained opioids?"@en ;
+    rdfs:comment "Solche Probleme können zum Beispiel schlechte körperliche Gesundheit, Traurigkeit oder Angst, Streit mit Familie oder Freund:innen, Verlust der Arbeit oder Schwierigkeiten mit Wohnung oder Geld sein."@de , "Such problems can include poor physical health, feeling depressed or anxious, trouble with family or friends, losing your job, or difficulties with housing or money."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:addictionDamage ;
+        sh:property [
+            sh:path ff:addictionDamage ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .    
+
+ff:regularSubstitutiontherapy6months a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Reguläre Substitutionstherapie von mindestens 6 Monaten"@de , "Regular substitution therapy of at least 6 months"@en ;
+    schema:question "Waren Sie bereits in Ihrem Leben mindestens 6 Monate in einer Substitutionstherapie?"@de ,
+        "Waren Sie schon einmal mindestens 6 Monate in einer Substitutionstherapie?"@de-x-es ,
+        "Have you already been in substitution therapy for at least 6 months in your life?"@en ;
+    rdfs:comment "Eine Substitutionstherapie ist eine medizinische Behandlung, bei der Opioide (zum Beispiel Heroin) durch andere, länger wirkende und weniger schädliche Substanzen (zum Beispiel Methadon oder Buprenorphin) ersetzt werden."@de ,
+        "Eine Substitutionstherapie ist eine Behandlung. Dabei wird ein Rauschmittel wie Heroin durch ein anderes Medikament ersetzt. Zum Beispiel Methadon oder Buprenorphin. Diese Medikamente wirken länger und sind weniger schädlich."@de-x-es ,
+        "Substitution therapy is a medical treatment in which opioids (for example, heroin) are replaced by other, longer-acting and less harmful substances (for example, methadone or buprenorphine)."@en ;        
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:regularSubstitutiontherapy6months ;
+        sh:property [
+            sh:path ff:regularSubstitutiontherapy6months ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .
+
+ff:regularSubstitutiontherapyUnsuccessful a ff:DataField ;
+    schema:category ff:gesundheit-pflege-df-kategorie ;
+    rdfs:label "Erfolglose Substitutionstherapie"@de, "Unsuccessful substitution therapy"@en ;
+    schema:question "Können Sie nachweisen, dass Sie bereits eine Substitutionstherapie zur Behandlung einer Opioidabhängigkeit über einen Zeitraum von 6 Monaten gemacht haben, welche sich als nicht geeignet oder erfolglos erwiesen hat?"@de , 
+        "Können Sie belegen, dass Sie schon eine Substitutionstherapie gegen eine Abhängigkeit von Opioiden gemacht haben, die mindestens 6 Monate gedauert hat und nicht geholfen hat?"@de-x-es , 
+        "Can you prove that you have already undergone substitution therapy for the treatment of opioid dependence for a period of 6 months, which proved to be unsuitable or unsuccessful?"@en ;
+    rdfs:comment "Bei einer Substitutionstherapie zur Behandlung einer Opioidabhängigkeit bekommen Betroffene ein Ersatzmedikament wie Methadon, Polamidon oder Buprenorphin. Wenn diese Behandlung mindestens 6 Monate lang durchgeführt wurde und sich als ungeeignet oder erfolglos erwiesen hat, gilt sie als nicht wirksam."@de , 
+        "In einer Substitutionstherapie gegen eine Abhängigkeit von Opioiden bekommen Menschen ein Ersatzmedikament. Beispiele sind Methadon, Polamidon oder Buprenorphin. Hat die Behandlung mindestens 6 Monate gedauert und nicht geholfen, gilt sie als erfolglos."@de-x-es , 
+        "In substitution therapy for the treatment of opioid dependence, patients are given a substitute medication such as methadone, polamidone, or buprenorphine. If this treatment has been carried out for at least 6 months and has proven to be unsuitable or unsuccessful, it is considered ineffective."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:regularSubstitutiontherapyUnsuccessful ;
+        sh:property [
+            sh:path ff:regularSubstitutiontherapyUnsuccessful ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;        
+    ] .    
+
+ff:acuteCareSituation a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Akute Pflegesituation"@de , "Acute Care Situation"@en ;
+    schema:question "Befindet sich eine Person in Ihrem Umfeld in einer akuten Pflegesituation?"@de ,
+        "Is there a person in your environment in an acute care situation?"@en ;
+    rdfs:comment "Eine akute Pflegesituation liegt vor, wenn bei einer Person unerwartet ein Pflegebedarf eintritt (z. B. durch Unfall oder plötzlichen Krankheitsschub), sodass unverzüglich Pflege organisiert oder selbst geleistet werden muss und dafür sofortiger persönlicher Einsatz erforderlich ist."@de ,
+        "An acute care situation exists when a person unexpectedly requires care (e.g. due to an accident or sudden illness), so that care must be organized or provided immediately and immediate personal commitment is required."@en ;        
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:acuteCareSituation ;
+        sh:property [
+            sh:path ff:acuteCareSituation ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:careRecipientCloseRelative a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Pflegebedürftiger naher Angehöriger"@de , "Care recipient close relative"@en ;
+    schema:question "Ist die pflegebedürftige Person eine nahe Angehörige oder Angehöriger?"@de ,
+        "Is the person in need of care a close relative?"@en ;
+    rdfs:comment "Zu „nahen Angehörigen“ zählen Großeltern, Eltern, Schwieger- und Stiefeltern, Ehegatten, Lebenspartner oder Partner einer ehe- bzw. lebenspartnerschaftsähnlichen Gemeinschaft, Geschwister sowie deren Ehe- oder Lebenspartner, Kinder, Adoptiv-, Pflege- und Stiefkinder, Schwiegerkinder und Enkelkinder."@de ,
+        "Close relatives include grandparents, parents, parents-in-law and step-parents, spouses, life partners or partners in a marriage or life partnership-like community, siblings and their spouses or life partners, children, adopted, foster and step-children, children-in-law and grandchildren."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:careRecipientCloseRelative ;
+        sh:property [
+            sh:path ff:careRecipientCloseRelative ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .    
+
+ff:requiredForCare a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Erforderlich für Pflege"@de , "Required for Care"@en ;
+    schema:question "Ist Ihre persönliche Mitwirkung erforderlich, um die Pflege der betroffenen Person sicherzustellen?"@de ,
+        "Is your personal involvement required to ensure the care of the affected person?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:requiredForCare ;
+        sh:property [
+            sh:path ff:requiredForCare ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .

@@ -1,0 +1,24 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ff: <https://foerderfunke.org/default#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+# general
+
+ff:wbFoundationPreviousYear a ff:DataField ;
+    schema:category ff:financeDfKategorie ;
+    rdfs:label "Förderung durch Wolfenbüttel Stiftung im Vorjahr"@de , "Wolfenbüttel Foundation Funding Last Year"@en ;
+    schema:question "Haben Sie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de ,
+                    "Did you receive funding from the Wolfenbüttel Foundation in the previous year?"@en ;
+    rdfs:comment "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung erfolgt ist."@de ,
+                 "This field captures whether financial support was received from the Wolfenbüttel Foundation in the previous calendar year."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:wbFoundationPreviousYear ;
+        sh:property [
+            sh:path ff:wbFoundationPreviousYear ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
