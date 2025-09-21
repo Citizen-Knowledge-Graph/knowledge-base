@@ -6,10 +6,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "node build.js"
   },
   "devDependencies": {
-    "@foerderfunke/sem-ops-utils": "^0.1.2",
+    "@foerderfunke/sem-ops-utils": "^0.3.3",
     "mocha": "^11.1.0"
   }
 }

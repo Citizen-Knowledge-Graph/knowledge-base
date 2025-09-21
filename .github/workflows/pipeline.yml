@@ -1,15 +1,49 @@
-name: trigger console deployment
+name: Build postprocessed turtle file
+
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+
 jobs:
-  dispatch:
+  build-and-commit:
     runs-on: ubuntu-latest
     steps:
-      - name: Dispatch event to trigger webapp deployment
-        uses: peter-evans/repository-dispatch@v3
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.PAT_SECRET }}
-          repository: Citizen-Knowledge-Graph/console
-          event-type: external-console-deployment-trigger
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Commit build output
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "."
+          message: "Build: add generated turtle file [skip ci]"
+          default_author: github_actions
+
+#name: trigger console deployment
+#on:
+#  push:
+#    branches:
+#      - main
+#jobs:
+#  dispatch:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Dispatch event to trigger webapp deployment
+#        uses: peter-evans/repository-dispatch@v3
+#        with:
+#          token: ${{ secrets.PAT_SECRET }}
+#          repository: Citizen-Knowledge-Graph/console
+#          event-type: external-console-deployment-trigger
