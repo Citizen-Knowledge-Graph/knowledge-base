@@ -3,6 +3,7 @@ import { fileURLToPath } from "url"
 import { promises as fsPromise, writeFileSync } from "fs"
 import { newStore, addTurtleToStore, storeToTurtle, sparqlInsertDelete } from "@foerderfunke/sem-ops-utils"
 
+let header = ["# This file is a generated enriched merge of the following source files:"]
 const dir = path.join(path.dirname(fileURLToPath(import.meta.url)))
 const turtleFiles = [
     `${dir}/datafields.ttl`,
@@ -13,6 +14,7 @@ const turtleFiles = [
 
 let defStore = newStore()
 for (let file of turtleFiles) {
+    header.push("# - " + file.substring(dir.length + 1))
     addTurtleToStore(defStore, await fsPromise.readFile(file, "utf8"))
 }
 
@@ -35,5 +37,6 @@ const query = `
     }`
 await sparqlInsertDelete(query, defStore)
 
+let turtle = header.join("\n") + "\n\n" + await storeToTurtle(defStore)
 await fsPromise.mkdir(`${dir}/build`, { recursive: true })
-writeFileSync(`${dir}/build/def.built.ttl`, await storeToTurtle(defStore), "utf8")
+writeFileSync(`${dir}/build/def.built.ttl`, turtle, "utf8")
