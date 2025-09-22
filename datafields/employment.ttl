@@ -63,6 +63,7 @@ ff:employmentStatus a ff:DataField ;
                 ff:employmentStatus-selfEmployed
                 ff:employmentStatus-unemployed
                 ff:employmentStatus-inEducation
+                ff:employmentStatus-federalVolunteerService
                 ff:employmentStatus-outsideLaborForce
                 ff:employmentStatus-pension
                 ff:employmentStatus-other
@@ -74,6 +75,7 @@ ff:employmentStatus-employed a ff:AnswerOption ; rdfs:label "Beschäftigt"@de , 
 ff:employmentStatus-selfEmployed a ff:AnswerOption ; rdfs:label "Selbstständig"@de , "Self-employed"@en .
 ff:employmentStatus-unemployed a ff:AnswerOption ; rdfs:label "Arbeitslos"@de , "Unemployed"@en .
 ff:employmentStatus-inEducation a ff:AnswerOption ; rdfs:label "In Ausbildung/Studium"@de , "In education/training"@en .
+ff:employmentStatus-federalVolunteerService a ff:AnswerOption ; rdfs:label "Bundesfreiwilligendienst"@de , "Federal volunteer service"@en .
 ff:employmentStatus-outsideLaborForce a ff:AnswerOption ; rdfs:label "Nicht erwerbstätig (z.B. Elternzeit, Pflege)"@de , "Outside the labor force (e.g. parental leave, caregiving)"@en .
 ff:employmentStatus-pension a ff:AnswerOption ; rdfs:label "Rente"@de , "Pension"@en .
 ff:employmentStatus-other a ff:AnswerOption ; rdfs:label "Andere"@de , "Other"@en .
