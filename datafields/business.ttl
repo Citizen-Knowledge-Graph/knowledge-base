@@ -44,10 +44,17 @@ ff:buildingCountry a ff:DataField ;
         sh:targetSubjectsOf ff:buildingCountry ;
         sh:property [
             sh:path ff:buildingCountry ;
-            sh:datatype xsd:string ;
+            sh:in (
+                ff:buildingCountry-ger
+                ff:buildingCountry-eu
+                ff:buildingCountry-other
+            ) ;
             sh:maxCount 1 ;
         ] ;
     ] .
+ff:buildingCountry-ger a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germany"@en .
+ff:buildingCountry-eu a ff:AnswerOption ; rdfs:label "Europäische Union (außer Deutschland)"@de , "European Union (excluding Germany)"@en .
+ff:buildingCountry-other a ff:AnswerOption ; rdfs:label "Anderes Land"@de , "Other country"@en .
 
 ff:buildingTypeRenovation a ff:DataField ;
     schema:category ff:personalDfKategorie ;
@@ -83,15 +90,15 @@ ff:renovationType a ff:DataField ;
         sh:property [
             sh:path ff:renovationType ;
             sh:in (
-                ff:renovationType-energy-efficiency
-                ff:renovationType-renewable-heating
+                ff:renovationType-energyEfficiency
+                ff:renovationType-renewableHeating
                 ff:renovationType-other
             ) ;
             sh:maxCount 1 ;
         ] ;
     ] .
-ff:renovationType-energy-efficiency a ff:AnswerOption ; rdfs:label "Energy efficiency improvements"@en, "Energieeffizienzverbesserungen"@de .
-ff:renovationType-renewable-heating a ff:AnswerOption ; rdfs:label "Renewable heating systems"@en, "Erneuerbare Heizsysteme"@de .
+ff:renovationType-energyEfficiency a ff:AnswerOption ; rdfs:label "Energy efficiency improvements"@en, "Energieeffizienzverbesserungen"@de .
+ff:renovationType-renewableHeating a ff:AnswerOption ; rdfs:label "Renewable heating systems"@en, "Erneuerbare Heizsysteme"@de .
 ff:renovationType-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
 
 ff:companyFounded a ff:DataField ;
@@ -161,7 +168,7 @@ ff:majorityShares a ff:DataField ;
         ] ;
     ] .
 
-ff:interestedSuccession a ff:DataField ;
+ff:interestedInSuccession a ff:DataField ;
     schema:category ff:gruendung-df-kategorie ;
     rdfs:label "Interest in Business Succession"@en, "Interesse an Unternehmensnachfolge"@de ;
     schema:question "Are you interested in business succession or taking over an existing company?"@en, "Sind Sie an einer Unternehmensnachfolge oder der Übernahme eines bestehenden Unternehmens interessiert?"@de ;
@@ -169,9 +176,9 @@ ff:interestedSuccession a ff:DataField ;
                  "Diese Frage hilft dabei, Personen oder Organisationen zu identifizieren, die an einer Unternehmensnachfolge oder der Übernahme bestehender Unternehmen interessiert sind und möglicherweise für Fördermöglichkeiten oder Zuschüsse zur Unterstützung des Eigentumsübergangs infrage kommen."@de ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:interestedSuccession ;
+        sh:targetSubjectsOf ff:interestedInSuccession ;
         sh:property [
-            sh:path ff:interestedSuccession ;
+            sh:path ff:interestedInSuccession ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
@@ -327,15 +334,15 @@ ff:industry a ff:DataField ;
             sh:in (
                 ff:industry-construction
                 ff:industry-gastronomy
-                ff:industry-hospitality-non-ecological
+                ff:industry-hospitalityNonEcological
                 ff:industry-retail
-                ff:industry-retail-non-sustainable
+                ff:industry-retailNonSustainable
                 ff:industry-healthcare
-                ff:industry-renewable-energy
-                ff:industry-creative-industries
+                ff:industry-renewableEnergy
+                ff:industry-creativeIndustries
                 ff:industry-logistics
                 ff:industry-tourism
-                ff:industry-food-industry
+                ff:industry-foodIndustry
                 ff:industry-trade
                 ff:industry-manufacturing
                 ff:industry-other
@@ -345,15 +352,15 @@ ff:industry a ff:DataField ;
     ] .
 ff:industry-construction a ff:AnswerOption ; rdfs:label "Construction"@en, "Bauwesen"@de .
 ff:industry-gastronomy a ff:AnswerOption ; rdfs:label "Gastronomy"@en, "Gastronomie"@de .
-ff:industry-hospitality-non-ecological a ff:AnswerOption ; rdfs:label "Hospitality (non-ecological)"@en, "Gastgewerbe (nicht-ökologisch)"@de .
+ff:industry-hospitalityNonEcological a ff:AnswerOption ; rdfs:label "Hospitality (non-ecological)"@en, "Gastgewerbe (nicht-ökologisch)"@de .
 ff:industry-retail a ff:AnswerOption ; rdfs:label "Retail"@en, "Einzelhandel"@de .
-ff:industry-retail-non-sustainable a ff:AnswerOption ; rdfs:label "Retail (non-sustainable)"@en, "Einzelhandel (nicht-nachhaltig)"@de .
+ff:industry-retailNonSustainable a ff:AnswerOption ; rdfs:label "Retail (non-sustainable)"@en, "Einzelhandel (nicht-nachhaltig)"@de .
 ff:industry-healthcare a ff:AnswerOption ; rdfs:label "Healthcare"@en, "Gesundheitswesen"@de .
-ff:industry-renewable-energy a ff:AnswerOption ; rdfs:label "Renewable Energy"@en, "Erneuerbare Energien"@de .
-ff:industry-creative-industries a ff:AnswerOption ; rdfs:label "Creative Industries"@en, "Kreativwirtschaft"@de .
+ff:industry-renewableEnergy a ff:AnswerOption ; rdfs:label "Renewable Energy"@en, "Erneuerbare Energien"@de .
+ff:industry-creativeIndustries a ff:AnswerOption ; rdfs:label "Creative Industries"@en, "Kreativwirtschaft"@de .
 ff:industry-logistics a ff:AnswerOption ; rdfs:label "Logistics"@en, "Logistik"@de .
 ff:industry-tourism a ff:AnswerOption ; rdfs:label "Tourism"@en, "Tourismus"@de .
-ff:industry-food-industry a ff:AnswerOption ; rdfs:label "Food Industry"@en, "Lebensmittelindustrie"@de .
+ff:industry-foodIndustry a ff:AnswerOption ; rdfs:label "Food Industry"@en, "Lebensmittelindustrie"@de .
 ff:industry-trade a ff:AnswerOption ; rdfs:label "Trade"@en, "Handel"@de .
 ff:industry-manufacturing a ff:AnswerOption ; rdfs:label "Manufacturing"@en, "Produktion"@de .
 ff:industry-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
@@ -591,14 +598,14 @@ ff:annualTurnover a ff:DataField ;
             sh:in (
                 ff:annualTurnover-below500K
                 ff:annualTurnover-below50Million
-                ff:annualTurnover-greater250Million
+                ff:annualTurnover-greater50Million
             ) ;
             sh:maxCount 1 ;
         ] ;
     ] .
 ff:annualTurnover-below500K a ff:AnswerOption ; rdfs:label "Less than 500,000 euros"@en, "Weniger als 500.000 Euro"@de .
 ff:annualTurnover-below50Million a ff:AnswerOption ; rdfs:label "Less than 50 million euros"@en, "Weniger als 50 Millionen Euro"@de .
-ff:annualTurnover-greater250Million a ff:AnswerOption ; rdfs:label "50 million euros or more"@en, "50 Millionen Euro oder mehr"@de .
+ff:annualTurnover-greater50Million a ff:AnswerOption ; rdfs:label "50 million euros or more"@en, "50 Millionen Euro oder mehr"@de .
 
 ff:balanceSheet a ff:DataField ;
     schema:category ff:gruendung-df-kategorie ;
@@ -621,7 +628,7 @@ ff:balanceSheet a ff:DataField ;
 ff:balanceSheet-below43Million a ff:AnswerOption ; rdfs:label "Less than 43 million euros"@en, "Weniger als 43 Millionen Euro"@de .
 ff:balanceSheet-greater43Million a ff:AnswerOption ; rdfs:label "43 million euros or more"@en, "43 Millionen Euro oder mehr"@de .
 
-ff:financialDifficulty a ff:DataField ;
+ff:companyFinancialDifficulty a ff:DataField ;
     schema:category ff:gruendung-df-kategorie ;
     rdfs:label "Financial Difficulty"@en, "Finanzielle Schwierigkeiten"@de ;
     schema:question "Is your company currently experiencing financial difficulties?"@en, "Hat Ihr Unternehmen derzeit finanzielle Schwierigkeiten?"@de ;
@@ -629,9 +636,9 @@ ff:financialDifficulty a ff:DataField ;
                  "Diese Frage hilft dabei, Unternehmen zu identifizieren, die mit finanziellen Herausforderungen konfrontiert sind und möglicherweise Unterstützung oder Fördermittel benötigen, um Schwierigkeiten zu überwinden. Einige Förderungen sind speziell für Unternehmen verfügbar, die finanzielle Schwierigkeiten haben oder Hilfe zur Stabilisierung ihrer finanziellen Situation suchen."@de ;
     ff:hasShaclShape [
         a sh:NodeShape ;
-        sh:targetSubjectsOf ff:financialDifficulty ;
+        sh:targetSubjectsOf ff:companyFinancialDifficulty ;
         sh:property [
-            sh:path ff:financialDifficulty ;
+            sh:path ff:companyFinancialDifficulty ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;

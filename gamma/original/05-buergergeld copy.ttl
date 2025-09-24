@@ -96,12 +96,12 @@ ff:buergergeldMainShape a sh:NodeShape ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:path ff:household_members ;
+        sh:path ff:householdMembers ;
         sh:minInclusive 1 ;
         sh:minCount 1 ;
     ] ;    
     sh:property [
-      	sh:path ff:vermoegen ;
-        sh:lessThan ff:vermoegensgrenze_buergergeld ;
+      	sh:path ff:assets ;
+        sh:lessThan ff:assetLimitCitizensIncome ;
       	sh:minCount 1 ;
    	] .

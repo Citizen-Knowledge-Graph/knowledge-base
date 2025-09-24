@@ -4,7 +4,24 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 
-# general
+# specifc
+
+ff:residenceInWolfenbuettel a ff:DataField ;
+    schema:category ff:financeDfKategorie ;
+    rdfs:label "Wohnsitz in Wolfenbüttel"@de , "Residence in Wolfenbüttel"@en ;
+    schema:question "Haben Sie Ihren Wohnsitz in Wolfenbüttel?"@de ,
+                    "Do you have your residence in Wolfenbüttel?"@en ;
+    rdfs:comment "Dieses Feld erfasst, ob der Antragsteller seinen Wohnsitz in der Stadt Wolfenbüttel hat."@de ,
+                 "This field captures whether the applicant has their residence in the city of Wolfenbüttel."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:residenceInWolfenbuettel ;
+        sh:property [
+            sh:path ff:residenceInWolfenbuettel ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
 
 ff:wbFoundationPreviousYear a ff:DataField ;
     schema:category ff:financeDfKategorie ;

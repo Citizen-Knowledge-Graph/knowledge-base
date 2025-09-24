@@ -34,7 +34,7 @@ ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
                 [ sh:not [ sh:property [ sh:path ff:gender ; sh:in (sh:male) ] ] ]
                 [ sh:or (
                     [ sh:property [ sh:path ff:pregnancy ; sh:in (true) ] ]
-                    [ sh:property [ sh:path ff:recent_birth ; sh:in (true) ] ]
+                    [ sh:property [ sh:path ff:recentChildbirth ; sh:in (true) ] ]
                 )]
             ) ]
         )
@@ -48,6 +48,7 @@ ff:substitutionstherapieRegulaerFlowShape a sh:NodeShape ;
     sh:property ff:baseRequirements ;
     sh:property ff:sobrietyWishPS ;
     sh:property ff:severeDiseasePS ;
+    sh:property ff:genderRequirementsPS ;
     sh:property ff:pregancyPS ;
     sh:property ff:recentBirthPS .
 

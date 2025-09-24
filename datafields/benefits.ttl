@@ -138,7 +138,7 @@ ff:rehabilitationProvider a ff:DataField ;
         sh:property [
             sh:path ff:rehabilitationProvider ;
             sh:in (
-                ff:rehabilitationProvider-bundesagentur-fuer-arbeit
+                ff:rehabilitationProvider-bundesagenturFuerArbeit
                 ff:rehabilitationProvider-other
             ) ;
             sh:maxCount 1 ;
