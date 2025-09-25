@@ -6,7 +6,7 @@
 
 # general
 
-ff:socialBenefitsReceived a ff:DataField ;
+ff:socialBenefitsReceiving a ff:DataField ;
     schema:category ff:financeDfKategorie ;
     rdfs:label "Erhaltene Sozialleistungen"@de , "Social Benefits Received"@en ;
     schema:question "Welche der folgenden Leistungen beziehen Sie derzeit? (Mehrfachnennung möglich)"@de ,
@@ -19,40 +19,42 @@ ff:socialBenefitsReceived a ff:DataField ;
         sh:property [
             sh:path ff:socialBenefitsReceived ;
             sh:in (
-                ff:socialBenefitsReceived-none
-                ff:socialBenefitsReceived-unemploymentBenefit
-                ff:socialBenefitsReceived-citizensIncome
-                ff:socialBenefitsReceived-asylumSeekersBenefits
-                ff:socialBenefitsReceived-bafoeg
-                ff:socialBenefitsReceived-housingAllowance
-                ff:socialBenefitsReceived-childSupplement
-                ff:socialBenefitsReceived-parentalAllowance
-                ff:socialBenefitsReceived-pension
-                ff:socialBenefitsReceived-maternityAllowance
-                ff:socialBenefitsReceived-disabilityPension
-                ff:socialBenefitsReceived-basicSecurity
-                ff:socialBenefitsReceived-subsistenceAssistance
-                ff:socialBenefitsReceived-vocationalTrainingAllowance
-                ff:socialBenefitsReceived-mobiproEU
+                ff:socialBenefitsReceiving-none
+                ff:socialBenefitsReceiving-unemploymentBenefit
+                ff:socialBenefitsReceiving-citizensIncome
+                ff:socialBenefitsReceiving-asylumSeekersBenefits
+                ff:socialBenefitsReceiving-bafoeg
+                ff:socialBenefitsReceiving-housingAllowance
+                ff:socialBenefitsReceiving-childBenefit
+                ff:socialBenefitsReceiving-childSupplement
+                ff:socialBenefitsReceiving-parentalAllowance
+                ff:socialBenefitsReceiving-pension
+                ff:socialBenefitsReceiving-maternityAllowance
+                ff:socialBenefitsReceiving-disabilityPension
+                ff:socialBenefitsReceiving-basicSecurity
+                ff:socialBenefitsReceiving-subsistenceAssistance
+                ff:socialBenefitsReceiving-vocationalTrainingAllowance
+                ff:socialBenefitsReceiving-mobiproEU
             ) ;
             sh:minCount 0 ;
         ] ;
     ] .
-ff:socialBenefitsReceived-none a ff:AnswerOption ; rdfs:label "Keine"@de , "None"@en .
-ff:socialBenefitsReceived-unemploymentBenefit a ff:AnswerOption ; rdfs:label "Arbeitslosengeld"@de , "Unemployment benefit"@en .
-ff:socialBenefitsReceived-citizensIncome a ff:AnswerOption ; rdfs:label "Bürgergeld"@de , "Citizen's income"@en .
-ff:socialBenefitsReceived-asylumSeekersBenefits a ff:AnswerOption ; rdfs:label "Asylbewerberleistungen"@de , "Asylum seekers' benefits"@en .
-ff:socialBenefitsReceived-bafoeg a ff:AnswerOption ; rdfs:label "BAföG"@de , "BAföG (student grant)"@en .
-ff:socialBenefitsReceived-housingAllowance a ff:AnswerOption ; rdfs:label "Wohngeld"@de , "Housing allowance"@en .
-ff:socialBenefitsReceived-childSupplement a ff:AnswerOption ; rdfs:label "Kinderzuschlag"@de , "Child supplement"@en .
-ff:socialBenefitsReceived-parentalAllowance a ff:AnswerOption ; rdfs:label "Elterngeld"@de , "Parental allowance"@en .
-ff:socialBenefitsReceived-pension a ff:AnswerOption ; rdfs:label "Rente"@de , "Pension"@en .
-ff:socialBenefitsReceived-maternityAllowance a ff:AnswerOption ; rdfs:label "Mutterschaftsgeld"@de , "Maternity allowance"@en .
-ff:socialBenefitsReceived-disabilityPension a ff:AnswerOption ; rdfs:label "Erwerbsminderungsrente"@de , "Disability pension"@en .
-ff:socialBenefitsReceived-basicSecurity a ff:AnswerOption ; rdfs:label "Grundsicherung"@de , "Basic security"@en .
-ff:socialBenefitsReceived-subsistenceAssistance a ff:AnswerOption ; rdfs:label "Hilfe zum Lebensunterhalt"@de , "Assistance for subsistence"@en .
-ff:socialBenefitsReceived-vocationalTrainingAllowance a ff:AnswerOption ; rdfs:label "Berufsausbildungsbeihilfe / Ausbildungsgeld"@de , "Vocational training allowance / training allowance"@en .
-ff:socialBenefitsReceived-mobiproEU a ff:AnswerOption ; rdfs:label "Sicherung des Lebensunterhalts (MobiPro-EU)"@de , "Subsistence support (MobiPro-EU)"@en .
+ff:socialBenefitsReceiving-none a ff:AnswerOption ; rdfs:label "Keine"@de , "None"@en .
+ff:socialBenefitsReceiving-unemploymentBenefit a ff:AnswerOption ; rdfs:label "Arbeitslosengeld"@de , "Unemployment benefit"@en .
+ff:socialBenefitsReceiving-citizensIncome a ff:AnswerOption ; rdfs:label "Bürgergeld"@de , "Citizen's income"@en .
+ff:socialBenefitsReceiving-asylumSeekersBenefits a ff:AnswerOption ; rdfs:label "Asylbewerberleistungen"@de , "Asylum seekers' benefits"@en .
+ff:socialBenefitsReceiving-bafoeg a ff:AnswerOption ; rdfs:label "BAföG"@de , "BAföG (student grant)"@en .
+ff:socialBenefitsReceiving-housingAllowance a ff:AnswerOption ; rdfs:label "Wohngeld"@de , "Housing allowance"@en .
+ff:socialBenefitsReceiving-childBenefit a ff:AnswerOption ; rdfs:label "Kindergeld"@de , "Child benefit"@en .
+ff:socialBenefitsReceiving-childSupplement a ff:AnswerOption ; rdfs:label "Kinderzuschlag"@de , "Child supplement"@en .
+ff:socialBenefitsReceiving-parentalAllowance a ff:AnswerOption ; rdfs:label "Elterngeld"@de , "Parental allowance"@en .
+ff:socialBenefitsReceiving-pension a ff:AnswerOption ; rdfs:label "Rente"@de , "Pension"@en .
+ff:socialBenefitsReceiving-maternityAllowance a ff:AnswerOption ; rdfs:label "Mutterschaftsgeld"@de , "Maternity allowance"@en .
+ff:socialBenefitsReceiving-disabilityPension a ff:AnswerOption ; rdfs:label "Erwerbsminderungsrente"@de , "Disability pension"@en .
+ff:socialBenefitsReceiving-basicSecurity a ff:AnswerOption ; rdfs:label "Grundsicherung"@de , "Basic security"@en .
+ff:socialBenefitsReceiving-subsistenceAssistance a ff:AnswerOption ; rdfs:label "Hilfe zum Lebensunterhalt"@de , "Assistance for subsistence"@en .
+ff:socialBenefitsReceiving-vocationalTrainingAllowance a ff:AnswerOption ; rdfs:label "Berufsausbildungsbeihilfe / Ausbildungsgeld"@de , "Vocational training allowance / training allowance"@en .
+ff:socialBenefitsReceiving-mobiproEU a ff:AnswerOption ; rdfs:label "Sicherung des Lebensunterhalts (MobiPro-EU)"@de , "Subsistence support (MobiPro-EU)"@en .
 
 ff:unemploymentBenefitApproved a ff:DataField ;
     schema:category ff:financeDfKategorie ;
@@ -136,7 +138,7 @@ ff:rehabilitationProvider a ff:DataField ;
         sh:property [
             sh:path ff:rehabilitationProvider ;
             sh:in (
-                ff:rehabilitationProvider-bundesagentur-fuer-arbeit
+                ff:rehabilitationProvider-bundesagenturFuerArbeit
                 ff:rehabilitationProvider-other
             ) ;
             sh:maxCount 1 ;

@@ -23,15 +23,20 @@ ff:substitutionstherapie-regulaer a ff:RequirementProfile ;
 ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
-    sh:property [ sh:path ff:has_opioid_addiction ; sh:in (true) ] ;
-    sh:property [ sh:path ff:has_medical_insurance ; sh:in (true) ] ;
+    sh:property [ sh:path ff:opioidAddiction ; sh:in (true) ] ;
+    sh:property [ sh:path ff:healthInsurance ; sh:in (true) ] ;
     sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ;
     sh:property [
         sh:or (
             [ sh:property [ sh:path ff:sobrietyWish ; sh:in (true) ] ]
-            [ sh:property [ sh:path ff:has_severe_disease ; sh:in (true) ] ]
-            [ sh:property [ sh:path ff:pregnant ; sh:in (true) ] ]
-            [ sh:property [ sh:path ff:recent_birth ; sh:in (true) ] ]
+            [ sh:property [ sh:path ff:severeDisease ; sh:in (true) ] ]
+            [ sh:and (
+                [ sh:not [ sh:property [ sh:path ff:gender ; sh:in (sh:male) ] ] ]
+                [ sh:or (
+                    [ sh:property [ sh:path ff:pregnancy ; sh:in (true) ] ]
+                    [ sh:property [ sh:path ff:recentChildbirth ; sh:in (true) ] ]
+                )]
+            ) ]
         )
     ] .
     
@@ -43,45 +48,58 @@ ff:substitutionstherapieRegulaerFlowShape a sh:NodeShape ;
     sh:property ff:baseRequirements ;
     sh:property ff:sobrietyWishPS ;
     sh:property ff:severeDiseasePS ;
-    sh:property ff:pregancyRequirementsPS ;
+    sh:property ff:genderRequirementsPS ;
+    sh:property ff:pregancyPS ;
     sh:property ff:recentBirthPS .
 
 ff:baseRequirements a sh:PropertyShape ;
-    sh:property [ sh:path ff:has_opioid_addiction ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:has_medical_insurance ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:geburtsdatum ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:opioidAddiction ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:healthInsurance ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:birthDate ; sh:minCount 1 ] .
 
 ff:sobrietyWishPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:and (
-                [ shn:eq ( [ sh:path ff:has_opioid_addiction ] true ) ]
-                [ shn:eq ( [ sh:path ff:has_medical_insurance ] true ) ]
+                [ shn:eq ( [ sh:path ff:opioidAddiction ] true ) ]
+                [ shn:eq ( [ sh:path ff:healthInsurance ] true ) ]
                 [ sh:path ff:hasAge ; sh:minInclusive 18 ]
         )]
     ] ;
-    sh:property [ sh:path ff:sobriety_wish ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:sobrietyWish ; sh:minCount 1 ] .
 
 ff:severeDiseasePS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            shn:eq ( [ sh:path ff:sobriety_wish ] false )
+            shn:eq ( [ sh:path ff:sobrietyWish ] false )
         ]
     ] ;
-    sh:property [ sh:path ff:has_severe_disease ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:severeDisease ; sh:minCount 1 ] .
 
-ff:pregancyRequirementsPS a sh:PropertyShape ;
+ff:genderRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            shn:eq ( [ sh:path ff:has_severe_disease ] false )
+            shn:eq ( [ sh:path ff:severeDisease ] false )
         ]
     ] ;
-    sh:property [ sh:path ff:pregnant ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:gender ; sh:minCount 1 ] .
+
+ff:pregnancyPS a sh:PropertyShape ;
+    sh:deactivated [
+        sh:not [
+            sh:or (
+                [ sh:property [ sh:path ff:gender ; sh:in (ff:gender-female) ] ]        
+                [ sh:property [ sh:path ff:gender ; sh:in (ff:gender-diverse) ] ]
+                [ sh:property [ sh:path ff:gender ; sh:in (ff:gender-other) ] ]
+            )
+        ]
+    ] ;
+    sh:property [ sh:path ff:pregnancy ; sh:minCount 1 ] .
 
 ff:recentBirthPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            shn:eq ( [ sh:path ff:pregnant ] false )
+            shn:eq ( [ sh:path ff:pregnancy ] false )
         ]
     ] ;
-    sh:property [ sh:path ff:recent_birth ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:recentChildbirth ; sh:minCount 1 ] .

@@ -75,6 +75,24 @@ ff:childrenAge-18_25 a ff:AnswerOption ; rdfs:label "18-25 Jahre"@de , "18-25 ye
 ff:childrenAge-over_25 a ff:AnswerOption ; rdfs:label "Über 25 Jahre"@de , "Over 25 years"@en .
 ff:childrenAge-no_children a ff:AnswerOption ; rdfs:label "Keine Kinder"@de , "No children"@en .
 
+ff:householdMembers a ff:DataField ;
+    schema:category ff:familienstand-df-kategorie;
+    rdfs:label "Mitglieder im Haushalt"@de , "Household Members"@en ;
+    schema:question "Wie viele Personen leben in Ihrem Haushalt (inkl. Ihnen)?"@de , "How many people live in your household (including you)?"@en ;
+    rdfs:comment "Bitte geben Sie die Gesamtzahl der Personen an, die in Ihrem Haushalt leben, einschließlich Ihnen selbst."@de ,
+        "Please provide the total number of people living in your household, including yourself."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:householdMembers ;
+        sh:property [
+            sh:path ff:householdMembers ;
+            sh:datatype xsd:integer ;
+            sh:minInclusive 1 ;
+            sh:maxInclusive 1000 ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
 # specific
 
 ff:parentingSituation a ff:DataField ;

@@ -63,6 +63,7 @@ ff:employmentStatus a ff:DataField ;
                 ff:employmentStatus-selfEmployed
                 ff:employmentStatus-unemployed
                 ff:employmentStatus-inEducation
+                ff:employmentStatus-federalVolunteerService
                 ff:employmentStatus-outsideLaborForce
                 ff:employmentStatus-pension
                 ff:employmentStatus-other
@@ -74,9 +75,37 @@ ff:employmentStatus-employed a ff:AnswerOption ; rdfs:label "Beschäftigt"@de , 
 ff:employmentStatus-selfEmployed a ff:AnswerOption ; rdfs:label "Selbstständig"@de , "Self-employed"@en .
 ff:employmentStatus-unemployed a ff:AnswerOption ; rdfs:label "Arbeitslos"@de , "Unemployed"@en .
 ff:employmentStatus-inEducation a ff:AnswerOption ; rdfs:label "In Ausbildung/Studium"@de , "In education/training"@en .
+ff:employmentStatus-federalVolunteerService a ff:AnswerOption ; rdfs:label "Bundesfreiwilligendienst"@de , "Federal volunteer service"@en .
 ff:employmentStatus-outsideLaborForce a ff:AnswerOption ; rdfs:label "Nicht erwerbstätig (z.B. Elternzeit, Pflege)"@de , "Outside the labor force (e.g. parental leave, caregiving)"@en .
 ff:employmentStatus-pension a ff:AnswerOption ; rdfs:label "Rente"@de , "Pension"@en .
 ff:employmentStatus-other a ff:AnswerOption ; rdfs:label "Andere"@de , "Other"@en .
+
+ff:workplaceType a ff:DataField ;
+    schema:category ff:beschaeftigung-df-kategorie ;
+    rdfs:label "Art der Arbeitsstätte"@de , "Type of Workplace"@en ;
+    schema:question "Welche Art von Arbeitsstätte haben Sie?"@de , "What type of workplace do you have?"@en ;
+    rdfs:comment "Bitte geben Sie an, ob Ihre Arbeitsstätte ein Büro, eine Fabrik, ein Geschäft, eine Schule, ein Krankenhaus oder eine andere Art von Einrichtung ist."@de ,
+                 "Please indicate whether your workplace is an office, factory, store, school, hospital, or another type of facility."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:workplaceType ;
+        sh:property [
+            sh:path ff:workplaceType ;
+            sh:in (
+                ff:workplaceType-regular
+                ff:workplaceType-inclusive
+                ff:workplaceType-sheltered
+                ff:workplaceType-selfEmployed
+                ff:workplaceType-other
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+ff:workplaceType-regular a ff:AnswerOption ; rdfs:label "Reguläre Arbeitsstätte"@de , "Regular Workplace"@en .
+ff:workplaceType-inclusive a ff:AnswerOption ; rdfs:label "Inklusive Arbeitsstätte"@de , "Inclusive Workplace"@en .
+ff:workplaceType-sheltered a ff:AnswerOption ; rdfs:label "Geschützte Werkstatt"@de , "Sheltered Workshop"@en .
+ff:workplaceType-selfEmployed a ff:AnswerOption ; rdfs:label "Selbstständig"@de , "Self-employed"@en .
+ff:workplaceType-other a ff:AnswerOption ; rdfs:label "Andere"@de , "Other"@en .
 
 ff:workplaceLocation a ff:DataField ;
     schema:category ff:beschaeftigung-df-kategorie ;
@@ -180,6 +209,22 @@ ff:careerReturner a ff:DataField ;
         sh:targetSubjectsOf ff:careerReturner ;
         sh:property [
             sh:path ff:careerReturner ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:reducedEarningCapacityCause a ff:DataField ;
+    schema:category ff:arbeitswelt-df-kategorie ;
+    rdfs:label "Besondere Gründe für Arbeitsunfähigkeit"@de , "Special reasons for inability to work"@en ;
+    schema:question "Ist Ihre Erwerbsminderung durch einen Arbeitsunfall, eine Berufskrankheit, einen Unfall im Wehr- oder Freiwilligendienst, einen Impfschaden oder durch Gewalt entstanden?"@de ,
+        "Ist Ihre Erwerbsminderung durch einen Arbeitsunfall, eine Krankheit durch den Beruf, einen Unfall im Wehr- oder Freiwilligendienst, einen Impfschaden oder durch Gewalt entstanden?"@de-x-es ,
+        "Is your disability due to a work accident, an occupational disease, an accident during military or voluntary service, a vaccination injury, or violence?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:reducedEarningCapacityCause ;
+        sh:property [
+            sh:path ff:reducedEarningCapacityCause ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
