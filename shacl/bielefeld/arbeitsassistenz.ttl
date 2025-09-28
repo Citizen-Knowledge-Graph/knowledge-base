@@ -130,4 +130,4 @@ ff:workplaceRequirementsPS a sh:PropertyShape ;
         ]
     ] ;
     sh:property [ sh:path ff:workplaceType ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:primaryEmploymentHours ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:primaryEmploymentHours ; sh:minCount 1 ] .

@@ -104,4 +104,3 @@ ff:ifb-gruendung-nachfolgeMainShape a sh:NodeShape ;
         sh:in (ff:deMinimisAid-no ff:deMinimisAid-unsure) ;
         sh:message "Nur Unternehmen, die die De-minimis-Förderung nicht vollständig ausgeschöpft haben oder nicht wissen, ob sie die Grenze erreicht haben, sind förderfähig. (Quelle: 'Unternehmen, die die zulässige De-minimis-Grenze gemäß EU-Verordnung überschreiten, sind nicht förderfähig')."@de ;
     ] .
-z
