@@ -5,11 +5,12 @@ import { newStore, addTurtleToStore, storeToTurtle, sparqlInsertDelete } from "@
 
 let header = ["# This file is a generated enriched merge of the following source files:"]
 const dir = path.join(path.dirname(fileURLToPath(import.meta.url)))
+const dfDir = path.join(dir, "datafields")
+
 const turtleFiles = [
-    `${dir}/datafields.ttl`,
-    `${dir}/bielefeld/datafields-bielefeld.ttl`,
     `${dir}/definitions.ttl`,
-    `${dir}/materialization.ttl`
+    `${dir}/materialization.ttl`,
+    ...(await fsPromise.readdir(dfDir)).filter(f => f.endsWith(".ttl")).map(f => path.join(dfDir, f))
 ]
 
 let defStore = newStore()
@@ -39,4 +40,6 @@ await sparqlInsertDelete(query, defStore)
 
 let turtle = header.join("\n") + "\n\n" + await storeToTurtle(defStore)
 await fsPromise.mkdir(`${dir}/build`, { recursive: true })
-writeFileSync(`${dir}/build/def.built.ttl`, turtle, "utf8")
+let target = `${dir}/build/def.built.ttl`
+writeFileSync(target, turtle, "utf8")
+console.log(`Wrote to ${target}`)
