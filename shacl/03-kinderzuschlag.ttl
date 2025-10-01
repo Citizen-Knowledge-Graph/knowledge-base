@@ -35,7 +35,6 @@ ff:kinderzuschlagMainShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:in (ff:habitualResidence-ger) ;
     ] ;
-
     sh:property [
         sh:path ff:citizenship ;
         sh:minCount 1 ;
@@ -85,18 +84,23 @@ ff:kinderzuschlagMainShape a sh:NodeShape ;
             ] 
         )
     ] ;
-
     sh:property [
         sh:path ff:socialBenefitsReceiving ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:and (
-            sh:property [ sh:path ff:socialBenefitsReceiving ; sh:in (ff:socialBenefitsReceiving-childBenefit) ]
-            [
-                sh:not (
-                    sh:property [ sh:path ff:socialBenefitsReceiving ; sh:in (ff:socialBenefitsReceiving-citizensIncome) ]
-                )
-            ]   
+            sh:property [
+                sh:path ff:socialBenefitsReceiving ;
+                sh:in (
+                    ff:socialBenefitsReceiving-childBenefit 
+                ) 
+            ] 
+            sh:property [
+                sh:path ff:socialBenefitsReceiving ;
+                sh:not [
+                    sh:in (ff:socialBenefitsReceiving-citizensIncome) 
+                ]
+            ]
         )
     ] .
