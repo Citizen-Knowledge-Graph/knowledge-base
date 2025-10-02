@@ -25,17 +25,7 @@ ff:schwerbehindertenausweisMainShape a sh:NodeShape ;
 
     sh:property [ sh:path ff:disability ; sh:in (true) ] ;
     sh:property [ sh:path ff:disabilityDegreeDetermined; sh:in (true) ] ;
-    sh:property [
-        sh:or (
-            [ sh:property [ sh:path ff:disabilityDegree ; sh:minInclusive 50 ] ]
-            [ 
-                sh:and (
-                    sh:property [ sh:path ff:disabilityDegree ; sh:minInclusive 30 ; sh:maxInclusive 49 ]
-                    sh:property [ sh:path ff:equalStatusNeeded ; sh:in (true) ]
-                )
-            ]
-        )
-    ] .
+    sh:property [ sh:path ff:disabilityDegree ; sh:minInclusive 50 ] .
 
 # ----- DECISION TREE LOGIC -----
 
@@ -43,8 +33,7 @@ ff:schwerbehindertenausweisFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property ff:baseRequirements ;
-    sh:property ff:degreeEvaluatedPS ;
-    sh:property ff:jobRiskPS .
+    sh:property ff:degreeEvaluatedPS .
 
 ff:baseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:disability ; sh:minCount 1 ] ;
@@ -57,12 +46,3 @@ ff:degreeEvaluatedPS a sh:PropertyShape ;
         ]
     ] ;
     sh:path ff:disabilityDegree ; sh:minCount 1 .
-
-ff:jobRiskPS a sh:PropertyShape ;
-    sh:deactivated [
-        sh:or (
-            [ sh:path ff:disabilityDegree ; sh:maxInclusive 49 ]
-            [ sh:path ff:disabilityDegree ; sh:minInclusive 30 ]
-        )
-    ] ;
-    sh:path ff:equalStatusNeeded ; sh:minCount 1 .

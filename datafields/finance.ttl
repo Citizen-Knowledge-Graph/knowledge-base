@@ -19,7 +19,9 @@ ff:incomeSource a ff:DataField ;
             sh:path ff:incomeSource ;
             sh:in (
                 ff:incomeSource-employment
+                ff:incomeSource-unemploymentBenefit
                 ff:incomeSource-selfEmployment
+                ff:incomeSource-bafoeg
                 ff:incomeSource-pension
                 ff:incomeSource-socialBenefits
                 ff:incomeSource-familySupport
@@ -28,6 +30,8 @@ ff:incomeSource a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
+ff:incomeSource-unemploymentBenefit a ff:AnswerOption ; rdfs:label "Arbeitslosengeld"@de , "Unemployment benefit"@en .
+ff:incomeSource-bafoeg a ff:AnswerOption ; rdfs:label "BAföG"@de , "BAföG"@en .
 ff:incomeSource-employment a ff:AnswerOption ; rdfs:label "Beschäftigung"@de , "Employment"@en .
 ff:incomeSource-selfEmployment a ff:AnswerOption ; rdfs:label "Selbstständigkeit"@de , "Self-employment"@en .
 ff:incomeSource-pension a ff:AnswerOption ; rdfs:label "Rente"@de , "Pension"@en .

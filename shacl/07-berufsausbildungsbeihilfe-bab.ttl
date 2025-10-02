@@ -35,11 +35,6 @@ ff:berufsausbildungsbeihilfe-babMainShape a sh:NodeShape ;
         sh:in (ff:habitualResidence-ger) ;
     ] ; 
     sh:property [
-        sh:path ff:careNeed ;
-        sh:minCount 1 ;
-        sh:in (true) ;
-    ] ;
-    sh:property [
         sh:path ff:employmentStatus ;
         sh:minCount 1 ;
         sh:in (ff:employmentStatus-inEducation) ;
@@ -54,4 +49,9 @@ ff:berufsausbildungsbeihilfe-babMainShape a sh:NodeShape ;
                 ff:incomeSource-pension
             ) ;
         ] ;
+    ] ;
+    sh:property [
+        sh:path ff:livesWithParents ;
+        sh:in (false) ;
+        sh:minCount 1 ;
     ] .

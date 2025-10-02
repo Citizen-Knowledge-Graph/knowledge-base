@@ -134,3 +134,19 @@ ff:adultChildInEducation a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
+
+ff:livesWithParents a ff:DataField ;
+    schema:category ff:familienstand-df-kategorie;
+    rdfs:label "Wohnen bei Eltern"@de , "Living with Parents"@en ;
+    schema:question "Wohnen Sie bei Ihren Eltern?"@de , "Do you live with your parents?"@en ;
+    rdfs:comment "Bitte geben Sie an, ob Sie derzeit bei Ihren Eltern wohnen. Dies kann Auswirkungen auf Ihren Anspruch auf bestimmte Leistungen haben."@de ,
+        "Please indicate whether you currently live with your parents. This may affect your entitlement to certain benefits."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:livesWithParents ;
+        sh:property [
+            sh:path ff:livesWithParents ;
+            sh:in (ff:livesWithParents-no ff:livesWithParents-yes) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .

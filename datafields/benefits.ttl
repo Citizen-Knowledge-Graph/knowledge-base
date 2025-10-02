@@ -145,7 +145,7 @@ ff:rehabilitationProvider a ff:DataField ;
         ] ;
     ] .
 
-ff:rehabilitationProvider-bundesagentur-fuer-arbeit a ff:AnswerOption ; rdfs:label "Bundesagentur für Arbeit"@de, "Federal Employment Agency"@en .
+ff:rehabilitationProvider-bundesagenturFuerArbeit a ff:AnswerOption ; rdfs:label "Bundesagentur für Arbeit"@de, "Federal Employment Agency"@en .
 ff:rehabilitationProvider-other a ff:AnswerOption ; rdfs:label "Other"@en, "Sonstige"@de .
 
 ff:eligibleTransitionalAllowance a ff:DataField ;
