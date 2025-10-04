@@ -21,4 +21,17 @@ ff:bundesfoerderung-effiziente-gebaeudeMainShape a sh:NodeShape ;
         sh:path ff:buildingCountry ;
         sh:in ( ff:buildingCountry-ger ) ;
         sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ff:buildingTypeRenovation ;
+        sh:in ( ff:buildingTypeRenovation-existing ) ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [   
+        sh:path ff:renovationType ;
+        sh:in ( ff:renovationType-energyEfficiency ff:renovationType-renewableHeating ) ;
+        sh:minCount 1 ;
+        sh:message "Die Maßnahme muss zur Verbesserung der Energieeffizienz oder zur Erhöhung des Anteils erneuerbarer Energien beitragen. (Quelle: BEG Merkblatt – '... die Energieeffizienz und der Anteil erneuerbarer Energien ... gesteigert werden ...')"@de ;
     ] .

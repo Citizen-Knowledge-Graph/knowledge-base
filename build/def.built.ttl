@@ -301,7 +301,7 @@ ff:birthDate a ff:DataField;
     ].
 
 ff:buildingCountry a ff:DataField;
-  schema:category ff:personalDfKategorie;
+  schema:category ff:wohnungsbau-df-kategorie;
   schema:question
     "In welchem Land befindet sich das Gebäude, das Sie sanieren oder nachrüsten möchten?"@de-x-es,
     "In welchem Land befindet sich das Gebäude, das Sie sanieren oder nachrüsten möchten?"@de,
@@ -311,9 +311,9 @@ ff:buildingCountry a ff:DataField;
     "Erfasst wird das Land, in dem sich das zu sanierende oder nachzurüstende Gebäude befindet."@de,
     "This field captures the country in which the building to be renovated or retrofitted is located."@en;
   rdfs:label
-    "Gebäudestandort (Land)"@de-x-es,
-    "Gebäudestandort (Land)"@de,
-    "Building Location (Country)"@en;
+    "Gebäudestandort Land"@de-x-es,
+    "Gebäudestandort Land"@de,
+    "Building Location Country"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:in (ff:buildingCountry-ger ff:buildingCountry-eu ff:buildingCountry-other);
@@ -342,7 +342,7 @@ ff:buildingCountry-other a ff:AnswerOption;
     "Other country"@en.
 
 ff:buildingTypeRenovation a ff:DataField;
-  schema:category ff:personalDfKategorie;
+  schema:category ff:wohnungsbau-df-kategorie;
   schema:question
     "Handelt es sich bei dem Gebäude, das Sie sanieren oder nachrüsten möchten, um ein bestehendes Gebäude oder ein Neubauprojekt?"@de-x-es,
     "Handelt es sich bei dem Gebäude, das Sie sanieren oder nachrüsten möchten, um ein bestehendes Gebäude oder ein Neubauprojekt?"@de,
@@ -352,9 +352,9 @@ ff:buildingTypeRenovation a ff:DataField;
     "Die Frage unterscheidet, ob es sich bei dem geplanten Vorhaben um die Sanierung oder Nachrüstung eines bestehenden Gebäudes oder um ein Neubauprojekt handelt."@de,
     "This question distinguishes whether the planned project involves the renovation or retrofitting of an existing building or a new construction project."@en;
   rdfs:label
-    "Gebäudeart (Sanierung oder Neubau)"@de-x-es,
-    "Gebäudeart (Sanierung oder Neubau)"@de,
-    "Building Type (Renovation or New Construction)"@en;
+    "Gebäudeart - Sanierung oder Neubau"@de-x-es,
+    "Gebäudeart - Sanierung oder Neubau"@de,
+    "Building Type - Renovation or New Construction"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:in (ff:buildingTypeRenovation-existing ff:buildingTypeRenovation-new);
@@ -2061,7 +2061,7 @@ ff:housingInvestmentLocation-outsideBerlin a ff:AnswerOption;
     "Outside Berlin"@en.
 
 ff:housingProjectType a ff:DataField;
-  schema:category ff:personalDfKategorie;
+  schema:category ff:wohnungsbau-df-kategorie;
   schema:question
     "Welche Art von Wohnprojekt ist geplant?"@de-x-es,
     "Welche Art von Wohnprojekt ist geplant?"@de,
@@ -2123,12 +2123,18 @@ ff:incomeSource a ff:DataField;
     "Source of Income"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
-          sh:in (ff:incomeSource-employment ff:incomeSource-selfEmployment ff:incomeSource-pension ff:incomeSource-socialBenefits ff:incomeSource-familySupport ff:incomeSource-other);
+          sh:in (ff:incomeSource-employment ff:incomeSource-unemploymentBenefit ff:incomeSource-selfEmployment ff:incomeSource-bafoeg ff:incomeSource-pension ff:incomeSource-socialBenefits ff:incomeSource-familySupport ff:incomeSource-other);
           sh:maxCount 1;
           sh:path ff:incomeSource
         ];
       sh:targetSubjectsOf ff:incomeSource
     ].
+
+ff:incomeSource-bafoeg a ff:AnswerOption;
+  rdfs:label
+    "BAföG"@de-x-es,
+    "BAföG"@de,
+    "BAföG"@en.
 
 ff:incomeSource-employment a ff:AnswerOption;
   rdfs:label
@@ -2165,6 +2171,12 @@ ff:incomeSource-socialBenefits a ff:AnswerOption;
     "Sozialleistungen"@de-x-es,
     "Sozialleistungen"@de,
     "Social benefits"@en.
+
+ff:incomeSource-unemploymentBenefit a ff:AnswerOption;
+  rdfs:label
+    "Arbeitslosengeld"@de-x-es,
+    "Arbeitslosengeld"@de,
+    "Unemployment benefit"@en.
 
 ff:individualIncome a ff:DataField;
   schema:category ff:einkommen-df-kategorie;
@@ -2416,6 +2428,29 @@ ff:leistungen-fuer-familien-bc-kategorie a ff:BenefitCategory;
     "Leistungen für Familien"@de,
     "Family & Children"@en;
   rdfs:seeAlso <https://sozialplattform.de/inhalt/leistungen-fuer-familien>.
+
+ff:livesWithParents a ff:DataField;
+  schema:category ff:familienstand-df-kategorie;
+  schema:question
+    "Wohnen Sie bei Ihren Eltern?"@de-x-es,
+    "Wohnen Sie bei Ihren Eltern?"@de,
+    "Do you live with your parents?"@en;
+  rdfs:comment
+    "Bitte geben Sie an, ob Sie derzeit bei Ihren Eltern wohnen. Dies kann Auswirkungen auf Ihren Anspruch auf bestimmte Leistungen haben."@de-x-es,
+    "Bitte geben Sie an, ob Sie derzeit bei Ihren Eltern wohnen. Dies kann Auswirkungen auf Ihren Anspruch auf bestimmte Leistungen haben."@de,
+    "Please indicate whether you currently live with your parents. This may affect your entitlement to certain benefits."@en;
+  rdfs:label
+    "Wohnen bei Eltern"@de-x-es,
+    "Wohnen bei Eltern"@de,
+    "Living with Parents"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:in (ff:livesWithParents-no ff:livesWithParents-yes);
+          sh:maxCount 1;
+          sh:path ff:livesWithParents
+        ];
+      sh:targetSubjectsOf ff:livesWithParents
+    ].
 
 ff:locationFoundingTeam a ff:DataField;
   schema:category ff:gruendung-df-kategorie;
@@ -3001,7 +3036,7 @@ ff:rehabilitationProvider a ff:DataField;
       sh:targetSubjectsOf ff:rehabilitationProvider
     ].
 
-ff:rehabilitationProvider-bundesagentur-fuer-arbeit a ff:AnswerOption;
+ff:rehabilitationProvider-bundesagenturFuerArbeit a ff:AnswerOption;
   rdfs:label
     "Bundesagentur für Arbeit"@de-x-es,
     "Bundesagentur für Arbeit"@de,
