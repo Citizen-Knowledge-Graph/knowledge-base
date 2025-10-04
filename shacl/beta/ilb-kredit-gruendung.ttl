@@ -25,7 +25,7 @@ ff:ilb-kredit-gruendungMainShape a sh:NodeShape ;
     sh:property [
         sh:path ff:employeeCount ;
         sh:minCount 1 ;
-        sh:not[ sh:in (ff:employeeCount-greater25) ; ];
+        sh:not[ sh:in (ff:employeeCount-greater250) ; ];
         sh:message "Das Unternehmen muss ein KMU mit weniger als 250 Mitarbeitenden sein. (Quelle: KMU-Definition der EU - 'junge, kleine und mittlere Unternehmen im Sinne der EU-Definition mit weniger als 250 Mitarbeitern.')"@de ;
     ] ;
     
