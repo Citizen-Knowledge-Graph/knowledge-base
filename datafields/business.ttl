@@ -7,7 +7,7 @@
 # general
 
 ff:housingProjectType a ff:DataField ;
-    schema:category ff:personalDfKategorie ;
+    schema:category ff:wohnungsbau-df-kategorie ;
     rdfs:label "Art des Wohnprojekts"@de , "Type of Housing Project"@en ;
     schema:question "Welche Art von Wohnprojekt ist geplant?"@de ,
                     "What type of housing project is planned?"@en ;
@@ -33,8 +33,8 @@ ff:housingProjectType-burglaryProtection a ff:AnswerOption ; rdfs:label "Einbruc
 ff:housingProjectType-other a ff:AnswerOption ; rdfs:label "Andere"@de , "Other"@en .
 
 ff:buildingCountry a ff:DataField ;
-    schema:category ff:personalDfKategorie ;
-    rdfs:label "Gebäudestandort (Land)"@de , "Building Location (Country)"@en ;
+    schema:category ff:wohnungsbau-df-kategorie ;
+    rdfs:label "Gebäudestandort Land"@de , "Building Location Country"@en ;
     schema:question "In welchem Land befindet sich das Gebäude, das Sie sanieren oder nachrüsten möchten?"@de ,
                     "In which country is the building you want to renovate or retrofit located?"@en ;
     rdfs:comment "Erfasst wird das Land, in dem sich das zu sanierende oder nachzurüstende Gebäude befindet."@de ,
@@ -57,8 +57,8 @@ ff:buildingCountry-eu a ff:AnswerOption ; rdfs:label "Europäische Union (außer
 ff:buildingCountry-other a ff:AnswerOption ; rdfs:label "Anderes Land"@de , "Other country"@en .
 
 ff:buildingTypeRenovation a ff:DataField ;
-    schema:category ff:personalDfKategorie ;
-    rdfs:label "Gebäudeart (Sanierung oder Neubau)"@de , "Building Type (Renovation or New Construction)"@en ;
+    schema:category ff:wohnungsbau-df-kategorie ;
+    rdfs:label "Gebäudeart - Sanierung oder Neubau"@de , "Building Type - Renovation or New Construction"@en ;
     schema:question "Handelt es sich bei dem Gebäude, das Sie sanieren oder nachrüsten möchten, um ein bestehendes Gebäude oder ein Neubauprojekt?"@de ,
                     "Is the building you want to renovate or retrofit an existing building or a new construction project?"@en ;
     rdfs:comment "Die Frage unterscheidet, ob es sich bei dem geplanten Vorhaben um die Sanierung oder Nachrüstung eines bestehenden Gebäudes oder um ein Neubauprojekt handelt."@de ,
