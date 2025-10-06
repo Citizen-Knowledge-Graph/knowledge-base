@@ -160,6 +160,7 @@ ff:disabilityDegree a ff:DataField ;
                 ff:disabilityDegree-80
                 ff:disabilityDegree-90
                 ff:disabilityDegree-100
+                ff:disabilityDegree-none
             ) ;
             sh:maxCount 1 ;
         ] ;
@@ -173,6 +174,7 @@ ff:disabilityDegree-70 a ff:AnswerOption ; rdfs:label "70"@de , "70"@en .
 ff:disabilityDegree-80 a ff:AnswerOption ; rdfs:label "80"@de , "80"@en .
 ff:disabilityDegree-90 a ff:AnswerOption ; rdfs:label "90"@de , "90"@en .
 ff:disabilityDegree-100 a ff:AnswerOption ; rdfs:label "100"@de , "100"@en .
+ff:disabilityDegree-none a ff:AnswerOption ; rdfs:label "Keine Angabe"@de , "No indication"@en .
 
 ff:equalStatusNeeded a ff:DataField ;
     schema:category ff:beschaeftigungDfKategorie ;
