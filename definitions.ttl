@@ -163,6 +163,16 @@ ff:integrationsamt a ff:ProvidingAgency ;
     rdfs:comment "Das Integrationsamt unterstützt Menschen mit Behinderungen bei der Teilhabe am Arbeitsleben."@de ,
     "The Integration Office supports people with disabilities in participating in working life."@en .
 
+ff:jugendamt a ff:ProvidingAgency ;
+    rdfs:label "Jugendamt"@de, "Youth Welfare Office"@en ;
+    rdfs:comment "Das Jugendamt ist für die Förderung und den Schutz von Kindern und Jugendlichen zuständig."@de ,
+    "The Youth Welfare Office is responsible for the promotion and protection of children and young people."@en .
+
+ff:rentenversicherung a ff:ProvidingAgency ;
+    rdfs:label "Rentenversicherung"@de, "Pension Insurance"@en ;
+    rdfs:comment "Die Rentenversicherung ist für die gesetzliche Rentenversicherung in Deutschland zuständig."@de ,
+    "The Pension Insurance is responsible for statutory pension insurance in Germany."@en .  
+
 # Administrative Levels
 
 ff:bund a ff:AdministrativeLevel ;

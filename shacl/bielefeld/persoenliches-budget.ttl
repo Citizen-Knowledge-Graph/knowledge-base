@@ -10,7 +10,7 @@ ff:persoenliches-budget a ff:RequirementProfile ;
     ff:validationStage ff:preliminary-validation ;
     ff:legalBasis ff:sgb-ix ;
     ff:administrativeLevel ff:bund ;
-    ff:providingAgency ff:sozialamt, ff:bundesagentur-fuer-arbeit, ff:kassenaerztliche-vereinigung, ff:gesundheitsamt, ff:integrationsamt ;
+    ff:providingAgency ff:sozialamt, ff:bundesagentur-fuer-arbeit, ff:kassenaerztliche-vereinigung, ff:gesundheitsamt, ff:integrationsamt, ff:jugendamt, ff:rentenversicherung ;
     ff:tag ff:bielefunke ;
     ff:benefitInfo "Menschen mit einer Behinderung oder von Behinderung bedrohte Personen können Leistungen zur Teilhabe in Form eines Persönlichen Budgets erhalten. Dadurch werden ihnen die erforderlichen Hilfen als Geldleistung oder Gutschein gewährt, sodass sie diese selbstbestimmt organisieren können."@de ,
                     "People with a disability or at risk of disability may receive participation benefits in the form of a Personal Budget. This provides them with the necessary support as cash benefits or vouchers, enabling them to organize assistance independently."@en ;
