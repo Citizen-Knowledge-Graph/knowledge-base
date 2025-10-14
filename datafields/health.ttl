@@ -408,4 +408,48 @@ ff:significantDailyLifeLimitation a ff:DataField ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;
-    ] . 
+    ] .
+
+ff:impairedVisibility a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Beeinträchtigte Sicht"@de , "Impaired Visibility"@en ;
+    schema:question "Liegt bei Ihnen eine erhebliche Beeinträchtigung des Sehvermögens vor?"@de , 
+        "Do you have a significant impairment of vision?"@en ;
+    rdfs:comment "Eine erhebliche Beeinträchtigung des Sehvermögens liegt vor, wenn die Sehkraft so eingeschränkt ist, dass alltägliche Aktivitäten wie Lesen, Erkennen von Gesichtern oder Navigieren in der Umgebung ohne Hilfsmittel oder Unterstützung nicht oder nur sehr eingeschränkt möglich sind."@de ,
+        "A significant impairment of vision exists when visual acuity is so limited that everyday activities such as reading, recognizing faces, or navigating the environment are not possible or only very limited without aids or assistance."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:impairedVisibility ;
+        sh:property [
+            sh:path ff:impairedVisibility ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:visibilityDegree a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Grad der Beeinträchtigung des Sehvermögens"@de , "Degree of Impairment of Vision"@en ;
+    schema:question "Wie stark ist das Sehvermögen auf Ihrem besseren Auge beeinträchtigt?"@de ,
+        "To what extent is the vision in your better eye impaired?"@en ;
+    rdfs:comment "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Der Visuswert gibt an, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann. Der Visuswert wird von Augenärzt:innen mit standardisierten Sehtests, zum Beispiel anhand von Sehtafeln, festgestellt."@de ,
+        "The degree of impairment of vision in Germany is determined by the visual acuity value (Visuswert). The Visuswert indicates how sharply someone can see compared to a person without visual impairment. The Visuswert is determined by ophthalmologists using standardized vision tests, for example with eye charts."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:visibilityDegree ;
+        sh:property [
+            sh:path ff:visibilityDegree ;
+            sh:in (
+                ff:visibilityDegree-below02
+                ff:visibilityDegree-below05
+                ff:visibilityDegree-above05
+                ff:visibilityDegree-none
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:visibilityDegree-below02 a ff:AnswerOption ; rdfs:label "Visuswert von 0,02 oder geringer"@de , "Below 0.02"@en .
+ff:visibilityDegree-below05 a ff:AnswerOption ; rdfs:label "Visuswert von 0,05 oder geringer"@de , "Below 0.05"@en .
+ff:visibilityDegree-above05 a ff:AnswerOption ; rdfs:label "Visuswert von 0,05 oder höher"@de , "0.05 or higher"@en .
+ff:visibilityDegree-none a ff:AnswerOption ; rdfs:label "Keine Angabe"@de , "No indication"@en .
