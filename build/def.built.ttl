@@ -2445,6 +2445,16 @@ ff:jobcenter a ff:ProvidingAgency;
     "Jobcenter"@de,
     "Job Center"@en.
 
+ff:jugendamt a ff:ProvidingAgency;
+  rdfs:comment
+    "Das Jugendamt ist für die Förderung und den Schutz von Kindern und Jugendlichen zuständig."@de-x-es,
+    "Das Jugendamt ist für die Förderung und den Schutz von Kindern und Jugendlichen zuständig."@de,
+    "The Youth Welfare Office is responsible for the promotion and protection of children and young people."@en;
+  rdfs:label
+    "Jugendamt"@de-x-es,
+    "Jugendamt"@de,
+    "Youth Welfare Office"@en.
+
 ff:kassenaerztliche-vereinigung a ff:ProvidingAgency;
   rdfs:comment
     "Die Kassenärztliche Vereinigung ist für die Sicherstellung der ambulanten medizinischen Versorgung in Deutschland zuständig."@de-x-es,
@@ -3165,6 +3175,16 @@ ff:renovationType-renewableHeating a ff:AnswerOption;
     "Erneuerbare Heizsysteme"@de,
     "Renewable heating systems"@en.
 
+ff:rentenversicherung a ff:ProvidingAgency;
+  rdfs:comment
+    "Die Rentenversicherung ist für die gesetzliche Rentenversicherung in Deutschland zuständig."@de-x-es,
+    "Die Rentenversicherung ist für die gesetzliche Rentenversicherung in Deutschland zuständig."@de,
+    "The Pension Insurance is responsible for statutory pension insurance in Germany."@en;
+  rdfs:label
+    "Rentenversicherung"@de-x-es,
+    "Rentenversicherung"@de,
+    "Pension Insurance"@en.
+
 ff:requiredForCare a ff:DataField;
   schema:category ff:gesundheit-df-kategorie;
   schema:question
@@ -3540,6 +3560,29 @@ ff:sgb-xii a ff:Law;
     "SGB XII"@de-x-es,
     "SGB XII"@de,
     "SGB XII"@en.
+
+ff:significantDailyLifeLimitation a ff:DataField;
+  schema:category ff:gesundheit-df-kategorie;
+  schema:question
+    "Werden Sie durch die Behinderung in Ihrem täglichen Leben wesentlich beeinträchtigt?"@de-x-es,
+    "Werden Sie durch die Behinderung in Ihrem täglichen Leben wesentlich beeinträchtigt?"@de,
+    "Are you significantly impaired in your daily life by the disability?"@en;
+  rdfs:comment
+    "Eine wesentliche Beeinträchtigung liegt vor, wenn die Behinderung zentrale Lebensbereiche wie Mobilität, Selbstversorgung, Kommunikation oder soziale Teilhabe dauerhaft einschränkt. Erkennbar ist dies, wenn alltägliche Aufgaben ohne Hilfe, Hilfsmittel oder Assistenz nicht oder nur sehr eingeschränkt möglich sind. Entscheidend ist also nicht die Diagnose, sondern die spürbare Einschränkung im täglichen Leben."@de-x-es,
+    "Eine wesentliche Beeinträchtigung liegt vor, wenn die Behinderung zentrale Lebensbereiche wie Mobilität, Selbstversorgung, Kommunikation oder soziale Teilhabe dauerhaft einschränkt. Erkennbar ist dies, wenn alltägliche Aufgaben ohne Hilfe, Hilfsmittel oder Assistenz nicht oder nur sehr eingeschränkt möglich sind. Entscheidend ist also nicht die Diagnose, sondern die spürbare Einschränkung im täglichen Leben."@de,
+    "A significant impairment exists when the disability permanently restricts central areas of life such as mobility, self-care, communication, or social participation. This is evident when everyday tasks cannot be performed without help, aids, or assistance, or can only be performed to a very limited extent. Thus, the decisive factor is not the diagnosis but the noticeable limitation in daily life."@en;
+  rdfs:label
+    "Wesentliche Beeinträchtigung im Alltag"@de-x-es,
+    "Wesentliche Beeinträchtigung im Alltag"@de,
+    "Significant Daily Life Limitation"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:significantDailyLifeLimitation
+        ];
+      sh:targetSubjectsOf ff:significantDailyLifeLimitation
+    ].
 
 ff:sobrietyWish a ff:DataField;
   schema:category ff:gesundheit-pflege-df-kategorie;
