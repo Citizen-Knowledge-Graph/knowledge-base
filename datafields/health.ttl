@@ -392,3 +392,20 @@ ff:requiredForCare a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
+
+ff:significantDailyLifeLimitation a ff:DataField ;
+    schema:category ff:gesundheit-df-kategorie ;
+    rdfs:label "Wesentliche Beeinträchtigung im Alltag"@de , "Significant Daily Life Limitation"@en ;
+    schema:question "Werden Sie durch die Behinderung in Ihrem täglichen Leben wesentlich beeinträchtigt?"@de ,
+        "Are you significantly impaired in your daily life by the disability?"@en ;
+    rdfs:comment "Eine wesentliche Beeinträchtigung liegt vor, wenn die Behinderung zentrale Lebensbereiche wie Mobilität, Selbstversorgung, Kommunikation oder soziale Teilhabe dauerhaft einschränkt. Erkennbar ist dies, wenn alltägliche Aufgaben ohne Hilfe, Hilfsmittel oder Assistenz nicht oder nur sehr eingeschränkt möglich sind. Entscheidend ist also nicht die Diagnose, sondern die spürbare Einschränkung im täglichen Leben."@de ,
+        "A significant impairment exists when the disability permanently restricts central areas of life such as mobility, self-care, communication, or social participation. This is evident when everyday tasks cannot be performed without help, aids, or assistance, or can only be performed to a very limited extent. Thus, the decisive factor is not the diagnosis but the noticeable limitation in daily life."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:significantDailyLifeLimitation ;
+        sh:property [
+            sh:path ff:significantDailyLifeLimitation ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] . 
