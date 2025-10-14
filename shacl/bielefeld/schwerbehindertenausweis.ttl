@@ -25,7 +25,14 @@ ff:schwerbehindertenausweisMainShape a sh:NodeShape ;
 
     sh:property [ sh:path ff:disability ; sh:in (true) ] ;
     sh:property [ sh:path ff:disabilityDegreeDetermined; sh:in (true) ] ;
-    sh:property [ sh:path ff:disabilityDegree ; sh:minInclusive 50 ] .
+    sh:property [ sh:path ff:disabilityDegree ; sh:in(
+        ff:disabilityDegree-50
+        ff:disabilityDegree-60 
+        ff:disabilityDegree-70 
+        ff:disabilityDegree-80 
+        ff:disabilityDegree-90 
+        ff:disabilityDegree-100
+    ) ] .
 
 # ----- DECISION TREE LOGIC -----
 

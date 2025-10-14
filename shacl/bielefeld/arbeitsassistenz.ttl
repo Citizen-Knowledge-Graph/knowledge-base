@@ -27,10 +27,22 @@ ff:arbeitsassistenzMainShape a sh:NodeShape ;
     sh:property [ sh:path ff:disabilityDegreeDetermined; sh:in (true) ] ;
     sh:property [
         sh:or (
-            [ sh:property [ sh:path ff:disabilityDegree ; sh:minInclusive 50 ] ]
+            [ 
+                sh:property [ sh:path ff:disabilityDegree ; sh:in(
+                    ff:disabilityDegree-50
+                    ff:disabilityDegree-60 
+                    ff:disabilityDegree-70 
+                    ff:disabilityDegree-80 
+                    ff:disabilityDegree-90 
+                    ff:disabilityDegree-100
+                ) ] 
+            ]
             [ 
                 sh:and (
-                    sh:property [ sh:path ff:disabilityDegree ; sh:minInclusive 30 ; sh:maxInclusive 49 ]
+                    sh:property [ sh:path ff:disabilityDegree ; sh:in(
+                        ff:disabilityDegree-30
+                        ff:disabilityDegree-40
+                    ) ]                     
                     sh:property [ sh:path ff:equalStatusNeeded ; sh:in (true) ]
                 )
             ]
@@ -93,10 +105,12 @@ ff:degreeEvaluatedPS a sh:PropertyShape ;
 
 ff:jobRiskPS a sh:PropertyShape ;
     sh:deactivated [
-        sh:or (
-            [ sh:path ff:disabilityDegree ; sh:maxInclusive 49 ]
-            [ sh:path ff:disabilityDegree ; sh:minInclusive 30 ]
-        )
+        sh:not [
+            sh:path ff:disabilityDegree ; sh:in(
+                ff:disabilityDegree-30
+                ff:disabilityDegree-40
+            )
+        ]
     ] ;
     sh:property [ sh:path ff:equalStatusNeeded ; sh:minCount 1 ] .
     
@@ -104,12 +118,24 @@ ff:insufficientWorkplacePS a sh:PropertyShape ;
     sh:deactivated [
         sh:or (
             [ sh:not [  
-                sh:path ff:disabilityDegree; sh:minInclusive 50
+                sh:path ff:disabilityDegree ; sh:in(
+                    ff:disabilityDegree-50
+                    ff:disabilityDegree-60
+                    ff:disabilityDegree-70
+                    ff:disabilityDegree-80
+                    ff:disabilityDegree-90
+                    ff:disabilityDegree-100
+                )
             ] ]
             [
                 sh:not [
                     sh:and (
-                        [ sh:path ff:disabilityDegree; sh:minInclusive 30 ; sh:maxInclusive 49 ]
+                        [ 
+                            sh:path ff:disabilityDegree ; sh:in(
+                                ff:disabilityDegree-30
+                                ff:disabilityDegree-40
+                            )
+                        ]
                         [ sh:path ff:equalStatusNeeded ; sh:in (true) ]
                     )
                 ]
