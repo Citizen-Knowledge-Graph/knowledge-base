@@ -91,7 +91,6 @@ ff:arbeitsassistenzFlowShape a sh:NodeShape ;
     sh:property ff:workplaceRequirementsPS .
 
 ff:baseRequirements a sh:PropertyShape ;    
-    sh:property [ sh:path ff:hasResidence ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:disability ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:disabilityDegreeDetermined ; sh:minCount 1 ] .
 
