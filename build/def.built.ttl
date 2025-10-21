@@ -13,6 +13,7 @@
 # - datafields/personal.ttl
 # - datafields/property.ttl
 # - datafields/research.ttl
+# - datafields/volunteering.ttl
 
 @prefix ff: <https://foerderfunke.org/default#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
@@ -20,6 +21,24 @@
 @prefix schema: <http://schema.org/>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+ff:activeInAssociation a ff:DataField;
+  schema:question
+    "Sind Sie in einem Verein oder einer gemeinnützigen Organisation aktiv?"@de-x-es,
+    "Sind Sie in einem Verein oder einer gemeinnützigen Organisation aktiv?"@de,
+    "Are you active in an association or a non-profit organization?"@en;
+  rdfs:label
+    "Aktivität in einem Verein"@de-x-es,
+    "Aktivität in einem Verein"@de,
+    "Activity in an Association"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:activeInAssociation
+        ];
+      sh:targetSubjectsOf ff:activeInAssociation
+    ].
 
 ff:acuteCareSituation a ff:DataField;
   schema:category ff:gesundheit-df-kategorie;
@@ -201,6 +220,65 @@ ff:assets a ff:DataField;
         ];
       sh:targetSubjectsOf ff:assets
     ].
+
+ff:associationActivity a ff:DataField;
+  schema:question
+    "Welche Art von Tätigkeit übt der Verein oder die gemeinnützige Organisation aus?"@de-x-es,
+    "Welche Art von Tätigkeit übt der Verein oder die gemeinnützige Organisation aus?"@de,
+    "What type of activity does the association or non-profit organization engage in?"@en;
+  rdfs:label
+    "Tätigkeit des Vereins"@de-x-es,
+    "Tätigkeit des Vereins"@de,
+    "Activity of the Association"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:in (ff:associationActivity-sports ff:associationActivity-cultural ff:associationActivity-social ff:associationActivity-environmental ff:associationActivity-educational ff:associationActivity-youthWork ff:associationActivity-womenSupport ff:associationActivity-other);
+          sh:path ff:associationActivity
+        ];
+      sh:targetSubjectsOf ff:associationActivity
+    ].
+
+ff:associationActivity-cultural a ff:AnswerOption;
+  rdfs:label
+    "Kultur"@de-x-es,
+    "Kultur"@de,
+    "Cultural"@en.
+
+ff:associationActivity-educational a ff:AnswerOption;
+  rdfs:label
+    "Bildung"@de-x-es,
+    "Bildung"@de,
+    "Educational"@en.
+
+ff:associationActivity-environmental a ff:AnswerOption;
+  rdfs:label
+    "Umwelt"@de-x-es,
+    "Umwelt"@de,
+    "Environmental"@en.
+
+ff:associationActivity-social a ff:AnswerOption;
+  rdfs:label
+    "Soziales"@de-x-es,
+    "Soziales"@de,
+    "Social"@en.
+
+ff:associationActivity-sports a ff:AnswerOption;
+  rdfs:label
+    "Sport"@de-x-es,
+    "Sport"@de,
+    "Sports"@en.
+
+ff:associationActivity-womenSupport a ff:AnswerOption;
+  rdfs:label
+    "Frauenförderung"@de-x-es,
+    "Frauenförderung"@de,
+    "Promotion of Women"@en.
+
+ff:associationActivity-youthWork a ff:AnswerOption;
+  rdfs:label
+    "Jugendarbeit"@de-x-es,
+    "Jugendarbeit"@de,
+    "Youth Work"@en.
 
 ff:balanceSheet a ff:DataField;
   schema:category ff:gruendung-df-kategorie;
