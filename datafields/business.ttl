@@ -6,6 +6,22 @@
 
 # general
 
+ff:interestInBusinessFunding a ff:DataField ;
+    schema:category ff:selbstaendigkeit-gruendung ;
+    rdfs:label "Interest in Business Funding"@en, "Interesse an Unternehmensförderung"@de ;
+    schema:question "Are you interested in funding opportunities for businesses?"@en, 
+                    "Haben Sie Interesse an Fördermöglichkeiten für Unternehmen?"@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:interestInBusinessFunding ;
+        sh:property [
+            sh:path ff:interestInBusinessFunding ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+
 ff:housingProjectType a ff:DataField ;
     schema:category ff:wohnungsbau-df-kategorie ;
     rdfs:label "Art des Wohnprojekts"@de , "Type of Housing Project"@en ;
@@ -639,6 +655,50 @@ ff:companyFinancialDifficulty a ff:DataField ;
         sh:targetSubjectsOf ff:companyFinancialDifficulty ;
         sh:property [
             sh:path ff:companyFinancialDifficulty ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:planingToFound a ff:DataField ;
+    schema:category ff:gruendung-df-kategorie ;
+    rdfs:label "Planning to Found"@en, "Gründungsplanung"@de ;
+    schema:question "Are you planning to found a company?"@en, "Planen Sie, ein Unternehmen zu gründen?"@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:planingToFound ;
+        sh:property [
+            sh:path ff:planingToFound ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:recentlyFounded a ff:DataField ;
+    schema:category ff:gruendung-df-kategorie ;
+    rdfs:label "Recently Founded"@en, "Kürzlich gegründet"@de ;
+    schema:question "Have you founded a company in recent months?"@en, "Haben Sie in den letzten Monaten ein Unternehmen gegründet?"@de ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:recentlyFounded ;
+        sh:property [
+            sh:path ff:recentlyFounded ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:managingCompany a ff:DataField ;
+    schema:category ff:gruendung-df-kategorie ;
+    rdfs:label "Managing a Company"@en, "Unternehmensführung"@de ;
+    schema:question "Sind Sie in einer Führungsposition in einem Unternehmen tätig?"@de , "Are you in a management position in a company?"@en ;
+    rdfs:comment "Bezieht sich auf eine führende Position in einem Unternehmen, z. B. als Geschäftsführer:in oder als Gesellschafter:in mit Leitungsfunktion."@de ,
+                    "Refers to a management position in a company, e.g., as a managing director or as a partner with leadership responsibilities."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:managingCompany ;
+        sh:property [
+            sh:path ff:managingCompany ;
             sh:datatype xsd:boolean ;
             sh:maxCount 1 ;
         ] ;

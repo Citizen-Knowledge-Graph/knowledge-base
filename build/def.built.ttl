@@ -11,6 +11,7 @@
 # - datafields/insurance.ttl
 # - datafields/local-offers.ttl
 # - datafields/personal.ttl
+# - datafields/property.ttl
 # - datafields/research.ttl
 
 @prefix ff: <https://foerderfunke.org/default#>.
@@ -2458,6 +2459,25 @@ ff:interestedInSuccession a ff:DataField;
       sh:targetSubjectsOf ff:interestedInSuccession
     ].
 
+ff:interestInBusinessFunding a ff:DataField;
+  schema:category ff:selbstaendigkeit-gruendung;
+  schema:question
+    "Haben Sie Interesse an Fördermöglichkeiten für Unternehmen?"@de-x-es,
+    "Haben Sie Interesse an Fördermöglichkeiten für Unternehmen?"@de,
+    "Are you interested in funding opportunities for businesses?"@en;
+  rdfs:label
+    "Interesse an Unternehmensförderung"@de-x-es,
+    "Interesse an Unternehmensförderung"@de,
+    "Interest in Business Funding"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:interestInBusinessFunding
+        ];
+      sh:targetSubjectsOf ff:interestInBusinessFunding
+    ].
+
 ff:jobcenter a ff:ProvidingAgency;
   rdfs:comment
     "Das Jobcenter ist für die Grundsicherung für Arbeitsuchende zuständig und unterstützt bei der Integration in den Arbeitsmarkt."@de-x-es,
@@ -2623,6 +2643,29 @@ ff:majorityShares a ff:DataField;
           sh:path ff:majorityShares
         ];
       sh:targetSubjectsOf ff:majorityShares
+    ].
+
+ff:managingCompany a ff:DataField;
+  schema:category ff:gruendung-df-kategorie;
+  schema:question
+    "Sind Sie in einer Führungsposition in einem Unternehmen tätig?"@de-x-es,
+    "Sind Sie in einer Führungsposition in einem Unternehmen tätig?"@de,
+    "Are you in a management position in a company?"@en;
+  rdfs:comment
+    "Bezieht sich auf eine führende Position in einem Unternehmen, z. B. als Geschäftsführer:in oder als Gesellschafter:in mit Leitungsfunktion."@de-x-es,
+    "Bezieht sich auf eine führende Position in einem Unternehmen, z. B. als Geschäftsführer:in oder als Gesellschafter:in mit Leitungsfunktion."@de,
+    "Refers to a management position in a company, e.g., as a managing director or as a partner with leadership responsibilities."@en;
+  rdfs:label
+    "Unternehmensführung"@de-x-es,
+    "Unternehmensführung"@de,
+    "Managing a Company"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:managingCompany
+        ];
+      sh:targetSubjectsOf ff:managingCompany
     ].
 
 ff:martialStatus a ff:DataField;
@@ -2866,6 +2909,25 @@ ff:persoenliche-angaben-df-kategorie a ff:DatafieldCategory;
     "Persönliche Angaben"@de,
     "Personal information"@en.
 
+ff:planingToFound a ff:DataField;
+  schema:category ff:gruendung-df-kategorie;
+  schema:question
+    "Planen Sie, ein Unternehmen zu gründen?"@de-x-es,
+    "Planen Sie, ein Unternehmen zu gründen?"@de,
+    "Are you planning to found a company?"@en;
+  rdfs:label
+    "Gründungsplanung"@de-x-es,
+    "Gründungsplanung"@de,
+    "Planning to Found"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:planingToFound
+        ];
+      sh:targetSubjectsOf ff:planingToFound
+    ].
+
 ff:pregnancy a ff:DataField;
   schema:category ff:gesundheitDfKategorie;
   schema:question
@@ -2965,6 +3027,44 @@ ff:profitOriented a ff:DataField;
       sh:targetSubjectsOf ff:profitOriented
     ].
 
+ff:propertyOwnerhship a ff:DataField;
+  schema:category ff:wohnungsbau-modernisierung;
+  schema:question
+    "Sind Sie Eigentümer:in einer Wohnung oder eines Gebäudes?"@de-x-es,
+    "Sind Sie Eigentümer:in einer Wohnung oder eines Gebäudes?"@de,
+    "Do you own an apartment or a building?"@en;
+  rdfs:label
+    "Gebäude Eigentumsverhältnis"@de-x-es,
+    "Gebäude Eigentumsverhältnis"@de,
+    "Building Ownership"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:residenceInWolfenbuettel
+        ];
+      sh:targetSubjectsOf ff:propertyOwnerhship
+    ].
+
+ff:propertyRequiresRenovation a ff:DataField;
+  schema:category ff:wohnungsbau-modernisierung;
+  schema:question
+    "Muss Ihre Wohnung oder Ihr Gebäude renoviert werden?"@de-x-es,
+    "Muss Ihre Wohnung oder Ihr Gebäude renoviert werden?"@de,
+    "Does your apartment or building need renovation?"@en;
+  rdfs:label
+    "Gebäude Renovierungsbedarf"@de-x-es,
+    "Gebäude Renovierungsbedarf"@de,
+    "Building Renovation Requirement"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:propertyRequiresRenovation
+        ];
+      sh:targetSubjectsOf ff:propertyRequiresRenovation
+    ].
+
 ff:receivesScholarship a ff:DataField;
   schema:category ff:beschaeftigung-df-kategorie;
   schema:question
@@ -3009,6 +3109,25 @@ ff:recentChildbirth a ff:DataField;
           sh:path ff:recentChildbirth
         ];
       sh:targetSubjectsOf ff:recentChildbirth
+    ].
+
+ff:recentlyFounded a ff:DataField;
+  schema:category ff:gruendung-df-kategorie;
+  schema:question
+    "Haben Sie in den letzten Monaten ein Unternehmen gegründet?"@de-x-es,
+    "Haben Sie in den letzten Monaten ein Unternehmen gegründet?"@de,
+    "Have you founded a company in recent months?"@en;
+  rdfs:label
+    "Kürzlich gegründet"@de-x-es,
+    "Kürzlich gegründet"@de,
+    "Recently Founded"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:recentlyFounded
+        ];
+      sh:targetSubjectsOf ff:recentlyFounded
     ].
 
 ff:reducedEarningCapacityBySpecialCause a ff:DataField;
@@ -3197,6 +3316,25 @@ ff:renovationType-renewableHeating a ff:AnswerOption;
     "Erneuerbare Heizsysteme"@de-x-es,
     "Erneuerbare Heizsysteme"@de,
     "Renewable heating systems"@en.
+
+ff:rentalProperty a ff:DataField;
+  schema:category ff:wohnungsbau-modernisierung;
+  schema:question
+    "Vermieten Sie eine oder mehrere Wohnungen oder Gebäude?"@de-x-es,
+    "Vermieten Sie eine oder mehrere Wohnungen oder Gebäude?"@de,
+    "Do you rent out one or more apartments or buildings?"@en;
+  rdfs:label
+    "Mietobjekt"@de-x-es,
+    "Mietobjekt"@de,
+    "Rental Property"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:rentalProperty
+        ];
+      sh:targetSubjectsOf ff:rentalProperty
+    ].
 
 ff:rentenversicherung a ff:ProvidingAgency;
   rdfs:comment

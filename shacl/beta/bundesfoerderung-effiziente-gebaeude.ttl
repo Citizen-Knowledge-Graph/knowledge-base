@@ -17,7 +17,20 @@ ff:bundesfoerderung-effiziente-gebaeude a ff:RequirementProfile ;
 
 ff:bundesfoerderung-effiziente-gebaeudeMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
-   	sh:property [
+   	
+    sh:property [
+        sh:path ff:propertyOwnerhship ;
+        sh:in ( true ) ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ff:propertyRequiresRenovation ;
+        sh:in ( true ) ;
+        sh:minCount 1 ;
+    ] ;
+    
+    sh:property [
         sh:path ff:buildingCountry ;
         sh:in ( ff:buildingCountry-ger ) ;
         sh:minCount 1 ;

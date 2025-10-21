@@ -18,6 +18,12 @@ ff:wolfenbuettel-gastronomische-aussenmoeblierungMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [
+        sh:path ff:interestInBusinessFunding ;
+        sh:in ( true ) ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
         sh:path ff:businessActivityLocation ;
         sh:in (ff:businessActivityLocation-wolfenbuettel) ;
         sh:minCount 1 ;

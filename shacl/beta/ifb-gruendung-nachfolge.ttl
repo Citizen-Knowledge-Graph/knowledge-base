@@ -17,18 +17,37 @@ ff:ifb-gruendung-nachfolgeMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [
-        sh:path ff:companyFounded ;
+        sh:path ff:interestInBusinessFunding ;
+        sh:in ( true ) ;
         sh:minCount 1 ;
     ] ;
+
+    sh:property [
+        sh:path ff:planingToFound ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ff:recentlyFounded ;
+        sh:minCount 1 ;
+    ] ;
+
     sh:property [
         sh:path ff:interestedInSuccession ;
         sh:minCount 1 ;
     ] ;
+
     sh:or (
         [
             sh:property [
+                sh:path ff:planingToFound ;
+                sh:in ( true ) ;
+            ] ;
+        ]        
+        [
+            sh:property [
                 sh:path ff:companyFounded ;
-                sh:in ( true false ) ;
+                sh:in ( true ) ;
             ] ;
         ]
         [

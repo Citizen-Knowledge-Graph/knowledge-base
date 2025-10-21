@@ -18,6 +18,12 @@ ff:wolfenbuettel-ansiedlungMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [
+        sh:path ff:interestInBusinessFunding ;
+        sh:in ( true ) ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
         sh:path ff:industry ;
         sh:in (ff:industry-gastronomy ff:industry-retail) ;
         sh:minCount 1 ;
