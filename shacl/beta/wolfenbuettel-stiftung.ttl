@@ -48,7 +48,6 @@ ff:wolfenbuettel-stiftungMainShape a sh:NodeShape ;
     sh:property [
         sh:path ff:wbFoundationPreviousYear ;
         sh:in ( false ) ;
-        sh:message "Eine Förderung ist nur möglich, wenn im Vorjahr keine Förderung durch die Wolfenbüttel-Stiftung erhalten wurde. (Quelle: 'Die Förderung erfolgt nur einmal jährlich und nicht für bereits geförderte Projekte')."@de ;
     ] .
 
 # ----- DECISION TREE LOGIC -----
@@ -57,29 +56,42 @@ ff:wolfenbuettel-stiftungFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property ff:baseRequirements ;
+    sh:property ff:wbFoundationPreviousYearPS ;
+    sh:property ff:financialDifficultyPS ;
     sh:property ff:associationActivityPS ;
-    sh:property ff:associationActivityType .
+    sh:property ff:associationActivityTypePS .
 
 ff:baseRequirements a sh:PropertyShape ;    
-    sh:property [ sh:path ff:residenceInWolfenbuettel ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:financialDifficulty ; sh:minCount 1 ] ;
+    sh:property [ sh:path ff:residenceInWolfenbuettel ; sh:minCount 1 ] .
+
+ff:wbFoundationPreviousYearPS a sh:PropertyShape ;
+    sh:deactivated [
+        sh:not [
+            shn:eq ( [ sh:path ff:residenceInWolfenbuettel ] true ) 
+        ]
+    ] ;
     sh:property [ sh:path ff:wbFoundationPreviousYear ; sh:minCount 1 ] .
+
+ff:financialDifficultyPS a sh:PropertyShape ;
+    sh:deactivated [
+        sh:not [
+            shn:eq ( [ sh:path ff:wbFoundationPreviousYear ] false ) 
+        ]
+    ] ;
+    sh:property [ sh:path ff:financialDifficulty ; sh:minCount 1 ] .
 
 ff:associationActivityPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            sh:and (
-                shn:eq ( [ sh:path ff:financialDifficulty ] false ) 
-                shn:eq ( [ sh:path ff:residenceInWolfenbuettel ] true )
-            )
+            shn:eq ( [ sh:path ff:financialDifficulty ] false ) 
         ]
     ] ;
     sh:property [ sh:path ff:activeInAssociation ; sh:minCount 1 ] .
 
-ff:associationActivityType a sh:PropertyShape ;
+ff:associationActivityTypePS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            sh:path ff:activeInAssociation ; sh:in ( true )
+            shn:eq ( [ sh:path ff:activeInAssociation ] true ) 
         ]
     ] ;
     sh:property [ sh:path ff:associationActivity ; sh:minCount 1 ] .

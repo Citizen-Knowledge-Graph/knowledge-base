@@ -105,10 +105,7 @@ ff:degreeEvaluatedPS a sh:PropertyShape ;
 ff:jobRiskPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
-            sh:path ff:disabilityDegree ; sh:in(
-                ff:disabilityDegree-30
-                ff:disabilityDegree-40
-            )
+            sh:path ff:disabilityDegree ; sh:in( ff:disabilityDegree-30 ff:disabilityDegree-40 )
         ]
     ] ;
     sh:property [ sh:path ff:equalStatusNeeded ; sh:minCount 1 ] .
