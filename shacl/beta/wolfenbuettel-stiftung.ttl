@@ -33,12 +33,11 @@ ff:wolfenbuettel-stiftungMainShape a sh:NodeShape ;
                     [ sh:property [sh:path ff:activeInAssociation ; sh:in ( true ) ] ]
                     [
                         sh:property [
-                            sh:path ff:associationActivity ;
-                            sh:in ( 
-                                ff:associationActivity-youthWork 
-                                ff:associationActivity-womenSupport
-                            ) 
-                        ] 
+                            sh:or (
+                                [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-youthWork ]
+                                [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-womenSupport ]
+                            )
+                        ]
                     ]
                 )
             ]
