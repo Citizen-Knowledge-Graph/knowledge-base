@@ -1,0 +1,43 @@
+name: Build knowledge-base
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.11.1"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run build
+        run: npm run build
+
+      - name: Commit and push if build output changed
+        run: |
+          set -e
+          git add build/def.built.ttl
+          if git diff --staged --quiet; then
+            echo "No changes in build/def.built.ttl. Skipping commit."
+            exit 0
+          fi
+          echo "Changes detected in build/def.built.ttl. Committing..."
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Update def.built.ttl [skip ci]"
+          git push
