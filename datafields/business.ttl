@@ -724,7 +724,7 @@ ff:representingOrganisation a ff:DataField ;
 
 ff:wbFoundationOrganisationPreviousYear a ff:DataField ;
     schema:category ff:financeDfKategorie ;
-    rdfs:label "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de , "Wolfenbüttel Foundation Funding for Organisation Last Year"@en ;
+    rdfs:label "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de , "Wolfenbüttel Foundation Funding for organisation last year"@en ;
     schema:question "Hat Ihre Organisation im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de ,
     "Did your organisation receive funding from the Wolfenbüttel Foundation in the previous year?"@en ;
     rdfs:comment "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung an ihre Organisation erfolgt ist."@de ,
