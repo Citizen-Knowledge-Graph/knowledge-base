@@ -4361,7 +4361,7 @@ ff:wbFoundationOrganisationPreviousYear a ff:DataField;
   rdfs:label
     "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de-x-es,
     "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de,
-    "Wolfenbüttel Foundation Funding for Organisation Last Year"@en;
+    "Wolfenbüttel Foundation Funding for organisation last year"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:datatype xsd:boolean;
