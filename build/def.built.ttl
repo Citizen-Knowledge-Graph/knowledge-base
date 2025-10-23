@@ -1852,7 +1852,7 @@ ff:headquartersLocation a ff:DataField;
     "Headquarters Location"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
-          sh:in (ff:headquartersLocation-berlin ff:headquartersLocation-hamburg ff:headquartersLocation-other);
+          sh:in (ff:headquartersLocation-berlin ff:headquartersLocation-hamburg ff:headquartersLocation-wolfenbuettel ff:headquartersLocation-other);
           sh:maxCount 1;
           sh:path ff:headquartersLocation
         ];
@@ -1876,6 +1876,12 @@ ff:headquartersLocation-other a ff:AnswerOption;
     "Sonstige"@de-x-es,
     "Sonstige"@de,
     "Other"@en.
+
+ff:headquartersLocation-wolfenbuettel a ff:AnswerOption;
+  rdfs:label
+    "Wolfenbüttel"@de-x-es,
+    "Wolfenbüttel"@de,
+    "Wolfenbüttel"@en.
 
 ff:healthInsurance a ff:DataField;
   schema:category ff:financeDfKategorie;
@@ -3424,6 +3430,29 @@ ff:rentenversicherung a ff:ProvidingAgency;
     "Rentenversicherung"@de,
     "Pension Insurance"@en.
 
+ff:representingOrganisation a ff:DataField;
+  schema:category ff:gruendung-df-kategorie;
+  schema:question
+    "Repräsentiere Sie eine Organisation?"@de-x-es,
+    "Repräsentiere Sie eine Organisation?"@de,
+    "Do you represent a company?"@en;
+  rdfs:comment
+    "Im weiteren Verlauf erhalten Sie dann auch Matches auf diese Organisation."@de-x-es,
+    "Im weiteren Verlauf erhalten Sie dann auch Matches auf diese Organisation."@de,
+    "As you continue, you will also receive matches for this organization."@en;
+  rdfs:label
+    "Unternehmensführung"@de-x-es,
+    "Unternehmensführung"@de,
+    "Do you represent an organisation"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:representingOrganisation
+        ];
+      sh:targetSubjectsOf ff:representingOrganisation
+    ].
+
 ff:requiredForCare a ff:DataField;
   schema:category ff:gesundheit-df-kategorie;
   schema:question
@@ -4317,6 +4346,29 @@ ff:vocationalTrainingRecent a ff:DataField;
           sh:path ff:vocationalTrainingRecent
         ];
       sh:targetSubjectsOf ff:vocationalTrainingRecent
+    ].
+
+ff:wbFoundationOrganisationPreviousYear a ff:DataField;
+  schema:category ff:financeDfKategorie;
+  schema:question
+    "Hat Ihre Organisation im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
+    "Hat Ihre Organisation im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
+    "Did your organisation receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
+  rdfs:comment
+    "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung an ihre Organisation erfolgt ist."@de-x-es,
+    "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung an ihre Organisation erfolgt ist."@de,
+    "This field captures whether financial support was received by your organisation from the Wolfenbüttel Foundation in the previous calendar year."@en;
+  rdfs:label
+    "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de-x-es,
+    "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de,
+    "Wolfenbüttel Foundation Funding for Organisation Last Year"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:wbFoundationOrganisationPreviousYear
+        ];
+      sh:targetSubjectsOf ff:wbFoundationOrganisationPreviousYear
     ].
 
 ff:wbFoundationPreviousYear a ff:DataField;
