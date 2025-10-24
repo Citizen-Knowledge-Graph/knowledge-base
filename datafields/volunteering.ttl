@@ -5,9 +5,11 @@
 @prefix schema: <http://schema.org/> .
 
 ff:activeInAssociation a ff:DataField ;
-    rdfs:label "Aktivität in einem Verein"@de , "Activity in an Association"@en ;
-    schema:question "Sind Sie in einem Verein oder einer gemeinnützigen Organisation aktiv?"@de , 
-        "Are you active in an association or a non-profit organization?"@en ;
+    rdfs:label "Aktivität in einer Organisation"@de , "Activity in an Organization"@en ;
+    schema:question "Sind Sie in einem Verein oder einer Organisation aktiv?"@de , 
+        "Are you active in an association or a organization?"@en ;
+    rdfs:comment "Organisationen können Vereine, gemeinnützige Organisationen oder andere Gruppen sein, die sich für soziale, kulturelle, sportliche oder gemeinnützige Zwecke einsetzen."@de ,
+        "Organizations can be associations, non-profit organizations, or other groups that work for social, cultural, sporting, or charitable purposes."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:activeInAssociation ;
@@ -19,9 +21,9 @@ ff:activeInAssociation a ff:DataField ;
     ] .
 
 ff:associationActivity a ff:DataField ;
-    rdfs:label "Tätigkeit des Vereins"@de , "Activity of the Association"@en ;
-    schema:question "Welche Art von Tätigkeit übt der Verein oder die gemeinnützige Organisation aus?"@de , 
-        "What type of activity does the association or non-profit organization engage in?"@en ;
+    rdfs:label "Tätigkeit der Organisation"@de , "Activity of the Organization"@en ;
+    schema:question "Welche Art von Tätigkeit übt der Verein oder die Organisation aus?"@de , 
+        "What type of activity does the association or organization engage in?"@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:associationActivity ;
@@ -47,3 +49,32 @@ ff:associationActivity-environmental a ff:AnswerOption ; rdfs:label "Umwelt"@de 
 ff:associationActivity-educational a ff:AnswerOption ; rdfs:label "Bildung"@de , "Educational"@en .
 ff:associationActivity-youthWork a ff:AnswerOption ; rdfs:label "Jugendarbeit"@de , "Youth Work"@en .
 ff:associationActivity-womenSupport a ff:AnswerOption ; rdfs:label "Frauenförderung"@de , "Promotion of Women"@en .
+
+ff:associationHeadquarters a ff:DataField ;
+    rdfs:label "Hauptsitz der Organisation"@de , "Headquarters of the Organization"@en ;
+    schema:question "Wo befindet sich der Hauptsitz des Vereins oder der gemeinnützigen Organisation?"@de ,
+        "Where is the headquarters of the association or non-profit organization located?"@en ;
+    rdfs:comment "Wenn der Organisationssitz nicht in der Liste enthalten ist, wählen Sie bitte 'Anderer Ort'. Die Liste enthält nur Ort, für die aktuell Förderprogramme verfügbar sind."@de ,
+        "If the organization’s headquarters is not listed, please select 'Other location'. The list only includes locations for which funding programs are currently available."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:associationLocation ;
+        sh:property [
+            sh:path ff:associationHeadquarters ;
+            sh:in ( 
+                ff:associationHeadquarters-wolfenbuettel 
+                ff:associationHeadquarters-other
+            ) ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
+ff:associationHeadquarters-muenchen a ff:AnswerOption ; rdfs:label "München"@de , "Munich"@en .
+ff:associationHeadquarters-hamburg a ff:AnswerOption ; rdfs:label "Hamburg"@de , "Hamburg"@en .
+ff:associationHeadquarters-frankfurt a ff:AnswerOption ; rdfs:label "Frankfurt"@de , "Frankfurt"@en .
+ff:associationHeadquarters-koeln a ff:AnswerOption ; rdfs:label "Köln"@de , "Cologne"@en .
+ff:associationHeadquarters-berlin a ff:AnswerOption ; rdfs:label "Berlin"@de , "Berlin"@en .
+ff:associationHeadquarters-wolfenbuettel a ff:AnswerOption ; rdfs:label "Wolfenbüttel"@de , "Wolfenbüttel"@en .
+ff:associationHeadquarters-bielefeld a ff:AnswerOption ; rdfs:label "Bielefeld"@de , "Bielefeld"@en .
+ff:associationHeadquarters-other a ff:AnswerOption ; rdfs:label "Anderer Ort"@de , "Other location"@en .
+

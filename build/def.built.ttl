@@ -24,13 +24,17 @@
 
 ff:activeInAssociation a ff:DataField;
   schema:question
-    "Sind Sie in einem Verein oder einer gemeinnützigen Organisation aktiv?"@de-x-es,
-    "Sind Sie in einem Verein oder einer gemeinnützigen Organisation aktiv?"@de,
-    "Are you active in an association or a non-profit organization?"@en;
+    "Sind Sie in einem Verein oder einer Organisation aktiv?"@de-x-es,
+    "Sind Sie in einem Verein oder einer Organisation aktiv?"@de,
+    "Are you active in an association or a organization?"@en;
+  rdfs:comment
+    "Organisationen können Vereine, gemeinnützige Organisationen oder andere Gruppen sein, die sich für soziale, kulturelle, sportliche oder gemeinnützige Zwecke einsetzen."@de-x-es,
+    "Organisationen können Vereine, gemeinnützige Organisationen oder andere Gruppen sein, die sich für soziale, kulturelle, sportliche oder gemeinnützige Zwecke einsetzen."@de,
+    "Organizations can be associations, non-profit organizations, or other groups that work for social, cultural, sporting, or charitable purposes."@en;
   rdfs:label
-    "Aktivität in einem Verein"@de-x-es,
-    "Aktivität in einem Verein"@de,
-    "Activity in an Association"@en;
+    "Aktivität in einer Organisation"@de-x-es,
+    "Aktivität in einer Organisation"@de,
+    "Activity in an Organization"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:datatype xsd:boolean;
@@ -223,13 +227,13 @@ ff:assets a ff:DataField;
 
 ff:associationActivity a ff:DataField;
   schema:question
-    "Welche Art von Tätigkeit übt der Verein oder die gemeinnützige Organisation aus?"@de-x-es,
-    "Welche Art von Tätigkeit übt der Verein oder die gemeinnützige Organisation aus?"@de,
-    "What type of activity does the association or non-profit organization engage in?"@en;
+    "Welche Art von Tätigkeit übt der Verein oder die Organisation aus?"@de-x-es,
+    "Welche Art von Tätigkeit übt der Verein oder die Organisation aus?"@de,
+    "What type of activity does the association or organization engage in?"@en;
   rdfs:label
-    "Tätigkeit des Vereins"@de-x-es,
-    "Tätigkeit des Vereins"@de,
-    "Activity of the Association"@en;
+    "Tätigkeit der Organisation"@de-x-es,
+    "Tätigkeit der Organisation"@de,
+    "Activity of the Organization"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:in (ff:associationActivity-sports ff:associationActivity-cultural ff:associationActivity-social ff:associationActivity-environmental ff:associationActivity-educational ff:associationActivity-youthWork ff:associationActivity-womenSupport ff:associationActivity-other);
@@ -279,6 +283,76 @@ ff:associationActivity-youthWork a ff:AnswerOption;
     "Jugendarbeit"@de-x-es,
     "Jugendarbeit"@de,
     "Youth Work"@en.
+
+ff:associationHeadquarters a ff:DataField;
+  schema:question
+    "Wo befindet sich der Hauptsitz des Vereins oder der gemeinnützigen Organisation?"@de-x-es,
+    "Wo befindet sich der Hauptsitz des Vereins oder der gemeinnützigen Organisation?"@de,
+    "Where is the headquarters of the association or non-profit organization located?"@en;
+  rdfs:comment
+    "Wenn der Organisationssitz nicht in der Liste enthalten ist, wählen Sie bitte 'Anderer Ort'. Die Liste enthält nur Ort, für die aktuell Förderprogramme verfügbar sind."@de-x-es,
+    "Wenn der Organisationssitz nicht in der Liste enthalten ist, wählen Sie bitte 'Anderer Ort'. Die Liste enthält nur Ort, für die aktuell Förderprogramme verfügbar sind."@de,
+    "If the organization’s headquarters is not listed, please select 'Other location'. The list only includes locations for which funding programs are currently available."@en;
+  rdfs:label
+    "Hauptsitz der Organisation"@de-x-es,
+    "Hauptsitz der Organisation"@de,
+    "Headquarters of the Organization"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:in (ff:associationHeadquarters-wolfenbuettel ff:associationHeadquarters-other);
+          sh:maxCount 1;
+          sh:path ff:associationHeadquarters
+        ];
+      sh:targetSubjectsOf ff:associationLocation
+    ].
+
+ff:associationHeadquarters-berlin a ff:AnswerOption;
+  rdfs:label
+    "Berlin"@de-x-es,
+    "Berlin"@de,
+    "Berlin"@en.
+
+ff:associationHeadquarters-bielefeld a ff:AnswerOption;
+  rdfs:label
+    "Bielefeld"@de-x-es,
+    "Bielefeld"@de,
+    "Bielefeld"@en.
+
+ff:associationHeadquarters-frankfurt a ff:AnswerOption;
+  rdfs:label
+    "Frankfurt"@de-x-es,
+    "Frankfurt"@de,
+    "Frankfurt"@en.
+
+ff:associationHeadquarters-hamburg a ff:AnswerOption;
+  rdfs:label
+    "Hamburg"@de-x-es,
+    "Hamburg"@de,
+    "Hamburg"@en.
+
+ff:associationHeadquarters-koeln a ff:AnswerOption;
+  rdfs:label
+    "Köln"@de-x-es,
+    "Köln"@de,
+    "Cologne"@en.
+
+ff:associationHeadquarters-muenchen a ff:AnswerOption;
+  rdfs:label
+    "München"@de-x-es,
+    "München"@de,
+    "Munich"@en.
+
+ff:associationHeadquarters-other a ff:AnswerOption;
+  rdfs:label
+    "Anderer Ort"@de-x-es,
+    "Anderer Ort"@de,
+    "Other location"@en.
+
+ff:associationHeadquarters-wolfenbuettel a ff:AnswerOption;
+  rdfs:label
+    "Wolfenbüttel"@de-x-es,
+    "Wolfenbüttel"@de,
+    "Wolfenbüttel"@en.
 
 ff:balanceSheet a ff:DataField;
   schema:category ff:gruendung-df-kategorie;
@@ -1731,9 +1805,9 @@ ff:hasResidence a ff:DataField;
     "In welcher Stadt oder Gemeinde wohnen Sie?"@de,
     "In which city or municipality do you live?"@en;
   rdfs:comment
-    "Der Name der Stadt oder Gemeinde in der Sie Ihren Hauptwohnsitz haben."@de-x-es,
-    "Der Name der Stadt oder Gemeinde in der Sie Ihren Hauptwohnsitz haben."@de,
-    "The name of the city or municipality where you have your main residence."@en;
+    "Falls Ihr Wohnort nicht in der Liste enthalten ist, wählen Sie bitte 'Anderer Ort'. Die Liste enthält nur Orte, für die aktuell Förderprogramme verfügbar sind."@de-x-es,
+    "Falls Ihr Wohnort nicht in der Liste enthalten ist, wählen Sie bitte 'Anderer Ort'. Die Liste enthält nur Orte, für die aktuell Förderprogramme verfügbar sind."@de,
+    "If your place of residence is not listed, please select 'Other location'. The list only includes locations for which funding programs are currently available."@en;
   rdfs:label
     "Wohnort"@de-x-es,
     "Wohnort"@de,
@@ -3430,29 +3504,6 @@ ff:rentenversicherung a ff:ProvidingAgency;
     "Rentenversicherung"@de,
     "Pension Insurance"@en.
 
-ff:representingOrganisation a ff:DataField;
-  schema:category ff:gruendung-df-kategorie;
-  schema:question
-    "Repräsentiere Sie eine Organisation?"@de-x-es,
-    "Repräsentiere Sie eine Organisation?"@de,
-    "Do you represent a company?"@en;
-  rdfs:comment
-    "Im weiteren Verlauf erhalten Sie dann auch Matches auf diese Organisation."@de-x-es,
-    "Im weiteren Verlauf erhalten Sie dann auch Matches auf diese Organisation."@de,
-    "As you continue, you will also receive matches for this organization."@en;
-  rdfs:label
-    "Unternehmensführung"@de-x-es,
-    "Unternehmensführung"@de,
-    "Do you represent an organisation"@en;
-  ff:hasShaclShape [ a sh:NodeShape;
-      sh:property [
-          sh:datatype xsd:boolean;
-          sh:maxCount 1;
-          sh:path ff:representingOrganisation
-        ];
-      sh:targetSubjectsOf ff:representingOrganisation
-    ].
-
 ff:requiredForCare a ff:DataField;
   schema:category ff:gesundheit-df-kategorie;
   schema:question
@@ -4351,17 +4402,13 @@ ff:vocationalTrainingRecent a ff:DataField;
 ff:wbFoundationOrganisationPreviousYear a ff:DataField;
   schema:category ff:financeDfKategorie;
   schema:question
-    "Hat Ihre Organisation im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
-    "Hat Ihre Organisation im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
-    "Did your organisation receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
-  rdfs:comment
-    "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung an ihre Organisation erfolgt ist."@de-x-es,
-    "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung an ihre Organisation erfolgt ist."@de,
-    "This field captures whether financial support was received by your organisation from the Wolfenbüttel Foundation in the previous calendar year."@en;
+    "Hat der Verein oder die Organisation, in dem Sie sich engagieren, im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
+    "Hat der Verein oder die Organisation, in dem Sie sich engagieren, im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
+    "Did the association or organization you are involved with receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
   rdfs:label
-    "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de-x-es,
-    "Organisationsförderung durch Wolfenbüttel Stiftung im Vorjahr"@de,
-    "Wolfenbüttel Foundation Funding for organisation last year"@en;
+    "Förderung durch Wolfenbüttel Stiftung im Vorjahr"@de-x-es,
+    "Förderung durch Wolfenbüttel Stiftung im Vorjahr"@de,
+    "Wolfenbüttel Foundation Funding Last Year"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:datatype xsd:boolean;
@@ -4374,9 +4421,9 @@ ff:wbFoundationOrganisationPreviousYear a ff:DataField;
 ff:wbFoundationPreviousYear a ff:DataField;
   schema:category ff:financeDfKategorie;
   schema:question
-    "Haben Sie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
-    "Haben Sie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
-    "Did you receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
+    "Haben Sie oder Ihre Familie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
+    "Haben Sie oder Ihre Familie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
+    "Did you or your family receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
   rdfs:comment
     "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung erfolgt ist."@de-x-es,
     "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung erfolgt ist."@de,

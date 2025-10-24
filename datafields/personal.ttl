@@ -116,7 +116,8 @@ ff:habitualResidence-3rd a ff:AnswerOption ; rdfs:label "Drittstaat (Nicht-EU)"@
 ff:hasResidence a ff:DataField ;
     rdfs:label "Wohnort"@de , "Place of Residence"@en ;
     schema:question "In welcher Stadt oder Gemeinde wohnen Sie?"@de , "In which city or municipality do you live?"@en ;
-    rdfs:comment "Der Name der Stadt oder Gemeinde in der Sie Ihren Hauptwohnsitz haben."@de , "The name of the city or municipality where you have your main residence."@en ;
+    rdfs:comment "Falls Ihr Wohnort nicht in der Liste enthalten ist, wählen Sie bitte 'Anderer Ort'. Die Liste enthält nur Orte, für die aktuell Förderprogramme verfügbar sind."@de ,
+        "If your place of residence is not listed, please select 'Other location'. The list only includes locations for which funding programs are currently available."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:hasResidence ;
