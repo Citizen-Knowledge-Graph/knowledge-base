@@ -34,6 +34,7 @@ ff:wolfenbuettel-stiftung-organisationMainShape a sh:NodeShape ;
     sh:property [
         sh:or (
             [ sh:path ff:associationActivity ; sh:maxCount 0 ]
+            [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-social ]
             [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-youthWork ]
             [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-womenSupport ]
         )
