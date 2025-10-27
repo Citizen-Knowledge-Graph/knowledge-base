@@ -3676,9 +3676,9 @@ ff:residencyStatus-asylum a ff:AnswerOption;
 
 ff:residencyStatus-ger a ff:AnswerOption;
   rdfs:label
-    "Nicht anwendbar (deutsche Staatsbürger:in)"@de-x-es,
-    "Nicht anwendbar (deutsche Staatsbürger:in)"@de,
-    "Not applicable (German citizen)"@en.
+    "Deutsche Staatsbürger:in"@de-x-es,
+    "Deutsche Staatsbürger:in"@de,
+    "German citizen"@en.
 
 ff:residencyStatus-residencePermit a ff:AnswerOption;
   rdfs:label
