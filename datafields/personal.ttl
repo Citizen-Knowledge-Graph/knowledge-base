@@ -83,7 +83,7 @@ ff:residencyStatus a ff:DataField ;
             sh:maxCount 1 ;
         ] ;
     ] .
-ff:residencyStatus-ger a ff:AnswerOption ; rdfs:label "Nicht anwendbar (deutsche Staatsbürger:in)"@de , "Not applicable (German citizen)"@en .
+ff:residencyStatus-ger a ff:AnswerOption ; rdfs:label "Deutsche Staatsbürger:in"@de , "German citizen"@en .
 ff:residencyStatus-asylum a ff:AnswerOption ; rdfs:label "Asylbewerber:in"@de , "Asylum seeker"@en .
 ff:residencyStatus-toleration a ff:AnswerOption ; rdfs:label "Duldung"@de , "Toleration"@en .
 ff:residencyStatus-residencePermit a ff:AnswerOption ; rdfs:label "Aufenthaltserlaubnis"@de , "Temporary residence permit"@en .
