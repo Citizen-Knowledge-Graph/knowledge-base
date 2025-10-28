@@ -825,24 +825,12 @@ ff:children a ff:DataField;
     "Children"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
-          sh:in (ff:children-no ff:children-yes);
+          sh:datatype xsd:boolean;
           sh:maxCount 1;
           sh:path ff:children
         ];
       sh:targetSubjectsOf ff:children
     ].
-
-ff:children-no a ff:AnswerOption;
-  rdfs:label
-    "Nein"@de-x-es,
-    "Nein"@de,
-    "No"@en.
-
-ff:children-yes a ff:AnswerOption;
-  rdfs:label
-    "Ja"@de-x-es,
-    "Ja"@de,
-    "Yes"@en.
 
 ff:childrenAge a ff:DataField;
   schema:category ff:familienstand-df-kategorie;
