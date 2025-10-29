@@ -432,8 +432,8 @@ ff:visualImpairmentDegree a ff:DataField ;
     rdfs:label "Grad der Beeinträchtigung des Sehvermögens"@de , "Degree of Impairment of Vision"@en ;
     schema:question "Wie stark ist das Sehvermögen auf Ihrem besseren Auge beeinträchtigt?"@de ,
         "To what extent is the vision in your better eye impaired?"@en ;
-    rdfs:comment "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Der Visuswert gibt an, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann. Der Visuswert wird von Augenärzt:innen mit standardisierten Sehtests, zum Beispiel anhand von Sehtafeln, festgestellt."@de ,
-        "The degree of impairment of vision in Germany is determined by the visual acuity value (Visuswert). The Visuswert indicates how sharply someone can see compared to a person without visual impairment. The Visuswert is determined by ophthalmologists using standardized vision tests, for example with eye charts."@en ;
+    rdfs:comment "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Er zeigt, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann und wird von Augenärzt:innen mit standardisierten Sehtests ermittelt. Neben der Sehschärfe gelten auch gleichgestellte Störungen wie stark eingeschränkte Gesichtsfelder, große zentrale Ausfälle oder Rindenblindheit als erhebliche Beeinträchtigungen des Sehvermögens."@de ,
+        "The degree of impairment of vision in Germany is determined by the visual acuity value. It indicates how sharply someone can see compared to a person without visual impairment and is determined by ophthalmologists using standardized vision tests. In addition to visual acuity, equivalent disorders such as severely restricted visual fields, large central defects, or cortical blindness are also considered significant impairments of vision."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:visualImpairmentDegree ;
@@ -444,8 +444,8 @@ ff:visualImpairmentDegree a ff:DataField ;
                 ff:visualImpairmentDegree-below02
                 ff:visualImpairmentDegree-below02Equivalent
                 ff:visualImpairmentDegree-below05
+                ff:visualImpairmentDegree-below05Equivalent
                 ff:visualImpairmentDegree-above05
-                ff:visualImpairmentDegree-above05Equivalent
                 ff:visualImpairmentDegree-none
             ) ;
             sh:maxCount 1 ;

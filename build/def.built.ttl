@@ -2330,29 +2330,6 @@ ff:housingProjectType-other a ff:AnswerOption;
     "Andere"@de,
     "Other"@en.
 
-ff:impairedVisibility a ff:DataField;
-  schema:category ff:gesundheit-df-kategorie;
-  schema:question
-    "Liegt bei Ihnen eine erhebliche Beeinträchtigung des Sehvermögens vor?"@de-x-es,
-    "Liegt bei Ihnen eine erhebliche Beeinträchtigung des Sehvermögens vor?"@de,
-    "Do you have a significant impairment of vision?"@en;
-  rdfs:comment
-    "Eine erhebliche Beeinträchtigung des Sehvermögens liegt vor, wenn die Sehkraft so eingeschränkt ist, dass alltägliche Aktivitäten wie Lesen, Erkennen von Gesichtern oder Navigieren in der Umgebung ohne Hilfsmittel oder Unterstützung nicht oder nur sehr eingeschränkt möglich sind."@de-x-es,
-    "Eine erhebliche Beeinträchtigung des Sehvermögens liegt vor, wenn die Sehkraft so eingeschränkt ist, dass alltägliche Aktivitäten wie Lesen, Erkennen von Gesichtern oder Navigieren in der Umgebung ohne Hilfsmittel oder Unterstützung nicht oder nur sehr eingeschränkt möglich sind."@de,
-    "A significant impairment of vision exists when visual acuity is so limited that everyday activities such as reading, recognizing faces, or navigating the environment are not possible or only very limited without aids or assistance."@en;
-  rdfs:label
-    "Beeinträchtigte Sicht"@de-x-es,
-    "Beeinträchtigte Sicht"@de,
-    "Impaired Visibility"@en;
-  ff:hasShaclShape [ a sh:NodeShape;
-      sh:property [
-          sh:datatype xsd:boolean;
-          sh:maxCount 1;
-          sh:path ff:impairedVisibility
-        ];
-      sh:targetSubjectsOf ff:impairedVisibility
-    ].
-
 ff:incomeSource a ff:DataField;
   schema:category ff:beschaeftigung-df-kategorie;
   schema:question
@@ -4264,48 +4241,89 @@ ff:vermoegensgrenze_wohngeld a ff:DataField, ff:MaterializableDataField;
   ff:materializedViaRule ff:HouseholdMembersToVermoegensGrenzeWohngeld;
   ff:suggestProfileAddition false.
 
-ff:visibilityDegree a ff:DataField;
+ff:visualImpairment a ff:DataField;
+  schema:category ff:gesundheit-df-kategorie;
+  schema:question
+    "Liegt bei Ihnen eine erhebliche Beeinträchtigung des Sehvermögens vor?"@de-x-es,
+    "Liegt bei Ihnen eine erhebliche Beeinträchtigung des Sehvermögens vor?"@de,
+    "Do you have a significant impairment of vision?"@en;
+  rdfs:comment
+    "Eine erhebliche Beeinträchtigung des Sehvermögens liegt vor, wenn die Sehkraft so eingeschränkt ist, dass alltägliche Aktivitäten wie Lesen, Erkennen von Gesichtern oder Navigieren in der Umgebung ohne Hilfsmittel oder Unterstützung nicht oder nur sehr eingeschränkt möglich sind."@de-x-es,
+    "Eine erhebliche Beeinträchtigung des Sehvermögens liegt vor, wenn die Sehkraft so eingeschränkt ist, dass alltägliche Aktivitäten wie Lesen, Erkennen von Gesichtern oder Navigieren in der Umgebung ohne Hilfsmittel oder Unterstützung nicht oder nur sehr eingeschränkt möglich sind."@de,
+    "A significant impairment of vision exists when visual acuity is so limited that everyday activities such as reading, recognizing faces, or navigating the environment are not possible or only very limited without aids or assistance."@en;
+  rdfs:label
+    "Beeinträchtigte Sicht"@de-x-es,
+    "Beeinträchtigte Sicht"@de,
+    "Impaired Visibility"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:visualImpairment
+        ];
+      sh:targetSubjectsOf ff:visualImpairment
+    ].
+
+ff:visualImpairmentDegree a ff:DataField;
   schema:category ff:gesundheit-df-kategorie;
   schema:question
     "Wie stark ist das Sehvermögen auf Ihrem besseren Auge beeinträchtigt?"@de-x-es,
     "Wie stark ist das Sehvermögen auf Ihrem besseren Auge beeinträchtigt?"@de,
     "To what extent is the vision in your better eye impaired?"@en;
   rdfs:comment
-    "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Der Visuswert gibt an, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann. Der Visuswert wird von Augenärzt:innen mit standardisierten Sehtests, zum Beispiel anhand von Sehtafeln, festgestellt."@de-x-es,
-    "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Der Visuswert gibt an, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann. Der Visuswert wird von Augenärzt:innen mit standardisierten Sehtests, zum Beispiel anhand von Sehtafeln, festgestellt."@de,
-    "The degree of impairment of vision in Germany is determined by the visual acuity value (Visuswert). The Visuswert indicates how sharply someone can see compared to a person without visual impairment. The Visuswert is determined by ophthalmologists using standardized vision tests, for example with eye charts."@en;
+    "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Er zeigt, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann und wird von Augenärzt:innen mit standardisierten Sehtests ermittelt. Neben der Sehschärfe gelten auch gleichgestellte Störungen wie stark eingeschränkte Gesichtsfelder, große zentrale Ausfälle oder Rindenblindheit als erhebliche Beeinträchtigungen des Sehvermögens."@de-x-es,
+    "Der Grad der Beeinträchtigung des Sehvermögens wird in Deutschland durch den Visuswert bestimmt. Er zeigt, wie scharf jemand im Vergleich zu einer Person ohne Sehbeeinträchtigung sehen kann und wird von Augenärzt:innen mit standardisierten Sehtests ermittelt. Neben der Sehschärfe gelten auch gleichgestellte Störungen wie stark eingeschränkte Gesichtsfelder, große zentrale Ausfälle oder Rindenblindheit als erhebliche Beeinträchtigungen des Sehvermögens."@de,
+    "The degree of impairment of vision in Germany is determined by the visual acuity value. It indicates how sharply someone can see compared to a person without visual impairment and is determined by ophthalmologists using standardized vision tests. In addition to visual acuity, equivalent disorders such as severely restricted visual fields, large central defects, or cortical blindness are also considered significant impairments of vision."@en;
   rdfs:label
     "Grad der Beeinträchtigung des Sehvermögens"@de-x-es,
     "Grad der Beeinträchtigung des Sehvermögens"@de,
     "Degree of Impairment of Vision"@en;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
-          sh:in (ff:visibilityDegree-below02 ff:visibilityDegree-below05 ff:visibilityDegree-above05 ff:visibilityDegree-none);
+          sh:in (ff:visualImpairmentDegree-fullyBlind ff:visualImpairmentDegree-below02 ff:visualImpairmentDegree-below02Equivalent ff:visualImpairmentDegree-below05 ff:visualImpairmentDegree-below05Equivalent ff:visualImpairmentDegree-above05 ff:visualImpairmentDegree-none);
           sh:maxCount 1;
-          sh:path ff:visibilityDegree
+          sh:path ff:visualImpairmentDegree
         ];
-      sh:targetSubjectsOf ff:visibilityDegree
+      sh:targetSubjectsOf ff:visualImpairmentDegree
     ].
 
-ff:visibilityDegree-above05 a ff:AnswerOption;
+ff:visualImpairmentDegree-above05 a ff:AnswerOption;
   rdfs:label
     "Visuswert von 0,05 oder höher"@de-x-es,
     "Visuswert von 0,05 oder höher"@de,
     "0.05 or higher"@en.
 
-ff:visibilityDegree-below02 a ff:AnswerOption;
+ff:visualImpairmentDegree-below02 a ff:AnswerOption;
   rdfs:label
     "Visuswert von 0,02 oder geringer"@de-x-es,
     "Visuswert von 0,02 oder geringer"@de,
     "Below 0.02"@en.
 
-ff:visibilityDegree-below05 a ff:AnswerOption;
+ff:visualImpairmentDegree-below02Equivalent a ff:AnswerOption;
+  rdfs:label
+    "Störung des Sehvermögens gleichwertig zu einem Visuswert von 0,02 oder geringer"@de-x-es,
+    "Störung des Sehvermögens gleichwertig zu einem Visuswert von 0,02 oder geringer"@de,
+    "Equivalent to a visual acuity value of 0.02 or lower"@en.
+
+ff:visualImpairmentDegree-below05 a ff:AnswerOption;
   rdfs:label
     "Visuswert von 0,05 oder geringer"@de-x-es,
     "Visuswert von 0,05 oder geringer"@de,
     "Below 0.05"@en.
 
-ff:visibilityDegree-none a ff:AnswerOption;
+ff:visualImpairmentDegree-below05Equivalent a ff:AnswerOption;
+  rdfs:label
+    "Störung des Sehvermögens gleichwertig zu einem Visuswert von 0,05 oder geringer"@de-x-es,
+    "Störung des Sehvermögens gleichwertig zu einem Visuswert von 0,05 oder geringer"@de,
+    "Equivalent to a visual acuity value of 0.05 or lower"@en.
+
+ff:visualImpairmentDegree-fullyBlind a ff:AnswerOption;
+  rdfs:label
+    "Vollständig blind"@de-x-es,
+    "Vollständig blind"@de,
+    "Completely blind"@en.
+
+ff:visualImpairmentDegree-none a ff:AnswerOption;
   rdfs:label
     "Keine Angabe"@de-x-es,
     "Keine Angabe"@de,
