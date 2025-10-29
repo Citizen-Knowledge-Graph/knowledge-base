@@ -179,10 +179,10 @@ ff:disabilityDegree-none a ff:AnswerOption ; rdfs:label "Keine Angabe"@de , "No 
 ff:equalStatusNeeded a ff:DataField ;
     schema:category ff:beschaeftigungDfKategorie ;
     rdfs:label "Gleichstellung erforderlich"@de , "Equal Status Needed"@en ;
-    schema:question "Könnten Sie wegen Ihrer Behinderung ohne eine Gleichstellung keinen geeigneten Arbeitsplatz bekommen oder behalten?"@de ,
-                    "Due to your disability, would you be unable to obtain or keep a suitable job without being granted equal status?"@en ;
-    rdfs:comment "Gemeint ist die Gleichstellung mit schwerbehinderten Menschen nach dem Sozialgesetzbuch Neuntes Buch. Sie kommt typischerweise für Personen mit einem Grad der Behinderung von 30 oder 40 in Betracht, wenn die Gleichstellung erforderlich ist, um einen geeigneten Arbeitsplatz zu bekommen oder zu behalten."@de ,
-                 "This refers to being granted equal status with severely disabled persons under the German Social Code Book Nine. It typically applies to persons with a degree of disability of 30 or 40 when equal status is necessary to obtain or keep suitable employment."@en ;
+    schema:question "Würden Sie ohne Gleichstellung wegen Ihrer Behinderung keinen passenden Job finden oder behalten können?"@de ,
+                    "Would you be unable to find or keep a suitable job without being granted equal status due to your disability?"@en ;
+    rdfs:comment "Gleichstellung bedeutet, dass Menschen mit einer Behinderung rechtlich so behandelt werden wie schwerbehinderte Menschen – etwa beim Kündigungsschutz oder bei Förderungen im Job –, auch wenn ihr Grad der Behinderung unter 50 liegt."@de ,
+                    "Equal status means that people with disabilities are legally treated the same as severely disabled people – for example, in terms of protection against dismissal or job promotions – even if their degree of disability is below 50."@en ;
     ff:hasShaclShape [
         a sh:NodeShape ;
         sh:targetSubjectsOf ff:equalStatusNeeded ;
