@@ -65,7 +65,7 @@ ff:wohngeldMainShape a sh:NodeShape ;
         sh:minCount 1 ;
     ] ;    
     sh:property [
-      	sh:path ff:vermoegen ;
-        sh:lessThan ff:vermoegensgrenzeWohngeld ;
+      	sh:path ff:assets ;
+        sh:lessThan ff:assetLimitHousingAllowance ;
       	sh:minCount 1 ;
    	] .
