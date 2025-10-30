@@ -21,18 +21,18 @@ ff:blindenhilfe a ff:RequirementProfile ;
 
 ff:blindenhilfeMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
-    sh:property [ sh:path ff:habitualResidence ; sh:minCount 1 ; sh:in (ff:habitualResidence-ger) ] ;
+    sh:property [ sh:path ff:habitualResidence ; sh:in (ff:habitualResidence-ger) ] ;
     sh:property [
         sh:or (
-            sh:property [ sh:path ff:citizenship ; sh:in (ff:citizenship-ger) ]
-            sh:property [ 
+            [ sh:property [ sh:path ff:citizenship ; sh:in (ff:citizenship-ger) ] ]
+            [ sh:property [ 
                 sh:path ff:residencyStatus ; sh:in (
                     ff:residencyStatus-residencePermit 
                     ff:residencyStatus-settlementPermit
                     ff:residencyStatus-ger
                 ) 
-            ]
-            sh:property [ sh:path ff:longTermStay ; sh:in (true) ]
+            ] ]
+            [ sh:property [ sh:path ff:longTermStay ; sh:in (true) ] ]
         )
     ] ;
     sh:property [ sh:path ff:disability ; sh:in (true) ] ;
@@ -48,6 +48,7 @@ ff:blindenhilfeMainShape a sh:NodeShape ;
 ff:blindenhilfeFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property ff:baseRequirements ;
+	sh:property ff:residencyStatusPS ;
     sh:property ff:longTermStayPS ;
     sh:property ff:visualImpairmentPS ;
     sh:property ff:visualImpairmentDegreePS .
@@ -71,12 +72,12 @@ ff:longTermStayPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:or (
-                [ sh:property [ sh:path ff:residencyStatus ; sh:in (ff:residencyStatus-residencePermit) ] ]
-                [ sh:property [ sh:path ff:residencyStatus ; sh:in (ff:residencyStatus-settlementPermit) ] ]
-                [ sh:property [ sh:path ff:residencyStatus ; sh:in (ff:residencyStatus-ger) ] ]
+                [ shn:eq ( [ sh:path ff:residencyStatus ] ff:residencyStatus-asylum ) ]
+                [ shn:eq ( [ sh:path ff:residencyStatus ] ff:residencyStatus-toleration ) ]
+                [ shn:eq ( [ sh:path ff:residencyStatus ] ff:residencyStatus-other ) ]   
             )
         ]
-    ] ;
+    ];
     sh:property [ sh:path ff:longTermStay ; sh:minCount 1 ] .    
 
 ff:visualImpairmentPS a sh:PropertyShape ;
