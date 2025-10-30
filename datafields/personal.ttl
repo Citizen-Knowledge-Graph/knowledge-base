@@ -113,6 +113,23 @@ ff:habitualResidence-ger a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germ
 ff:habitualResidence-eu a ff:AnswerOption ; rdfs:label "EU"@de , "EU"@en .
 ff:habitualResidence-3rd a ff:AnswerOption ; rdfs:label "Drittstaat (Nicht-EU)"@de , "Third country (non-EU)"@en .
 
+ff:longTermStay a ff:DataField ;
+    schema:category ff:persoenliche-angaben-df-kategorie ;
+    rdfs:label "Langjähriger Aufenthalt in Deutschland"@de , "Long-term stay in Germany"@en ;
+    schema:question "Leben Sie seit mindestens fünf Jahren ununterbrochen rechtmäßig in Deutschland?"@de ,
+                    "Have you been living lawfully and continuously in Germany for at least five years?"@en ;
+    rdfs:comment "Dieses Feld erfasst, ob ein Anspruch nach § 23 Abs. 3 Satz 7 SGB XII bestehen kann (Sozialhilfe für Personen ohne regulären Aufenthaltstitel, aber mit langjährigem Aufenthalt)."@de ,
+                 "This field checks whether § 23(3) sentence 7 SGB XII may apply (social assistance eligibility after a long-term lawful stay without a regular residence permit)."@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:longTermStay ;
+        sh:property [
+            sh:path ff:longTermStay ;
+            sh:datatype xsd:boolean ;
+            sh:maxCount 1 ;
+        ] ;
+    ] .
+
 ff:hasResidence a ff:DataField ;
     rdfs:label "Wohnort"@de , "Place of Residence"@en ;
     schema:question "In welcher Stadt oder Gemeinde wohnen Sie?"@de , "In which city or municipality do you live?"@en ;
