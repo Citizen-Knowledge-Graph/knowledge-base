@@ -2745,6 +2745,29 @@ ff:locationFoundingTeam-other a ff:AnswerOption;
     "Sonstige"@de,
     "Other"@en.
 
+ff:longTermStay a ff:DataField;
+  schema:category ff:persoenliche-angaben-df-kategorie;
+  schema:question
+    "Leben Sie seit mindestens fünf Jahren ununterbrochen rechtmäßig in Deutschland?"@de-x-es,
+    "Leben Sie seit mindestens fünf Jahren ununterbrochen rechtmäßig in Deutschland?"@de,
+    "Have you been living lawfully and continuously in Germany for at least five years?"@en;
+  rdfs:comment
+    "Dieses Feld erfasst, ob ein Anspruch nach § 23 Abs. 3 Satz 7 SGB XII bestehen kann (Sozialhilfe für Personen ohne regulären Aufenthaltstitel, aber mit langjährigem Aufenthalt)."@de-x-es,
+    "Dieses Feld erfasst, ob ein Anspruch nach § 23 Abs. 3 Satz 7 SGB XII bestehen kann (Sozialhilfe für Personen ohne regulären Aufenthaltstitel, aber mit langjährigem Aufenthalt)."@de,
+    "This field checks whether § 23(3) sentence 7 SGB XII may apply (social assistance eligibility after a long-term lawful stay without a regular residence permit)."@en;
+  rdfs:label
+    "Langjähriger Aufenthalt in Deutschland"@de-x-es,
+    "Langjähriger Aufenthalt in Deutschland"@de,
+    "Long-term stay in Germany"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:datatype xsd:boolean;
+          sh:maxCount 1;
+          sh:path ff:longTermStay
+        ];
+      sh:targetSubjectsOf ff:longTermStay
+    ].
+
 ff:majorityShares a ff:DataField;
   schema:category ff:gruendung-df-kategorie;
   schema:question
