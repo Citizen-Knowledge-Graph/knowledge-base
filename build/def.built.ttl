@@ -1276,9 +1276,9 @@ ff:disabilityDegreeDetermined a ff:DataField;
     "Wurde der Grad Ihrer Behinderung bereits festgestellt?"@de,
     "Has the degree of your disability already been determined?"@en;
   rdfs:comment
-    "Der Grad der Behinderung (GdB) wird in Deutschland von den zuständigen Versorgungsämtern oder anderen zuständigen Behörden festgestellt und in Zehnerschritten von 20 bis 100 angegeben (§ 152 SGB IX)."@de-x-es,
-    "Der Grad der Behinderung (GdB) wird in Deutschland von den zuständigen Versorgungsämtern oder anderen zuständigen Behörden festgestellt und in Zehnerschritten von 20 bis 100 angegeben (§ 152 SGB IX)."@de,
-    "The degree of disability (GdB) in Germany is determined by the competent pension offices or other authorities and is specified in increments of ten from 20 to 100 (§ 152 German Social Code, Book IX)."@en;
+    "Die Feststellung dieses Wertes ist Voraussetzung für verschiedene Leistungen. Der Grad der Behinderung (GdB) wird in Deutschland von den zuständigen Versorgungsämtern oder anderen zuständigen Behörden festgestellt und in Zehnerschritten von 20 bis 100 angegeben (§ 152 SGB IX)."@de-x-es,
+    "Die Feststellung dieses Wertes ist Voraussetzung für verschiedene Leistungen. Der Grad der Behinderung (GdB) wird in Deutschland von den zuständigen Versorgungsämtern oder anderen zuständigen Behörden festgestellt und in Zehnerschritten von 20 bis 100 angegeben (§ 152 SGB IX)."@de,
+    "Determining this value is a prerequisite for various benefits. The degree of disability (GdB) in Germany is determined by the competent pension offices or other authorities and is specified in increments of ten from 20 to 100 (§ 152 German Social Code, Book IX)."@en;
   rdfs:label
     "Feststellung des Grades der Behinderung"@de-x-es,
     "Feststellung des Grades der Behinderung"@de,
