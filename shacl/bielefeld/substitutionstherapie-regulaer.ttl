@@ -24,7 +24,6 @@ ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [ sh:path ff:opioidAddiction ; sh:in (true) ] ;
-    sh:property [ sh:path ff:healthInsurance ; sh:in (true) ] ;
     sh:property [ sh:path ff:hasAge ; sh:minInclusive 18 ] ;
     sh:property [
         sh:or (
@@ -62,7 +61,6 @@ ff:sobrietyWishPS a sh:PropertyShape ;
         sh:not [
             sh:and (
                 [ shn:eq ( [ sh:path ff:opioidAddiction ] true ) ]
-                [ shn:eq ( [ sh:path ff:healthInsurance ] true ) ]
                 [ sh:path ff:hasAge ; sh:minInclusive 18 ]
         )]
     ] ;
