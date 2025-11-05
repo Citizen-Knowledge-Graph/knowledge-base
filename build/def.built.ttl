@@ -1338,6 +1338,7 @@ ff:educationLocation a ff:DataField;
   ff:hasShaclShape [ a sh:NodeShape;
       sh:property [
           sh:in (ff:educationLocation-ger ff:educationLocation-abroad ff:educationLocation-online);
+          sh:maxCount 1;
           sh:path ff:educationLocation
         ];
       sh:targetSubjectsOf ff:educationLocation
