@@ -166,6 +166,7 @@ ff:educationLocation a ff:DataField ;
                 ff:educationLocation-abroad
                 ff:educationLocation-online
             ) ;
+            sh:maxCount 1 ;
         ] ;
     ] .
 
