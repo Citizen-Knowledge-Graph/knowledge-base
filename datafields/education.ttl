@@ -133,26 +133,6 @@ ff:educationStatus-vocationalTraining a ff:AnswerOption ; rdfs:label "In Ausbild
 ff:educationStatus-higherEducation a ff:AnswerOption ; rdfs:label "Studierend"@de , "Studying"@en .
 ff:educationStatus-other a ff:AnswerOption ; rdfs:label "Andere"@de , "Other"@en .
 
-ff:educationLocation a ff:DataField ;
-    schema:category ff:bildung-df-kategorie ;
-    rdfs:label "Ort der Ausbildung"@de , "Place of Education"@en ;
-    schema:question "Wo findet Ihre Ausbildung statt?"@de , "Where is your education taking place?"@en ;
-    rdfs:comment "Bitte geben Sie an, ob Ihre schulische, berufliche oder hochschulische Ausbildung in Deutschland oder im Ausland stattfindet."@de , "Please indicate whether your school, vocational or higher education is taking place in Germany or abroad."@en ;
-    ff:hasShaclShape [
-        a sh:NodeShape ;
-        sh:targetSubjectsOf ff:educationLocation ;
-        sh:property [
-            sh:path ff:educationLocation ;
-            sh:in (
-                ff:educationLocation-ger
-                ff:educationLocation-abroad
-            ) ;
-            sh:maxCount 1 ;
-        ] ;
-    ] .
-ff:educationLocation-ger a ff:AnswerOption ; rdfs:label "Deutschland"@de , "Germany"@en .
-ff:educationLocation-abroad a ff:AnswerOption ; rdfs:label "Außerhalb Deutschlands"@de , "Abroad"@en .
-
 ff:receivesScholarship a ff:DataField ;
     schema:category ff:beschaeftigung-df-kategorie ;
     rdfs:label "Erhalten Sie derzeit ein Stipendium?"@de , "Are you currently receiving a scholarship?"@en ;

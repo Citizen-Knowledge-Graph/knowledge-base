@@ -1328,23 +1328,14 @@ ff:educationLocation a ff:DataField;
     "Wo findet Ihre Ausbildung statt?"@de,
     "Where is your education taking place?"@en;
   rdfs:comment
-    "Bitte geben Sie an, ob Ihre schulische, berufliche oder hochschulische Ausbildung in Deutschland oder im Ausland stattfindet."@de-x-es,
-    "Bitte geben Sie an, ob Ihre schulische, berufliche oder hochschulische Ausbildung in Deutschland oder im Ausland stattfindet."@de,
+    "Mehrfachangaben möglich: z. B. Deutschland und Ausland (Austausch/Praktikum) oder Online/Fernstudium."@de-x-es,
     "Mehrfachangaben möglich: z. B. Deutschland und Ausland (Austausch/Praktikum) oder Online/Fernstudium."@de,
-    "Multiple selections allowed: e.g., Germany and abroad (exchange/internship) or online/distance learning."@en,
-    "Please indicate whether your school, vocational or higher education is taking place in Germany or abroad."@en;
+    "Multiple selections allowed: e.g., Germany and abroad (exchange/internship) or online/distance learning."@en;
   rdfs:label
     "Ort der Ausbildung"@de-x-es,
     "Ort der Ausbildung"@de,
     "Place of Education"@en;
   ff:hasShaclShape [ a sh:NodeShape;
-      sh:property [
-          sh:in (ff:educationLocation-ger ff:educationLocation-abroad);
-          sh:maxCount 1;
-          sh:path ff:educationLocation
-        ];
-      sh:targetSubjectsOf ff:educationLocation
-    ], [ a sh:NodeShape;
       sh:property [
           sh:in (ff:educationLocation-ger ff:educationLocation-abroad ff:educationLocation-online);
           sh:path ff:educationLocation
