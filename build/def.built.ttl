@@ -4423,8 +4423,8 @@ ff:vocationalTrainingRecent a ff:DataField;
 ff:wbFoundationOrganisationPreviousYear a ff:DataField;
   schema:category ff:financeDfKategorie;
   schema:question
-    "Hat der Verein oder die Organisation, in dem Sie sich engagieren, im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
-    "Hat der Verein oder die Organisation, in dem Sie sich engagieren, im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
+    "Hat der Verein oder die Organisation, in dem Sie sich engagieren, in den vergangen zwölf Monaten eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
+    "Hat der Verein oder die Organisation, in dem Sie sich engagieren, in den vergangen zwölf Monaten eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
     "Did the association or organization you are involved with receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
   rdfs:label
     "Förderung durch Wolfenbüttel Stiftung im Vorjahr"@de-x-es,
@@ -4442,13 +4442,9 @@ ff:wbFoundationOrganisationPreviousYear a ff:DataField;
 ff:wbFoundationPreviousYear a ff:DataField;
   schema:category ff:financeDfKategorie;
   schema:question
-    "Haben Sie oder Ihre Familie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
-    "Haben Sie oder Ihre Familie im Vorjahr eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
-    "Did you or your family receive funding from the Wolfenbüttel Foundation in the previous year?"@en;
-  rdfs:comment
-    "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung erfolgt ist."@de-x-es,
-    "Dieses Feld erfasst, ob im vorangegangenen Kalenderjahr eine finanzielle Förderung durch die Wolfenbüttel Stiftung erfolgt ist."@de,
-    "This field captures whether financial support was received from the Wolfenbüttel Foundation in the previous calendar year."@en;
+    "Haben Sie oder Ihre Familie in den vergangen zwölf Monaten eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de-x-es,
+    "Haben Sie oder Ihre Familie in den vergangen zwölf Monaten eine Förderung von der Wolfenbüttel Stiftung erhalten?"@de,
+    "Did you or your family receive funding from the Wolfenbüttel Foundation in the past 12 months?"@en;
   rdfs:label
     "Förderung durch Wolfenbüttel Stiftung im Vorjahr"@de-x-es,
     "Förderung durch Wolfenbüttel Stiftung im Vorjahr"@de,
