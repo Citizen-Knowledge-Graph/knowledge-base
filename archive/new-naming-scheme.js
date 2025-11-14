@@ -2,7 +2,7 @@ import path from "path"
 import { fileURLToPath } from "url"
 import { promises } from "fs"
 
-const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)))
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
 const shaclDirs = [
     `${ROOT}/shacl`,
     `${ROOT}/shacl/beta`,
@@ -16,12 +16,13 @@ for (let shaclDir of shaclDirs) {
 for (let file of shaclFiles) {
     // let filename = path.basename(file)
     let content = await promises.readFile(file, "utf8")
-    const cls = "sh:PropertyShape"
+    const cls = "ff:RequirementProfile"
     const regex = new RegExp(`^([^\\s#;]+)\\s+a\\s+${cls}\\b`, "gm")
     const matches = [... content.matchAll(regex)].map(m => m[1].trim())
-    for (let match of matches) {
+    console.log(matches[0])
+    /*for (let match of matches) {
         const hash = Math.random().toString(36).slice(2, 5)
         content = content.split(match).join(`${match}_${hash}`)
     }
-    await promises.writeFile(file, content, "utf8")
+    await promises.writeFile(file, content, "utf8")*/
 }
