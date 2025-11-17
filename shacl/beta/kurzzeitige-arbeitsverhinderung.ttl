@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:kurzzeitige-arbeitsverhinderung a ff:RequirementProfile ;
+ff:kav a ff:RequirementProfile ;
     ff:title "Kurzzeitige Arbeitsverhinderung für akute Pflege"@de ,
         "Short-term Work Interruption for Acute Care"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;

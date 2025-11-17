@@ -4,7 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix shn: <https://schemas.link/shacl-next#> .
 
-ff:wolfenbuettel-stiftung-organisation a ff:RequirementProfile ;
+ff:wfsto a ff:RequirementProfile ;
     ff:title "Wolfenbüttel Stiftung - Organisation"@de , "Wolfenbüttel Foundation - Organisation"@en ;
     ff:category ff:stiftungs-foerderung ;
     ff:validationStage ff:preliminary-validation ;
@@ -13,12 +13,12 @@ ff:wolfenbuettel-stiftung-organisation a ff:RequirementProfile ;
     ff:benefitInfo "Die Wolfenbüttel-Stiftung unterstützt soziale Projekte in Wolfenbüttel – ohne Rechtsanspruch auf Förderung."@de ,
         "The Wolfenbüttel Foundation supports social projects in Wolfenbüttel - without a legal claim to funding."@en ;
     rdfs:seeAlso <https://www.wolfenbuettel.de/index.php?ModID=7&FID=2672.9007.1&object=tx%7C2672.9007.1> ;
-    ff:hasMainShape ff:wolfenbuettel-stiftung-organisationMainShape ;
-    ff:hasFlowShape ff:wolfenbuettel-stiftung-organisationFlowShape .
+    ff:hasMainShape ff:wfstoMainShape ;
+    ff:hasFlowShape ff:wfstoFlowShape .
 
 # ----- EVALUATION LOGIC -----
 
-ff:wolfenbuettel-stiftung-organisationMainShape a sh:NodeShape ;
+ff:wfstoMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [
@@ -47,17 +47,17 @@ ff:wolfenbuettel-stiftung-organisationMainShape a sh:NodeShape ;
 
 # ----- DECISION TREE LOGIC -----
 
-ff:wolfenbuettel-stiftung-organisationFlowShape a sh:NodeShape ;
+ff:wfstoFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
-    sh:property ff:baseRequirements ;
-    sh:property ff:headquartersLocationPS ;
-    sh:property ff:orgIsInWbPS .
+    sh:property ff:wfstoBaseRequirements ;
+    sh:property ff:wfstoHeadquartersLocationPS ;
+    sh:property ff:wfstoOrgIsInWbPS .
 
-ff:baseRequirements a sh:PropertyShape ;    
+ff:wfstoBaseRequirements a sh:PropertyShape ;    
     sh:property [ sh:path ff:activeInAssociation ; sh:minCount 1 ] .
 
-ff:headquartersLocationPS a sh:PropertyShape ;
+ff:wfstoHeadquartersLocationPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:activeInAssociation ] true )
@@ -65,7 +65,7 @@ ff:headquartersLocationPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:associationHeadquarters ; sh:minCount 1 ] .
 
-ff:orgIsInWbPS a sh:PropertyShape ;
+ff:wfstoOrgIsInWbPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:associationHeadquarters ] ff:associationHeadquarters-wolfenbuettel )

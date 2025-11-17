@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:blindengeld a ff:RequirementProfile ;
+ff:blg a ff:RequirementProfile ;
     ff:title "Blindengeld"@de , "Blindness Allowance"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;
     ff:validationStage ff:preliminary-validation ;
@@ -14,12 +14,12 @@ ff:blindengeld a ff:RequirementProfile ;
     ff:benefitInfo "Menschen mit einer wesentlichen Behinderung oder von einer solchen bedrohte Personen haben Anspruch auf Eingliederungshilfe. Sie unterstützt dabei, Einschränkungen auszugleichen und die gleichberechtigte Teilhabe am Leben in der Gesellschaft – etwa in Schule, Ausbildung, Arbeit, Wohnen und Freizeit – zu ermöglichen."@de ,
                "People with a substantial disability, or at risk of such, are entitled to integration assistance. It helps to compensate for limitations and enables equal participation in society – for example in education, training, work, housing, and leisure."@en ;
     ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
-    ff:hasMainShape ff:blindengeldMainShape ;
-    ff:hasFlowShape ff:blindengeldFlowShape .
+    ff:hasMainShape ff:blgMainShape ;
+    ff:hasFlowShape ff:blgFlowShape .
 
 # ----- EVALUATION LOGIC -----
 
-ff:blindengeldMainShape a sh:NodeShape ;
+ff:blgMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
     sh:property [ sh:path ff:disability ; sh:in (true) ] ;
     sh:property [ sh:path ff:visualImpairment; sh:in (true) ] ;
@@ -31,16 +31,16 @@ ff:blindengeldMainShape a sh:NodeShape ;
 
 # ----- DECISION TREE LOGIC -----
 
-ff:blindengeldFlowShape a sh:NodeShape ;
+ff:blgFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
-    sh:property ff:baseRequirements ;
-    sh:property ff:visualImpairmentPS ;
-    sh:property ff:visualImpairmentDegreePS .
+    sh:property ff:blgBaseRequirements ;
+    sh:property ff:blgVisualImpairmentPS ;
+    sh:property ff:blgVisualImpairmentDegreePS .
 
-ff:baseRequirements a sh:PropertyShape ;
+ff:blgBaseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:disability ; sh:minCount 1 ] .
 
-ff:visualImpairmentPS a sh:PropertyShape ;
+ff:blgVisualImpairmentPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:disability ] true ) 
@@ -48,7 +48,7 @@ ff:visualImpairmentPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:visualImpairment ; sh:minCount 1 ] .
 
-ff:visualImpairmentDegreePS a sh:PropertyShape ;
+ff:blgVisualImpairmentDegreePS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:visualImpairment ] true ) 

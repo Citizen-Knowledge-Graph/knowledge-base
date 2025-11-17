@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:erwerbsminderungsrente-voll a ff:RequirementProfile ;
+ff:emv a ff:RequirementProfile ;
     ff:title "Rente wegen voller Erwerbsminderung"@de ,
               "Pension for Full Disability"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie, ff:sozialhilfe-grundsicherung-bc-kategorie ;
@@ -61,22 +61,22 @@ ff:erwerbsminderungsrenteVollMainShape a sh:NodeShape ;
 ff:erwerbsminderungsrenteVollFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
-    sh:property ff:baseRequirements ;
-    sh:property ff:fullyReducedEarningsCapacityPS ;
-    sh:property ff:specialCauseInabilityPS ;
-    sh:property ff:waitingPeriodPS .
+    sh:property ff:emvBaseRequirements ;
+    sh:property ff:emvFullyReducedEarningsCapacityPS ;
+    sh:property ff:emvSpecialCauseInabilityPS ;
+    sh:property ff:emvWaitingPeriodPS .
 
-ff:baseRequirements a sh:PropertyShape ;
+ff:emvBaseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:birthDate ; sh:minCount 1 ] .
 
-ff:fullyReducedEarningsCapacityPS a sh:PropertyShape ;
+ff:emvFullyReducedEarningsCapacityPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [ shn:eq ( [ sh:path ff:pensionable ] false ) ]
     ] ;
     sh:property [ sh:path ff:workAbility ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:workAbilityHours ; sh:minCount 1 ] .
 
-ff:specialCauseInabilityPS a sh:PropertyShape ;
+ff:emvSpecialCauseInabilityPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [ 
             sh:or (
@@ -92,7 +92,7 @@ ff:specialCauseInabilityPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:reducedEarningCapacityCause ; sh:minCount 1 ] .
 
-ff:waitingPeriodPS a sh:PropertyShape ;
+ff:emvWaitingPeriodPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [ shn:eq ( [ sh:path ff:reducedEarningCapacityCause ] false ) ]
     ] ;

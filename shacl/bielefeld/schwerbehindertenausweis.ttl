@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:schwerbehindertenausweis a ff:RequirementProfile ;
+ff:sba a ff:RequirementProfile ;
     ff:title "Schwerbehindertenausweis und Gleichstellung"@de ,
              "Severely Disabled ID and Equal Status"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie, ff:sozialhilfe-grundsicherung-bc-kategorie ;
@@ -15,12 +15,12 @@ ff:schwerbehindertenausweis a ff:RequirementProfile ;
     ff:benefitInfo "Menschen mit einer Behinderung haben je nach Grad der Behinderung und Arbeitsplatzsituation Anspruch auf einen Schwerbehindertenausweis oder eine Gleichstellung."@de ,
                    "People with a disability may be entitled to a severely disabled person's ID card or to equal status, depending on the degree of disability and their employment situation."@en ;
     ff:moreInfoAt <https://raw.githubusercontent.com/Citizen-Knowledge-Graph/foerderfunke-react-app/refs/heads/main/public/assets/data/requirement-profiles/requirement-profiles-hydration.json> ;
-    ff:hasMainShape ff:schwerbehindertenausweisMainShape ;
-    ff:hasFlowShape ff:schwerbehindertenausweisFlowShape .
+    ff:hasMainShape ff:sbaMainShape ;
+    ff:hasFlowShape ff:sbaFlowShape .
 
 # ----- EVALUATION LOGIC -----
 
-ff:schwerbehindertenausweisMainShape a sh:NodeShape ;
+ff:sbaMainShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
     sh:property [ sh:path ff:disability ; sh:in (true) ] ;
@@ -36,17 +36,17 @@ ff:schwerbehindertenausweisMainShape a sh:NodeShape ;
 
 # ----- DECISION TREE LOGIC -----
 
-ff:schwerbehindertenausweisFlowShape a sh:NodeShape ;
+ff:sbaFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
-    sh:property ff:baseRequirements ;
-    sh:property ff:degreeEvaluatedPS .
+    sh:property ff:sbaBaseRequirements ;
+    sh:property ff:sbaDegreeEvaluatedPS .
 
-ff:baseRequirements a sh:PropertyShape ;
+ff:sbaBaseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:disability ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:disabilityDegreeDetermined ; sh:minCount 1 ] .
 
-ff:degreeEvaluatedPS a sh:PropertyShape ;
+ff:sbaDegreeEvaluatedPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:disabilityDegreeDetermined ] true ) 

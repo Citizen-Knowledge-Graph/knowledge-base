@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:substitutionstherapie-diamorphin a ff:RequirementProfile ;
+ff:std a ff:RequirementProfile ;
     ff:title "Diamorphingestützte Therapie"@de ,"Diamorphine-Assisted Therapy"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;
     ff:validationStage ff:preliminary-validation ;
@@ -47,23 +47,23 @@ ff:substitutionstherapieDiamorphinMainShape a sh:NodeShape ;
 ff:substitutionstherapieDiamorphinFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
-    sh:property ff:baseRequirements ;
-    sh:property ff:sobrietyWishPS ;
-    sh:property ff:severeDiseasePS ;
-    sh:property ff:genderRequirementsPS ;
+    sh:property ff:stdBaseRequirements ;
+    sh:property ff:stdSobrietyWishPS ;
+    sh:property ff:stdSevereDiseasePS ;
+    sh:property ff:stdGenderRequirementsPS ;
     sh:property ff:pregancyRequirementsPS ;
-    sh:property ff:recentBirthPS ;
-    sh:property ff:durationRequirementPS ;
-    sh:property ff:addictionDamageRequirementPS ;
-    sh:property ff:previousTherapyRequirementPS ;
-    sh:property ff:unsuccessfulTherapyRequirementPS .
+    sh:property ff:stdRecentBirthPS ;
+    sh:property ff:stdDurationRequirementPS ;
+    sh:property ff:stdAddictionDamageRequirementPS ;
+    sh:property ff:stdPreviousTherapyRequirementPS ;
+    sh:property ff:stdUnsuccessfulTherapyRequirementPS .
 
-ff:baseRequirements a sh:PropertyShape ;
+ff:stdBaseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:opioidAddiction ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:healthInsurance ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:birthDate ; sh:minCount 1 ] .
 
-ff:sobrietyWishPS a sh:PropertyShape ;
+ff:stdSobrietyWishPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:and (
@@ -73,7 +73,7 @@ ff:sobrietyWishPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:sobrietyWish ; sh:minCount 1 ] .
 
-ff:severeDiseasePS a sh:PropertyShape ;
+ff:stdSevereDiseasePS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:sobrietyWish ] false )
@@ -81,7 +81,7 @@ ff:severeDiseasePS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:severeDisease ; sh:minCount 1 ] .
 
-ff:genderRequirementsPS a sh:PropertyShape ;
+ff:stdGenderRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:severeDisease ] false )
@@ -89,7 +89,7 @@ ff:genderRequirementsPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:gender ; sh:minCount 1 ] .
 
-ff:pregnancyPS a sh:PropertyShape ;
+ff:stdPregnancyPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:or (
@@ -101,7 +101,7 @@ ff:pregnancyPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:pregnancy ; sh:minCount 1 ] .
 
-ff:recentBirthPS a sh:PropertyShape ;
+ff:stdRecentBirthPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:pregnancy ] false )
@@ -109,7 +109,7 @@ ff:recentBirthPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:recentChildbirth ; sh:minCount 1 ] .
 
-ff:durationRequirementPS a sh:PropertyShape ;
+ff:stdDurationRequirementPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:or (
@@ -122,7 +122,7 @@ ff:durationRequirementPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:opioidAddictionMoreThanTwoYears ; sh:minCount 1 ] .
 
-ff:addictionDamageRequirementPS a sh:PropertyShape ;
+ff:stdAddictionDamageRequirementPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:opioidAddictionMoreThanTwoYears ] true )
@@ -130,7 +130,7 @@ ff:addictionDamageRequirementPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:addictionDamage ; sh:minCount 1 ] .
 
-ff:previousTherapyRequirementPS a sh:PropertyShape ;
+ff:stdPreviousTherapyRequirementPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:addictionDamage ] true )
@@ -138,7 +138,7 @@ ff:previousTherapyRequirementPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:regularSubstitutiontherapy6months ; sh:minCount 1 ] .
 
-ff:unsuccessfulTherapyRequirementPS a sh:PropertyShape ;
+ff:stdUnsuccessfulTherapyRequirementPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:regularSubstitutiontherapy6months ] true )

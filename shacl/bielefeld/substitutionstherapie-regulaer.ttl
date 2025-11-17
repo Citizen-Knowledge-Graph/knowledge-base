@@ -3,7 +3,7 @@
 @prefix shn: <https://schemas.link/shacl-next#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-ff:substitutionstherapie-regulaer a ff:RequirementProfile ;
+ff:str a ff:RequirementProfile ;
     ff:title "Substitutionstherapie"@de ,
               "Substitution Therapy"@en ;
     ff:category ff:gesundheit-pflege-bc-kategorie ;
@@ -44,19 +44,19 @@ ff:substitutionstherapieRegulaerMainShape a sh:NodeShape ;
 ff:substitutionstherapieRegulaerFlowShape a sh:NodeShape ;
     sh:targetClass ff:Citizen ;
 
-    sh:property ff:baseRequirements ;
-    sh:property ff:sobrietyWishPS ;
-    sh:property ff:severeDiseasePS ;
-    sh:property ff:genderRequirementsPS ;
+    sh:property ff:strBaseRequirements ;
+    sh:property ff:strSobrietyWishPS ;
+    sh:property ff:strSevereDiseasePS ;
+    sh:property ff:strGenderRequirementsPS ;
     sh:property ff:pregancyPS ;
-    sh:property ff:recentBirthPS .
+    sh:property ff:strRecentBirthPS .
 
-ff:baseRequirements a sh:PropertyShape ;
+ff:strBaseRequirements a sh:PropertyShape ;
     sh:property [ sh:path ff:opioidAddiction ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:healthInsurance ; sh:minCount 1 ] ;
     sh:property [ sh:path ff:birthDate ; sh:minCount 1 ] .
 
-ff:sobrietyWishPS a sh:PropertyShape ;
+ff:strSobrietyWishPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:and (
@@ -66,7 +66,7 @@ ff:sobrietyWishPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:sobrietyWish ; sh:minCount 1 ] .
 
-ff:severeDiseasePS a sh:PropertyShape ;
+ff:strSevereDiseasePS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:sobrietyWish ] false )
@@ -74,7 +74,7 @@ ff:severeDiseasePS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:severeDisease ; sh:minCount 1 ] .
 
-ff:genderRequirementsPS a sh:PropertyShape ;
+ff:strGenderRequirementsPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:severeDisease ] false )
@@ -82,7 +82,7 @@ ff:genderRequirementsPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:gender ; sh:minCount 1 ] .
 
-ff:pregnancyPS a sh:PropertyShape ;
+ff:strPregnancyPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             sh:or (
@@ -94,7 +94,7 @@ ff:pregnancyPS a sh:PropertyShape ;
     ] ;
     sh:property [ sh:path ff:pregnancy ; sh:minCount 1 ] .
 
-ff:recentBirthPS a sh:PropertyShape ;
+ff:strRecentBirthPS a sh:PropertyShape ;
     sh:deactivated [
         sh:not [
             shn:eq ( [ sh:path ff:pregnancy ] false )
