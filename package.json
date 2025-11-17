@@ -10,7 +10,7 @@
     "build": "node build.js"
   },
   "devDependencies": {
-    "@foerderfunke/sem-ops-utils": "^0.3.3",
+    "@foerderfunke/sem-ops-utils": "^0.3.5",
     "mocha": "^11.1.0"
   }
 }

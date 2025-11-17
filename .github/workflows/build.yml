@@ -31,13 +31,13 @@ jobs:
       - name: Commit and push if build output changed
         run: |
           set -e
-          git add build/def.built.ttl
+          git add build/def.built.ttl build/rps.built.ttl
           if git diff --staged --quiet; then
-            echo "No changes in build/def.built.ttl. Skipping commit."
+            echo "No changes in build/def.built.ttl or build/rps.built.ttl. Skipping commit."
             exit 0
           fi
-          echo "Changes detected in build/def.built.ttl. Committing..."
+          echo "Changes detected in build outputs. Committing..."
           git -c user.name="github-actions[bot]" \
               -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-              commit -m "Update def.built.ttl [skip ci]"
+              commit -m "Update built.ttl files [skip ci]"
           git push

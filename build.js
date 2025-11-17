@@ -1,22 +1,26 @@
 import path from "path"
 import { fileURLToPath } from "url"
-import { promises as fsPromise, writeFileSync } from "fs"
+import { promises, writeFileSync } from "fs"
 import { newStore, addTurtleToStore, storeToTurtle, sparqlInsertDelete } from "@foerderfunke/sem-ops-utils"
 
-let header = ["# This file is a generated enriched merge of the following source files:"]
-const dir = path.join(path.dirname(fileURLToPath(import.meta.url)))
-const dfDir = path.join(dir, "datafields")
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)))
+await promises.mkdir(`${ROOT}/build`, { recursive: true })
 
-const turtleFiles = [
-    `${dir}/definitions.ttl`,
-    `${dir}/materialization.ttl`,
-    ...(await fsPromise.readdir(dfDir)).filter(f => f.endsWith(".ttl")).map(f => path.join(dfDir, f))
+// ----------- def.built.ttl -----------
+
+let header = ["# This file is a generated enriched merge of the following source files:"]
+const dfDir = path.join(ROOT, "datafields")
+
+const defTurtleFiles = [
+    `${ROOT}/definitions.ttl`,
+    `${ROOT}/materialization.ttl`,
+    ...(await promises.readdir(dfDir)).filter(f => f.endsWith(".ttl")).map(f => path.join(dfDir, f))
 ]
 
 let defStore = newStore()
-for (let file of turtleFiles) {
-    header.push("# - " + file.substring(dir.length + 1))
-    addTurtleToStore(defStore, await fsPromise.readFile(file, "utf8"))
+for (let file of defTurtleFiles) {
+    header.push("# - " + file.substring(ROOT.length + 1))
+    addTurtleToStore(defStore, await promises.readFile(file, "utf8"))
 }
 
 // ensure language tag @de-x-es: if not present, copy from @de
@@ -39,7 +43,30 @@ const query = `
 await sparqlInsertDelete(query, defStore)
 
 let turtle = header.join("\n") + "\n\n" + await storeToTurtle(defStore)
-await fsPromise.mkdir(`${dir}/build`, { recursive: true })
-let target = `${dir}/build/def.built.ttl`
+let target = `${ROOT}/build/def.built.ttl`
+writeFileSync(target, turtle, "utf8")
+console.log(`Wrote to ${target}`)
+
+// ----------- rps.built.ttl -----------
+
+header = ["# This file is a generated merge of the following source files:"]
+const shaclDirs = [
+    `${ROOT}/shacl`,
+    `${ROOT}/shacl/beta`,
+    `${ROOT}/shacl/bielefeld`
+]
+let shaclFiles = []
+for (let shaclDir of shaclDirs) {
+    shaclFiles = shaclFiles.concat((await promises.readdir(shaclDir)).map(file => `${shaclDir}/${file}`).filter(file => file.endsWith(".ttl")))
+}
+
+let rpsStore = newStore()
+for (let file of shaclFiles) {
+    header.push("# - " + file.substring(ROOT.length + 1))
+    addTurtleToStore(rpsStore, await promises.readFile(file, "utf8"))
+}
+
+turtle = header.join("\n") + "\n\n" + await storeToTurtle(rpsStore)
+target = `${ROOT}/build/rps.built.ttl`
 writeFileSync(target, turtle, "utf8")
 console.log(`Wrote to ${target}`)
