@@ -1,17 +1,9 @@
 import path from "path"
 import { fileURLToPath } from "url"
 import { promises } from "fs"
+import { expand } from "@foerderfunke/sem-ops-utils"
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")
-const shaclDirs = [
-    `${ROOT}/shacl`,
-    `${ROOT}/shacl/beta`,
-    `${ROOT}/shacl/bielefeld`
-]
-let shaclFiles = []
-for (let shaclDir of shaclDirs) {
-    shaclFiles = shaclFiles.concat((await promises.readdir(shaclDir)).map(file => `${shaclDir}/${file}`).filter(file => file.endsWith(".ttl")))
-}
 
 const map = {
     "ff:hilfe-zum-lebensunterhalt": "ff:hlu",
@@ -51,6 +43,18 @@ const map = {
     "ff:substitutionstherapie-regulaer": "ff:str"
 }
 
+// rename in knowledge-base shacl files
+
+const shaclDirs = [
+    `${ROOT}/shacl`,
+    `${ROOT}/shacl/beta`,
+    `${ROOT}/shacl/bielefeld`
+]
+let shaclFiles = []
+for (let shaclDir of shaclDirs) {
+    shaclFiles = shaclFiles.concat((await promises.readdir(shaclDir)).map(file => `${shaclDir}/${file}`).filter(file => file.endsWith(".ttl")))
+}
+
 for (let file of shaclFiles) {
     // let filename = path.basename(file)
     let content = await promises.readFile(file, "utf8")
@@ -74,3 +78,14 @@ for (let file of shaclFiles) {
 
     await promises.writeFile(file, content, "utf8")
 }
+
+// rename in frontend
+
+const frontendFile = `${ROOT}/../foerderfunke-react-app/public/assets/data/requirement-profiles/requirement-profiles.json`
+let content = await promises.readFile(frontendFile, "utf8")
+
+for (let [oldUri, newUri] of Object.entries(map)) {
+    content = content.split(`"${expand(oldUri)}"`).join(`"${expand(newUri)}"`)
+}
+
+await promises.writeFile(frontendFile, content, "utf8")
