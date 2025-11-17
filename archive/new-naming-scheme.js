@@ -81,11 +81,16 @@ for (let file of shaclFiles) {
 
 // rename in frontend
 
-const frontendFile = `${ROOT}/../foerderfunke-react-app/public/assets/data/requirement-profiles/requirement-profiles.json`
-let content = await promises.readFile(frontendFile, "utf8")
-
+let jsonFile = `${ROOT}/../foerderfunke-react-app/public/assets/data/requirement-profiles/requirement-profiles.json`
+let content = await promises.readFile(jsonFile, "utf8")
 for (let [oldUri, newUri] of Object.entries(map)) {
     content = content.split(`"${expand(oldUri)}"`).join(`"${expand(newUri)}"`)
 }
+await promises.writeFile(jsonFile, content, "utf8")
 
-await promises.writeFile(frontendFile, content, "utf8")
+jsonFile = `${ROOT}/../foerderfunke-react-app/public/assets/data/requirement-profiles/requirement-profiles-hydration.json`
+content = await promises.readFile(jsonFile, "utf8")
+for (let [oldUri, newUri] of Object.entries(map)) {
+    content = content.split(`"${oldUri}"`).join(`"${newUri}"`)
+}
+await promises.writeFile(jsonFile, content, "utf8")
