@@ -33,10 +33,11 @@ ff:wfstoMainShape a sh:NodeShape ;
 
     sh:property [
         sh:or (
-            [ sh:path ff:associationActivity ; sh:maxCount 0 ]
-            [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-social ]
-            [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-youthWork ]
-            [ sh:path ff:associationActivity ; sh:hasValue ff:associationActivity-womenSupport ]
+            [ sh:path ff:associationTargetGroup ; sh:maxCount 0 ]
+            [ sh:path ff:associationTargetGroup ; sh:hasValue ff:associationTargetGroup-children ]
+            [ sh:path ff:associationTargetGroup ; sh:hasValue ff:associationTargetGroup-youth ]
+            [ sh:path ff:associationTargetGroup ; sh:hasValue ff:associationTargetGroup-women ]
+            [ sh:path ff:associationTargetGroup ; sh:hasValue ff:associationTargetGroup-sociallyDisadvantaged ]
         )
     ] ;
 
@@ -72,4 +73,4 @@ ff:wfstoOrgIsInWbPS a sh:PropertyShape ;
         ]
     ] ;
     sh:property [ sh:path ff:wbFoundationOrganisationPreviousYear ; sh:minCount 1 ] ;
-    sh:property [ sh:path ff:associationActivity ; sh:minCount 1 ] .
+    sh:property [ sh:path ff:associationTargetGroup ; sh:minCount 1 ] .

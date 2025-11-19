@@ -354,6 +354,65 @@ ff:associationHeadquarters-wolfenbuettel a ff:AnswerOption;
     "Wolfenbüttel"@de,
     "Wolfenbüttel"@en.
 
+ff:associationTargetGroup a ff:DataField;
+  schema:question
+    "Welche Gruppe(n) spricht der Verein oder die Organisation hauptsächlich an?"@de-x-es,
+    "Welche Gruppe(n) spricht der Verein oder die Organisation hauptsächlich an?"@de,
+    "Which target group(s) does the association or organization primarily address?"@en;
+  rdfs:label
+    "Zielgruppe der Organisation"@de-x-es,
+    "Zielgruppe der Organisation"@de,
+    "Target Group of the Organization"@en;
+  ff:hasShaclShape [ a sh:NodeShape;
+      sh:property [
+          sh:in (ff:associationTargetGroup-none ff:associationTargetGroup-children ff:associationTargetGroup-youth ff:associationTargetGroup-women ff:associationTargetGroup-sociallyDisadvantaged ff:associationTargetGroup-generalPublic ff:associationTargetGroup-other);
+          sh:path ff:associationTargetGroup
+        ];
+      sh:targetSubjectsOf ff:associationTargetGroup
+    ].
+
+ff:associationTargetGroup-children a ff:AnswerOption;
+  rdfs:label
+    "Kinder"@de-x-es,
+    "Kinder"@de,
+    "Children"@en.
+
+ff:associationTargetGroup-generalPublic a ff:AnswerOption;
+  rdfs:label
+    "Allgemeine Öffentlichkeit"@de-x-es,
+    "Allgemeine Öffentlichkeit"@de,
+    "General public"@en.
+
+ff:associationTargetGroup-none a ff:AnswerOption;
+  rdfs:label
+    "Keine spezifische Zielgruppe"@de-x-es,
+    "Keine spezifische Zielgruppe"@de,
+    "No specific target group"@en.
+
+ff:associationTargetGroup-other a ff:AnswerOption;
+  rdfs:label
+    "Andere"@de-x-es,
+    "Andere"@de,
+    "Other"@en.
+
+ff:associationTargetGroup-sociallyDisadvantaged a ff:AnswerOption;
+  rdfs:label
+    "Sozial benachteiligte Gruppen und Hilfsbedürftige"@de-x-es,
+    "Sozial benachteiligte Gruppen und Hilfsbedürftige"@de,
+    "Socially disadvantaged groups and those in need"@en.
+
+ff:associationTargetGroup-women a ff:AnswerOption;
+  rdfs:label
+    "Frauen"@de-x-es,
+    "Frauen"@de,
+    "Women"@en.
+
+ff:associationTargetGroup-youth a ff:AnswerOption;
+  rdfs:label
+    "Jugendliche"@de-x-es,
+    "Jugendliche"@de,
+    "Youth"@en.
+
 ff:balanceSheet a ff:DataField;
   schema:category ff:gruendung-df-kategorie;
   schema:question

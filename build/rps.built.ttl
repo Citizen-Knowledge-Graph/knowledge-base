@@ -39,7 +39,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
-@prefix shn: <https://schemas.link/shacl-next#>.
 
 ff:aas a ff:RequirementProfile;
   ff:administrativeLevel ff:bund;
@@ -70,7 +69,7 @@ ff:aasBaseRequirements a sh:PropertyShape;
 ff:aasDegreeEvaluatedPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b1 true)
+          <https://schemas.link/shacl-next#eq> (_:b1 true)
         ]
     ];
   sh:property [
@@ -149,7 +148,7 @@ ff:aasSocialSecurityEmploymentPS a sh:PropertyShape;
 ff:aasWorkplaceRequirementsPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          sh:and (shn:eq _:b16 shn:eq _:b17 shn:eq _:b18)
+          sh:and (<https://schemas.link/shacl-next#eq> _:b16 <https://schemas.link/shacl-next#eq> _:b17 <https://schemas.link/shacl-next#eq> _:b18)
         ]
     ];
   sh:property [
@@ -567,7 +566,7 @@ ff:blgMainShape a sh:NodeShape;
 ff:blgVisualImpairmentDegreePS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b23 true)
+          <https://schemas.link/shacl-next#eq> (_:b23 true)
         ]
     ];
   sh:property [
@@ -578,7 +577,7 @@ ff:blgVisualImpairmentDegreePS a sh:PropertyShape;
 ff:blgVisualImpairmentPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b24 true)
+          <https://schemas.link/shacl-next#eq> (_:b24 true)
         ]
     ];
   sh:property [
@@ -657,7 +656,7 @@ ff:blhResidencyStatusPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
           sh:not [
-              shn:eq (_:b31 ff:citizenship-ger)
+              <https://schemas.link/shacl-next#eq> (_:b31 ff:citizenship-ger)
             ]
         ]
     ];
@@ -669,7 +668,7 @@ ff:blhResidencyStatusPS a sh:PropertyShape;
 ff:blhVisualImpairmentDegreePS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b32 true)
+          <https://schemas.link/shacl-next#eq> (_:b32 true)
         ]
     ];
   sh:property [
@@ -680,7 +679,7 @@ ff:blhVisualImpairmentDegreePS a sh:PropertyShape;
 ff:blhVisualImpairmentPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b33 true)
+          <https://schemas.link/shacl-next#eq> (_:b33 true)
         ]
     ];
   sh:property [
@@ -777,7 +776,7 @@ ff:eghFlowShape a sh:NodeShape;
 ff:eghLimitationPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b34 true)
+          <https://schemas.link/shacl-next#eq> (_:b34 true)
         ]
     ];
   sh:property [
@@ -823,7 +822,7 @@ ff:emtBaseRequirements a sh:PropertyShape;
 ff:emtReducedEarningsCapacityPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b35 false)
+          <https://schemas.link/shacl-next#eq> (_:b35 false)
         ]
     ];
   sh:property [
@@ -848,7 +847,7 @@ ff:emtSpecialCauseInabilityPS a sh:PropertyShape;
 ff:emtWaitingPeriodPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b38 false)
+          <https://schemas.link/shacl-next#eq> (_:b38 false)
         ]
     ];
   sh:property [
@@ -888,7 +887,7 @@ ff:emvBaseRequirements a sh:PropertyShape;
 ff:emvFullyReducedEarningsCapacityPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b39 false)
+          <https://schemas.link/shacl-next#eq> (_:b39 false)
         ]
     ];
   sh:property [
@@ -913,7 +912,7 @@ ff:emvSpecialCauseInabilityPS a sh:PropertyShape;
 ff:emvWaitingPeriodPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b42 false)
+          <https://schemas.link/shacl-next#eq> (_:b42 false)
         ]
     ];
   sh:property [
@@ -1507,13 +1506,13 @@ ff:kurzzeitige-arbeitsverhinderung-EvalShape a sh:NodeShape;
 ff:kurzzeitige-arbeitsverhinderungg-FlowShape a sh:NodeShape;
   sh:property [
       sh:minCount 1;
-      sh:path ff:acuteCareSituation
-    ], [
-      sh:minCount 1;
       sh:path ff:careRecipientCloseRelative
     ], [
       sh:minCount 1;
       sh:path ff:requiredForCare
+    ], [
+      sh:minCount 1;
+      sh:path ff:acuteCareSituation
     ];
   sh:targetClass ff:Citizen.
 
@@ -1645,7 +1644,7 @@ ff:sbaBaseRequirements a sh:PropertyShape;
 ff:sbaDegreeEvaluatedPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b64 true)
+          <https://schemas.link/shacl-next#eq> (_:b64 true)
         ]
     ];
   sh:minCount 1;
@@ -1692,7 +1691,7 @@ ff:std a ff:RequirementProfile;
 ff:stdAddictionDamageRequirementPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b65 true)
+          <https://schemas.link/shacl-next#eq> (_:b65 true)
         ]
     ];
   sh:property [
@@ -1726,7 +1725,7 @@ ff:stdDurationRequirementPS a sh:PropertyShape;
 ff:stdGenderRequirementsPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b70 false)
+          <https://schemas.link/shacl-next#eq> (_:b70 false)
         ]
     ];
   sh:property [
@@ -1748,7 +1747,7 @@ ff:stdPregnancyPS a sh:PropertyShape;
 ff:stdPreviousTherapyRequirementPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b74 true)
+          <https://schemas.link/shacl-next#eq> (_:b74 true)
         ]
     ];
   sh:property [
@@ -1759,7 +1758,7 @@ ff:stdPreviousTherapyRequirementPS a sh:PropertyShape;
 ff:stdRecentBirthPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b75 false)
+          <https://schemas.link/shacl-next#eq> (_:b75 false)
         ]
     ];
   sh:property [
@@ -1770,7 +1769,7 @@ ff:stdRecentBirthPS a sh:PropertyShape;
 ff:stdSevereDiseasePS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b76 false)
+          <https://schemas.link/shacl-next#eq> (_:b76 false)
         ]
     ];
   sh:property [
@@ -1792,7 +1791,7 @@ ff:stdSobrietyWishPS a sh:PropertyShape;
 ff:stdUnsuccessfulTherapyRequirementPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b79 true)
+          <https://schemas.link/shacl-next#eq> (_:b79 true)
         ]
     ];
   sh:property [
@@ -1834,7 +1833,7 @@ ff:strBaseRequirements a sh:PropertyShape;
 ff:strGenderRequirementsPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b80 false)
+          <https://schemas.link/shacl-next#eq> (_:b80 false)
         ]
     ];
   sh:property [
@@ -1856,7 +1855,7 @@ ff:strPregnancyPS a sh:PropertyShape;
 ff:strRecentBirthPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b84 false)
+          <https://schemas.link/shacl-next#eq> (_:b84 false)
         ]
     ];
   sh:property [
@@ -1867,7 +1866,7 @@ ff:strRecentBirthPS a sh:PropertyShape;
 ff:strSevereDiseasePS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b85 false)
+          <https://schemas.link/shacl-next#eq> (_:b85 false)
         ]
     ];
   sh:property [
@@ -2152,7 +2151,7 @@ ff:wfstoFlowShape a sh:NodeShape;
 ff:wfstoHeadquartersLocationPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b109 true)
+          <https://schemas.link/shacl-next#eq> (_:b109 true)
         ]
     ];
   sh:property [
@@ -2168,7 +2167,7 @@ ff:wfstoMainShape a sh:NodeShape;
       sh:in (ff:associationHeadquarters-wolfenbuettel);
       sh:path ff:associationHeadquarters
     ], [
-      sh:or (_:b110 _:b111 _:b112 _:b113)
+      sh:or (_:b110 _:b111 _:b112 _:b113 _:b114)
     ], [
       sh:in (false);
       sh:path ff:wbFoundationOrganisationPreviousYear
@@ -2178,7 +2177,7 @@ ff:wfstoMainShape a sh:NodeShape;
 ff:wfstoOrgIsInWbPS a sh:PropertyShape;
   sh:deactivated [
       sh:not [
-          shn:eq (_:b114 ff:associationHeadquarters-wolfenbuettel)
+          <https://schemas.link/shacl-next#eq> (_:b115 ff:associationHeadquarters-wolfenbuettel)
         ]
     ];
   sh:property [
@@ -2186,7 +2185,7 @@ ff:wfstoOrgIsInWbPS a sh:PropertyShape;
       sh:path ff:wbFoundationOrganisationPreviousYear
     ], [
       sh:minCount 1;
-      sh:path ff:associationActivity
+      sh:path ff:associationTargetGroup
     ].
 
 ff:wfstp a ff:RequirementProfile;
@@ -2310,149 +2309,159 @@ ff:wogMainShape a sh:NodeShape;
     ];
   sh:targetClass ff:Citizen.
 
+_:b96
+  sh:property [
+      sh:in (true);
+      sh:path ff:vocationalTrainingRecent
+    ].
+
 _:b97
-  sh:or (_:b115 _:b116);
+  sh:or (_:b116 _:b117);
   sh:property [
       sh:in (false);
       sh:path ff:vocationalTrainingRecent
     ].
 
-_:b115
-  sh:or (_:b117 _:b118);
+_:b116
+  sh:or (_:b118 _:b119);
   sh:property [
       sh:in (false);
       sh:path ff:careerReturner
     ].
 
-_:b117
+_:b118
   sh:property [
       sh:in (true);
       sh:path ff:socialInsurance12MonthsLast3Years
     ].
 
-_:b118
+_:b119
   sh:property [
       sh:in (true);
       sh:path ff:unemploymentBenefitApprovedLast3Years
     ].
 
-_:b116
-  sh:or (_:b119 _:b120);
+_:b117
+  sh:or (_:b120 _:b121);
   sh:property [
       sh:in (true);
       sh:path ff:careerReturner
     ].
 
-_:b119
+_:b120
   sh:property [
       sh:in (true);
       sh:path ff:socialInsurance12Months
     ].
 
-_:b120
+_:b121
   sh:property [
       sh:in (true);
       sh:path ff:unemploymentBenefitApproved
     ].
 
 _:b94
-  shn:eq (_:b121 true).
+  <https://schemas.link/shacl-next#eq> (_:b122 true).
 
-_:b121
+_:b122
   sh:path ff:disability.
 
 _:b95
-  shn:eq (_:b122 ff:rehabilitationProvider-bundesagentuFuerArbeit).
+  <https://schemas.link/shacl-next#eq> (_:b123 ff:rehabilitationProvider-bundesagentuFuerArbeit).
 
-_:b122
+_:b123
   sh:path ff:rehabilitationProvider.
 
 _:b106
-  shn:eq (_:b123 true).
+  <https://schemas.link/shacl-next#eq> (_:b124 true).
 
-_:b123
+_:b124
   sh:path ff:disability.
 
 _:b107
-  shn:eq (_:b124 ff:rehabilitationProvider-bundesagentuFuerArbeit).
+  <https://schemas.link/shacl-next#eq> (_:b125 ff:rehabilitationProvider-bundesagentuFuerArbeit).
 
-_:b124
+_:b125
   sh:path ff:rehabilitationProvider.
 
 _:b108
-  shn:eq (_:b125 false).
+  <https://schemas.link/shacl-next#eq> (_:b126 false).
 
-_:b125
+_:b126
   sh:path ff:vocationalTrainingRecent.
 
 _:b98
-  shn:eq (_:b126 true).
+  <https://schemas.link/shacl-next#eq> (_:b127 true).
 
-_:b126
+_:b127
   sh:path ff:disability.
 
 _:b99
-  shn:eq (_:b127 ff:rehabilitationProvider-bundesagentuFuerArbeit).
+  <https://schemas.link/shacl-next#eq> (_:b128 ff:rehabilitationProvider-bundesagentuFuerArbeit).
 
-_:b127
+_:b128
   sh:path ff:rehabilitationProvider.
 
 _:b100
-  shn:eq (_:b128 false).
+  <https://schemas.link/shacl-next#eq> (_:b129 false).
 
-_:b128
+_:b129
   sh:path ff:vocationalTrainingRecent.
 
 _:b101
-  shn:eq (_:b129 false).
+  <https://schemas.link/shacl-next#eq> (_:b130 false).
 
-_:b129
+_:b130
   sh:path ff:careerReturner.
 
 _:b102
-  shn:eq (_:b130 true).
+  <https://schemas.link/shacl-next#eq> (_:b131 true).
 
-_:b130
+_:b131
   sh:path ff:disability.
 
 _:b103
-  shn:eq (_:b131 ff:rehabilitationProvider-bundesagentuFuerArbeit).
+  <https://schemas.link/shacl-next#eq> (_:b132 ff:rehabilitationProvider-bundesagentuFuerArbeit).
 
-_:b131
+_:b132
   sh:path ff:rehabilitationProvider.
 
 _:b104
-  shn:eq (_:b132 false).
+  <https://schemas.link/shacl-next#eq> (_:b133 false).
 
-_:b132
+_:b133
   sh:path ff:vocationalTrainingRecent.
 
 _:b105
-  shn:eq (_:b133 true).
+  <https://schemas.link/shacl-next#eq> (_:b134 true).
 
-_:b133
+_:b134
   sh:path ff:careerReturner.
 
 _:b110
   sh:maxCount 0;
-  sh:path ff:associationActivity.
+  sh:path ff:associationTargetGroup.
 
 _:b111
-  sh:hasValue ff:associationActivity-social;
-  sh:path ff:associationActivity.
+  sh:hasValue ff:associationTargetGroup-children;
+  sh:path ff:associationTargetGroup.
 
 _:b112
-  sh:hasValue ff:associationActivity-youthWork;
-  sh:path ff:associationActivity.
+  sh:hasValue ff:associationTargetGroup-youth;
+  sh:path ff:associationTargetGroup.
 
 _:b113
-  sh:hasValue ff:associationActivity-womenSupport;
-  sh:path ff:associationActivity.
+  sh:hasValue ff:associationTargetGroup-women;
+  sh:path ff:associationTargetGroup.
+
+_:b114
+  sh:hasValue ff:associationTargetGroup-sociallyDisadvantaged;
+  sh:path ff:associationTargetGroup.
 
 _:b109
   sh:path ff:activeInAssociation.
 
-_:b114
+_:b115
   sh:path ff:associationHeadquarters.
 
 _:b6
@@ -2462,13 +2471,13 @@ _:b6
     ].
 
 _:b7
-  sh:and (sh:property _:b134 sh:property _:b135).
+  sh:and (sh:property _:b135 sh:property _:b136).
 
-_:b134
+_:b135
   sh:in (ff:disabilityDegree-30 ff:disabilityDegree-40);
   sh:path ff:disabilityDegree.
 
-_:b135
+_:b136
   sh:in (true);
   sh:path ff:equalStatusNeeded.
 
@@ -2520,14 +2529,14 @@ _:b4
 
 _:b5
   sh:not [
-      sh:and (_:b136 _:b137)
+      sh:and (_:b137 _:b138)
     ].
 
-_:b136
+_:b137
   sh:in (ff:disabilityDegree-30 ff:disabilityDegree-40);
   sh:path ff:disabilityDegree.
 
-_:b137
+_:b138
   sh:in (true);
   sh:path ff:equalStatusNeeded.
 
@@ -2540,7 +2549,7 @@ _:b16
       rdf:rest rdf:nil
     ].
 
-_:b138
+_:b139
   sh:path ff:regularWorkSupport.
 
 _:b17
@@ -2552,7 +2561,7 @@ _:b17
       rdf:rest rdf:nil
     ].
 
-_:b139
+_:b140
   sh:path ff:coreWorkWithoutHelp.
 
 _:b18
@@ -2564,7 +2573,7 @@ _:b18
       rdf:rest rdf:nil
     ].
 
-_:b140
+_:b141
   sh:path ff:workplaceAccommodationSufficient.
 
 _:b34
@@ -2586,13 +2595,13 @@ _:b45
     ].
 
 _:b46
-  sh:and (sh:property _:b141 sh:property _:b142).
+  sh:and (sh:property _:b142 sh:property _:b143).
 
-_:b141
+_:b142
   sh:in (true);
   sh:path ff:statutoryPensionFiveYears.
 
-_:b142
+_:b143
   sh:in (true);
   sh:path ff:statutoryPension36Months5Years.
 
@@ -2600,9 +2609,9 @@ _:b35
   sh:path ff:pensionable.
 
 _:b36
-  shn:eq (_:b143 true).
+  <https://schemas.link/shacl-next#eq> (_:b144 true).
 
-_:b143
+_:b144
   sh:path ff:workAbility.
 
 _:b37
@@ -2620,13 +2629,13 @@ _:b47
     ].
 
 _:b48
-  sh:and (sh:property _:b144 sh:property _:b145).
+  sh:and (sh:property _:b145 sh:property _:b146).
 
-_:b144
+_:b145
   sh:in (ff:workAbility-limited);
   sh:path ff:workAbility.
 
-_:b145
+_:b146
   sh:maxInclusive 3;
   sh:path ff:workAbilityHours.
 
@@ -2637,29 +2646,29 @@ _:b49
     ].
 
 _:b50
-  sh:and (sh:property _:b146 _:b147).
+  sh:and (sh:property _:b147 _:b148).
 
-_:b146
+_:b147
   sh:in (false);
   sh:path ff:reducedEarningCapacityCause.
 
-_:b147
-  sh:or (_:b148 _:b149).
-
 _:b148
+  sh:or (_:b149 _:b150).
+
+_:b149
   sh:property [
       sh:in (true);
       sh:path ff:statutoryPension20YearsDisability
     ].
 
-_:b149
-  sh:and (sh:property _:b150 sh:property _:b151).
-
 _:b150
+  sh:and (sh:property _:b151 sh:property _:b152).
+
+_:b151
   sh:in (true);
   sh:path ff:statutoryPensionFiveYears.
 
-_:b151
+_:b152
   sh:in (true);
   sh:path ff:statutoryPension36Months5Years.
 
@@ -2667,21 +2676,21 @@ _:b39
   sh:path ff:pensionable.
 
 _:b40
-  shn:eq (_:b152 ff:workAbility-none).
+  <https://schemas.link/shacl-next#eq> (_:b153 ff:workAbility-none).
 
-_:b152
+_:b153
   sh:path ff:workAbility.
 
 _:b41
-  sh:and (_:b153 _:b154).
-
-_:b153
-  shn:eq (_:b155 ff:workAbility-limited).
-
-_:b155
-  sh:path ff:workAbility.
+  sh:and (_:b154 _:b155).
 
 _:b154
+  <https://schemas.link/shacl-next#eq> (_:b156 ff:workAbility-limited).
+
+_:b156
+  sh:path ff:workAbility.
+
+_:b155
   sh:maxInclusive 3;
   sh:minInclusive 0;
   sh:path ff:workAbilityHours.
@@ -2705,9 +2714,9 @@ _:b89
     ].
 
 _:b90
-  sh:and (_:b156 _:b157).
+  sh:and (_:b157 _:b158).
 
-_:b156
+_:b157
   sh:not [
       sh:property [
           sh:in (sh:male);
@@ -2715,25 +2724,25 @@ _:b156
         ]
     ].
 
-_:b157
-  sh:or (_:b158 _:b159).
-
 _:b158
+  sh:or (_:b159 _:b160).
+
+_:b159
   sh:property [
       sh:in (true);
       sh:path ff:pregnancy
     ].
 
-_:b159
+_:b160
   sh:property [
       sh:in (true);
       sh:path ff:recentChildbirth
     ].
 
 _:b77
-  shn:eq (_:b160 true).
+  <https://schemas.link/shacl-next#eq> (_:b161 true).
 
-_:b160
+_:b161
   sh:path ff:opioidAddiction.
 
 _:b78
@@ -2768,27 +2777,27 @@ _:b75
   sh:path ff:pregnancy.
 
 _:b66
-  shn:eq (_:b161 true).
+  <https://schemas.link/shacl-next#eq> (_:b162 true).
 
-_:b161
+_:b162
   sh:path ff:sobrietyWish.
 
 _:b67
-  shn:eq (_:b162 true).
+  <https://schemas.link/shacl-next#eq> (_:b163 true).
 
-_:b162
+_:b163
   sh:path ff:severeDisease.
 
 _:b68
-  shn:eq (_:b163 true).
+  <https://schemas.link/shacl-next#eq> (_:b164 true).
 
-_:b163
+_:b164
   sh:path ff:pregnancy.
 
 _:b69
-  shn:eq (_:b164 true).
+  <https://schemas.link/shacl-next#eq> (_:b165 true).
 
-_:b164
+_:b165
   sh:path ff:recentChildbirth.
 
 _:b65
@@ -2813,9 +2822,9 @@ _:b92
     ].
 
 _:b93
-  sh:and (_:b165 _:b166).
+  sh:and (_:b166 _:b167).
 
-_:b165
+_:b166
   sh:not [
       sh:property [
           sh:in (sh:male);
@@ -2823,25 +2832,25 @@ _:b165
         ]
     ].
 
-_:b166
-  sh:or (_:b167 _:b168).
-
 _:b167
+  sh:or (_:b168 _:b169).
+
+_:b168
   sh:property [
       sh:in (true);
       sh:path ff:pregnancy
     ].
 
-_:b168
+_:b169
   sh:property [
       sh:in (true);
       sh:path ff:recentChildbirth
     ].
 
 _:b86
-  shn:eq (_:b169 true).
+  <https://schemas.link/shacl-next#eq> (_:b170 true).
 
-_:b169
+_:b170
   sh:path ff:opioidAddiction.
 
 _:b87
@@ -2884,27 +2893,27 @@ _:b59
   sh:path ff:residencyStatus.
 
 _:b60
-  sh:and (sh:property _:b170 sh:property _:b171).
+  sh:and (sh:property _:b171 sh:property _:b172).
 
-_:b170
+_:b171
   sh:in (ff:parentingSituation-coParenting);
   sh:path ff:parentingSituation.
 
-_:b171
+_:b172
   sh:in (ff:householdIncome-900plus);
   sh:path ff:householdIncome.
 
 _:b61
-  sh:and (sh:property _:b172 _:b173).
+  sh:and (sh:property _:b173 _:b174).
 
-_:b172
+_:b173
   sh:in (ff:parentingSituation-singleParent);
   sh:path ff:parentingSituation.
 
-_:b173
-  sh:not (sh:property _:b174).
-
 _:b174
+  sh:not (sh:property _:b175).
+
+_:b175
   sh:in (ff:householdIncome-below600);
   sh:path ff:householdIncome.
 
@@ -2974,21 +2983,21 @@ _:b31
   sh:path ff:citizenship.
 
 _:b25
-  shn:eq (_:b175 ff:residencyStatus-asylum).
-
-_:b175
-  sh:path ff:residencyStatus.
-
-_:b26
-  shn:eq (_:b176 ff:residencyStatus-toleration).
+  <https://schemas.link/shacl-next#eq> (_:b176 ff:residencyStatus-asylum).
 
 _:b176
   sh:path ff:residencyStatus.
 
-_:b27
-  shn:eq (_:b177 ff:residencyStatus-other).
+_:b26
+  <https://schemas.link/shacl-next#eq> (_:b177 ff:residencyStatus-toleration).
 
 _:b177
+  sh:path ff:residencyStatus.
+
+_:b27
+  <https://schemas.link/shacl-next#eq> (_:b178 ff:residencyStatus-other).
+
+_:b178
   sh:path ff:residencyStatus.
 
 _:b33
@@ -2998,30 +3007,30 @@ _:b32
   sh:path ff:visualImpairment.
 
 _:b51
-  sh:and (_:b178 _:b179).
+  sh:and (_:b179 _:b180).
 
-_:b178
+_:b179
   sh:property [
       sh:in (ff:educationStatus-higherEducation);
       sh:path ff:educationStatus
     ].
 
-_:b179
+_:b180
   sh:property [
       sh:in (ff:educationLocation-ger);
       sh:path ff:educationLocation
     ].
 
 _:b52
-  sh:and (_:b180 _:b181).
+  sh:and (_:b181 _:b182).
 
-_:b180
+_:b181
   sh:property [
       sh:in (true);
       sh:path ff:researchInstitutionEmployment
     ].
 
-_:b181
+_:b182
   sh:property [
       sh:in (ff:workplaceLocation-ger);
       sh:path ff:workplaceLocation
@@ -3043,10 +3052,4 @@ _:b57
   sh:property [
       sh:in (true);
       sh:path ff:interestedInSuccession
-    ].
-
-_:b96
-  sh:property [
-      sh:in (true);
-      sh:path ff:vocationalTrainingRecent
     ].

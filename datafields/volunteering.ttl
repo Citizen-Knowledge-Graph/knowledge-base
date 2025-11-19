@@ -20,6 +20,34 @@ ff:activeInAssociation a ff:DataField ;
         ] ;
     ] .
 
+ff:associationTargetGroup a ff:DataField ;
+    rdfs:label "Zielgruppe der Organisation"@de , "Target Group of the Organization"@en ;
+    schema:question "Welche Gruppe(n) spricht der Verein oder die Organisation hauptsächlich an?"@de , 
+        "Which target group(s) does the association or organization primarily address?"@en ;
+    ff:hasShaclShape [
+        a sh:NodeShape ;
+        sh:targetSubjectsOf ff:associationTargetGroup ;
+        sh:property [
+            sh:path ff:associationTargetGroup ;
+            sh:in (
+                ff:associationTargetGroup-none
+                ff:associationTargetGroup-children
+                ff:associationTargetGroup-youth
+                ff:associationTargetGroup-women
+                ff:associationTargetGroup-sociallyDisadvantaged
+                ff:associationTargetGroup-generalPublic
+                ff:associationTargetGroup-other
+            ) ;
+        ] ;
+    ] .
+ff:associationTargetGroup-none a ff:AnswerOption ; rdfs:label "Keine spezifische Zielgruppe"@de , "No specific target group"@en .
+ff:associationTargetGroup-children a ff:AnswerOption ; rdfs:label "Kinder"@de , "Children"@en .
+ff:associationTargetGroup-youth a ff:AnswerOption ; rdfs:label "Jugendliche"@de , "Youth"@en .
+ff:associationTargetGroup-women a ff:AnswerOption ; rdfs:label "Frauen"@de , "Women"@en .
+ff:associationTargetGroup-sociallyDisadvantaged a ff:AnswerOption ; rdfs:label "Sozial benachteiligte Gruppen und Hilfsbedürftige"@de , "Socially disadvantaged groups and those in need"@en .
+ff:associationTargetGroup-generalPublic a ff:AnswerOption ; rdfs:label "Allgemeine Öffentlichkeit"@de , "General public"@en .
+ff:associationTargetGroup-other a ff:AnswerOption ; rdfs:label "Andere"@de , "Other"@en .
+
 ff:associationActivity a ff:DataField ;
     rdfs:label "Tätigkeit der Organisation"@de , "Activity of the Organization"@en ;
     schema:question "Welche Art von Tätigkeit übt der Verein oder die Organisation aus?"@de , 
